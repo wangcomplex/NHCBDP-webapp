@@ -1,0 +1,49 @@
+.data-content{
+  margin:30px 0;
+}
+.choose-content{
+  width: 80%;
+  margin: 0 auto;
+  h3{
+    font-size: 16px;
+    line-height: 40px;
+  }
+  .data-source{
+    border:1px solid #AFC6D6;
+    border-radius:3px;
+    background: #fff;
+    height: 400px;
+    .source-list {
+      list-style: none;
+      line-height: 36px;
+      color: #397cd5;
+      height: 40px;
+      border-bottom: 1px solid #AFC6D6;
+      li{
+        float: left;
+        width:10% ;
+        line-height: 40px;
+        span{
+          text-align: center;
+          &:hover{
+            color: #333;
+            border-right:1px solid #AFC6D6;
+            border-bottom: 2px solid #fff
+          }
+        }
+      }
+    }
+  }
+}
+
+.put-apply{
+  margin-top: 20px;
+  margin-left: 45%;
+}
+.btn-apply{
+  width: 140px;
+  height:40px;
+  letter-spacing: 5px;
+  background: #4A90E2;
+  border: none;
+}

@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<div>
+  <div *ngIf="!submitted" class="input_info">
+    <h2>申请明细</h2>
+    <div class="basic_info">
+     <form #createDataEntryForm="ngForm" novalidate (ngSubmit)="onSubmit()" class="form-horizontal">
+       <div class="form-group">
+         <label for="title" class="form-control-label col-sm-2">申请名称</label>
+         <div class="col-sm-10">
+           <input id="title" name="title" type="text" [(ngModel)]="applyForRequest.title" required
+                  #title="ngModel"
+                  class="form-control"><span>*</span>
+         </div>
+       </div>
+       <div id="alert" class="alert alert-danger" [hidden]="title.valid || title.pristine">
+         申请名称不能为空
+       </div>
+
+        <div class="form-group">
+          <label for="name" class="form-control-label col-sm-2">申请人姓名</label>
+          <div class="col-sm-10">
+            <input id="name" name="name" type="text" [(ngModel)]="applyForRequest.name" required
+                   #name="ngModel"
+                   class="form-control"><span>*</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+          申请人不能为空
+        </div>
+
+       <div class="form-group">
+         <label for="cardId" class="form-control-label col-sm-2">证件号码:</label>
+         <div class="col-sm-10">
+           <input id="cardId" placeholder="身份证号" name="cardId" type="text"
+                  [(ngModel)]="applyForRequest.cardId" required number [rangeLength]="[17,18]"
+                  #cardId="ngModel" class="form-control"><span>*</span>
+         </div>
+       </div>
+       <div class="alert alert-danger" [hidden]="cardId.valid || cardId.pristine">
+         证件号码必须满足17／18位数字
+       </div>
+
+        <div class="form-group">
+          <label for="company" class="form-control-label col-sm-2">公司名称</label>
+          <div class="col-sm-10">
+            <input id="company" name="company" type="text" [(ngModel)]="applyForRequest.company" required
+                   #company="ngModel"
+                   class="form-control"><span>*</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" [hidden]="company.valid || company.pristine">公司名称不能为空</div>
+
+        <div class="form-group">
+          <label for="content" class="form-control-label col-sm-2">申请说明</label>
+          <div class="col-sm-10">
+            <textarea id="content" name="content" type="text" [(ngModel)]="applyForRequest.content" required
+                      #content="ngModel" class="form-control"></textarea><span>*</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" [hidden]="content.valid || content.pristine">内容不能为空</div>
+
+        <div class="form-group">
+          <label class="form-control-label col-sm-2">使用用途</label>
+          <div class="col-sm-10">
+            <textarea placeholder="请说明数据使用的目的,用途等" style="width: 100%;height: 200px; padding: 10px"></textarea>
+          </div>
+        </div>
+
+      <div class="col-md-4 btn-sumbit">
+        <button type="submit" class="btn btn-primary btn-apply"  (click)="applyForAudit()"
+                [disabled]="!title.valid || !cardId.valid || !company.valid || !content.valid ">提交</button>
+      </div>
+
+       <!--<div class="form-submit-info" [ngSwitch]="submitInfo">-->
+         <!--<template ngSwitchCase="default"></template>-->
+         <!--<template ngSwitchCase="process">-->
+           <!--<alert type="info" dismissable="true">正在提交 ...</alert>-->
+         <!--</template>-->
+         <!--<template ngSwitchCase="success">-->
+           <!--<alert type="success" dismissable="true">保存成功</alert>-->
+         <!--</template>-->
+         <!--<template ngSwitchCase="error">-->
+           <!--<alert type="danger" dismissable="true">无法创建数据集，请检查填写信息或者是否登录</alert>-->
+         <!--</template>-->
+       <!--</div>-->
+
+    </form>
+    </div>
+  </div>
+
+
+</div>
+<app-footer></app-footer>

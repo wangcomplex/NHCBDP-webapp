@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="container-fluid data-content">
+  <div class="choose-content">
+    <h3>选择数据来源</h3>
+    <div class="data-source">
+      <ul class="source-list">
+        <li><span>MySQL</span></li>
+        <li><span>MongoDB</span></li>
+        <li><span>HDFS</span></li>
+      </ul>
+      <div>
+        <div class="form-group">
+          <label for="category" class="form-control-label col-sm-2">选择数据库:</label>
+          <div class="col-sm-10">
+            <select id="category" name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                    #categoryId="ngModel"
+                    class="form-control">
+              <option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}
+              </option>
+            </select><span>*</span>
+          </div>
+        </div>
+        <div *ngIf="categoryId.errors && categoryId.touched" class="alert alert-danger">
+          <div [hidden]="!categoryId.errors.required">分类不能为空</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="put-apply">
+    <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="putInApply()">申请</button>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

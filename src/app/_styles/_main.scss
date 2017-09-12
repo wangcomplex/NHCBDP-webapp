@@ -1,0 +1,23 @@
+//@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css";
+//@import "~bootstrap-timepicker/css/bootstrap-timepicker.min.css";
+
+@import "app";
+@import "bootstrap-extends";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "variables";
+@import "mixins";
+
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+body{
+  font-family: \\5FAE\8F6F\96C5\9ED1, Microsoft Yahei, Hiragino Sans GB, Helvetica, Arial, sans-serif;
+}

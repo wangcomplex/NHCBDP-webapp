@@ -1,0 +1,98 @@
+
+.home {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: url("/assets/images/login-bottom.jpg") no-repeat center;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+.home-login{
+  width: 25%;
+  height:400px;
+  border:1px solid #397cd5;
+  box-shadow: 2px 2px 2px;
+  background: #fff;
+  margin-left: 35%;
+}
+
+
+.input-group {
+  position: relative;
+  display: inline-table;
+  vertical-align: middle;
+  border-collapse: separate;
+  width: 86%;
+  color: #4a4a4a;
+  border: 1px solid #397cd5;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input-group .form-control {
+  padding: 7px 10px;
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #000;
+}
+.form-control + .input-group__addon, .input-group__addon + .form-control {
+  padding-left: 0;
+}
+
+.input-group .input-group__addon {
+  display: table-cell;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.btn-login:hover{
+  cursor: pointer;
+}
+.form-user{
+  text-align: left;
+}
+
+
+
+.content {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 50px;
+  color:#333;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+  .btn-register {
+    font-size: 14px;
+    height: 48px;
+    width: 86%;
+    margin-left: 7%;
+  }
+}
+
+.goto-login{
+  color:#ccc;
+  .login{
+    font-size:16px;
+
+  }
+}
+
+
+

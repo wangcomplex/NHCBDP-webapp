@@ -1,0 +1,141 @@
+#form_container {
+  margin-top: 10px;
+}
+
+.input_info {
+  margin: 20px auto;
+  width: 1074px;
+  height: 1060px;
+  border: 3px solid #1B6A92;
+  border-radius: 5px;
+  background: #fff;
+  h2 {
+    color: #000;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+
+.basic_info {
+  width: 750px;
+  margin: 0 auto;
+  padding: 10px 0 0 10px;
+  label {
+    font-size: 14px;
+    padding-right: 5px;
+    text-align: left;
+    line-height: 36px;
+  }
+  input, select, textarea {
+    margin-right: 10px;
+    color: #666;
+  }
+  input, select {
+    height: 40px;
+  }
+  textarea {
+    height: 60px;
+  }
+  .col-sm-10 {
+    position: relative;
+  }
+  span {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    color: red;
+  }
+}
+
+
+.alert-danger {
+  padding-left: 20%;
+  padding-bottom: 12px;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+    label {
+      font-size: 14px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    input:checked + small {
+      background: #30DFFD;
+      color: #fff;
+    }
+    small {
+      width: 128px;
+      height: 48px;
+      display: block;
+      text-align: center;
+      &:hover {
+        background: #30DFFD;
+        color: #fff;
+      }
+    }
+  }
+
+
+.btn-content {
+  button {
+    margin-left: 180px;
+    width: 100px;
+  }
+}
+
+.form-submit-info {
+  margin-top: 20px;
+}
+
+.date-write {
+  margin-left: 8px;
+  width: 600px;
+  .date-write-left, .date-write-right {
+    border: 1px solid #ccc;
+    height: 38px;
+    width: 40%;
+    float: left;
+    background: #fff;
+  }
+  b {
+    float: left;
+  }
+  .date-write-left, b {
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+.date-sure, .date-clear {
+  width: 60px;
+  height: 28px;
+  background: #1badd8;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+}
+.date-sure {
+  margin-left: 30%;
+}
+.date-clear {
+  margin-left: 20%;
+}
+.choose-date {
+  width: 474px;
+  margin-left: 8px;
+}
+
+.btn-sumbit {
+  margin-top:5%;
+  margin-left: 50%;
+  .btn-apply {
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+  }
+}
+

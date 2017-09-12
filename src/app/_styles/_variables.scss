@@ -1,0 +1,52 @@
+$blue: #55c8ea;
+$blue-font: #55c8ea;
+$red: #ff3267;
+$green: #7ed321;
+$green-bg: #13CFA5;
+$orange: #F5A623;
+
+$brand-primary: $blue;
+$brand-danger: $red;
+$brand-success: $green;
+$brand-warning: $orange;
+$gray-darkest: #1d2439;
+$gray-darker: #282b37;
+$gray-dark: #364760;
+$gray: #d7dce5;
+$gray-background:#F6F8FB;
+$gray-light: #eef1f7;
+$gray-lighter: #fafcff;
+$gray-lightest: #fff;
+$black-blue: #101b31;
+$not-grouped: #ff3267;
+$text-muted: #80899c;
+
+$breadcrumb-active-color: $text-muted;
+$breadcrumb-divider-color: $text-muted;
+
+$header-height: 65px;
+$footer-height: 28px;
+$content-height: calc(100vh - #{$header-height});
+$content-height-without-footer: calc(100vh - #{$header-height} - 28px);
+$border-radius: 2px;
+$border-radius-sm: 2px;
+$border-radius-lg: 2px;
+
+$btn-primary-bg: #55C8EA;
+$btn-primary-hover: #51BEDE;
+$btn-success-bg: #13CFA5;
+$btn-success-hover: #11B994;
+$btn-default-bg: #D7DCE5;
+$btn-default-hover: #CCD1DA;
+
+// 大字体优先使用微软雅黑
+$font-family-sans-serif: '微软雅黑', "Microsoft Yahei", 'Hiragino Sans GB', Helvetica, Arial, sans-serif;
+// 英文和数字的字体优先使用细体字
+$font-family-serif: 'Open Sans', '微软雅黑', "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, serif;
+
+$font-size-root: 12px;
+
+$font-sm: 12px;
+$font-md: 16px;
+
+
