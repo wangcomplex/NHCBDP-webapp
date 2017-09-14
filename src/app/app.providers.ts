@@ -10,6 +10,9 @@ import {ApplyForAuditService} from './services/applyForAudit.service';
 import {LayoutHeaderComponent} from './_layout/layout-header';
 import {PlatformNavComponent} from './components/platform-nav/platform-nav.component';
 import {HealthRecordComponent} from './components/health-record/health-record.component';
+import {MyDataComponent} from './components/my-data/my-data.component';
+import {MyMachineComponent} from './components/my-machine/my-machine.component';
+import {MapComponent} from './components/map/map.component';
 
 export const COMPONENT_PROVIDERS = [
     LoginComponent,
@@ -22,6 +25,9 @@ export const COMPONENT_PROVIDERS = [
     AuditingComponent,
     PlatformNavComponent,
     HealthRecordComponent,
+    MyDataComponent,
+    MyMachineComponent,
+    MapComponent
 ];
 export const PIPE_PROVIDERS = [
 

@@ -9,12 +9,18 @@ import { RouterModule } from '@angular/router';
 import {SERVICE_PROVIDERS} from './app.providers';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {CustomFormsModule} from 'ng2-validation';
+import {SelectModule} from './select/select.module';
+import {MapService} from './core/api/map.service';
+import {Ng2Echarts} from 'ng2-echarts';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...COMPONENT_PROVIDERS,
     ...PIPE_PROVIDERS,
+    Ng2Echarts,
+
 
   ],
   imports: [
@@ -23,9 +29,15 @@ import {CustomFormsModule} from 'ng2-validation';
     CustomFormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES),
+    SelectModule,
   ],
-  providers: [SERVICE_PROVIDERS, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    SERVICE_PROVIDERS,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    MapService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

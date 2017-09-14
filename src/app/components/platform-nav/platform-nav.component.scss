@@ -1,8 +1,20 @@
 .data-content{
   height:1000px;
 }
+
+.platform{
+  width: 100%;
+  margin: 40px auto 0;
+  h2{
+    text-align: center;
+    color: #226AB8;
+    font-weight: bold;
+    font-size: 32px;
+  }
+}
+
 .home-content{
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .list-left{
   border:3px solid #1B6A92;
@@ -12,6 +24,7 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  margin-left: 3%;
   img{
     margin-top: 7%;
   }

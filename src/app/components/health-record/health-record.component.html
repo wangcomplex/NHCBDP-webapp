@@ -1,31 +1,354 @@
 <app-header></app-header>
 
+<div class="platform-nav">
+  <h5>
+    <img src="/assets/images/globe.png" alt="">
+    <span>平台导航／结构化医疗信息平台／健康档案</span>
+  </h5>
+</div>
+
 <div class="container-fluid data-content">
   <div class="choose-content">
     <h3>选择数据来源</h3>
     <div class="data-source">
-      <ul class="source-list">
-        <li><span>MySQL</span></li>
-        <li><span>MongoDB</span></li>
-        <li><span>HDFS</span></li>
-      </ul>
-      <div>
-        <div class="form-group">
-          <label for="category" class="form-control-label col-sm-2">选择数据库:</label>
-          <div class="col-sm-10">
-            <select id="category" name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
-                    #categoryId="ngModel"
-                    class="form-control">
-              <option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}
-              </option>
-            </select><span>*</span>
-          </div>
-        </div>
-        <div *ngIf="categoryId.errors && categoryId.touched" class="alert alert-danger">
-          <div [hidden]="!categoryId.errors.required">分类不能为空</div>
-        </div>
-      </div>
+      <ul class="nav">
+        <li class="navI">
+          <input class="navI-radio" name="nav" type="radio" id="kc" checked>
+          <label class="navI-tit" for="kc">MySQL</label>
+          <div class="navI-txt">
+            <div class="form-group">
+              <label class="form-control-label col-sm-2">选择数据库:</label>
+              <div class="col-sm-8">
+                <!--<div class="Select-control-drop">-->
+                <!--<ng-select [items]="items"-->
+                <!--[active]="active"-->
+                <!--[disabled]="disabled"-->
+                <!--(data)="refreshValue($event)"-->
+                <!--(selected)="selected($event)"-->
+                <!--(removed)="removed($event)"-->
+                <!--(typed)="typed($event)"-->
+                <!--[placeholder]="isWorkFlow ? inputPlaceholder : items[0].text">-->
+                <!--</ng-select>-->
+                <!--</div>-->
 
+                <select id="category" name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">健康档案</option>
+                  <option value="医疗影像">医疗影像</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2">选择表:</label>
+              <div class="col-sm-8">
+
+                <select name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">DB_U789892</option>
+                  <option value="医疗影像">DATA_12</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-default" >+ 添加表</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2"></label>
+              <div class="col-sm-8">
+                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+            <div class="data-preview">
+              <h5>预览数据结果</h5>
+              <table class="table-data">
+                <thead class="table-nav">
+                <tr class="table-header">
+                  <th>编号</th>
+                  <th>姓名</th>
+                  <th>年龄</th>
+                  <th>婚否</th>
+                  <th>识别ID</th>
+                  <th>心脏病</th>
+                  <th>肺结核</th>
+                </tr>
+                </thead>
+                <tbody class="table-nav">
+                <tr class="table-cont">
+                  <td>1</td>
+                  <td>李宁</td>
+                  <td>22</td>
+                  <td>是</td>
+                  <td>120123123456098731</td>
+                  <td>无</td>
+                  <td>无</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>2</td>
+                  <td>刘峰</td>
+                  <td>21</td>
+                  <td>否</td>
+                  <td>120123123456098722</td>
+                  <td>一期</td>
+                  <td>一期</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>3</td>
+                  <td>陈峰</td>
+                  <td>27</td>
+                  <td>否</td>
+                  <td>120123123456093331</td>
+                  <td>二期</td>
+                  <td>二期</td>
+                </tr>
+                <!--<tr *ngFor="let rows of result" class="table-cont">-->
+                <!--<td>{{rows.customerId ? rows.customerId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerAuthId ? rows.customerAuthId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerName ? rows.customerName : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerCallNumber ? rows.customerCallNumber : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.callCount ? rows.callCount : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.duplicateCallCount ? rows.duplicateCallCount : "&nbsp;"}}</td>-->
+                <!--<td *ngIf="showCallReason">{{rows.callReason ? rows.callReason : "&nbsp;"}}</td>-->
+                <!--</tr>-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+        <li class="navI">
+          <input class="navI-radio" name="nav" type="radio" id="xx">
+          <label class="navI-tit" for="xx">MongoDB</label>
+          <div class="navI-txt ml1">
+            <div class="form-group">
+              <label class="form-control-label col-sm-2">选择数据库:</label>
+              <div class="col-sm-8">
+                <select id="category" name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">MongoDB</option>
+                  <option value="医疗影像">医疗影像</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2">选择表:</label>
+              <div class="col-sm-8">
+
+                <select name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">DB_U789892</option>
+                  <option value="医疗影像">DATA_12</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-default" >+ 添加表</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2"></label>
+              <div class="col-sm-8">
+                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+            <div class="data-preview">
+              <h5>预览数据结果</h5>
+              <table class="table-data">
+                <thead class="table-nav">
+                <tr class="table-header">
+                  <th>编号</th>
+                  <th>姓名</th>
+                  <th>年龄</th>
+                  <th>婚否</th>
+                  <th>识别ID</th>
+                  <th>心脏病</th>
+                  <th>肺结核</th>
+                </tr>
+                </thead>
+                <tbody class="table-nav">
+                <tr class="table-cont">
+                  <td>1</td>
+                  <td>宏友</td>
+                  <td>22</td>
+                  <td>是</td>
+                  <td>120123123456098731</td>
+                  <td>无</td>
+                  <td>无</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>2</td>
+                  <td>汪峰</td>
+                  <td>21</td>
+                  <td>否</td>
+                  <td>120123123456098722</td>
+                  <td>一期</td>
+                  <td>一期</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>3</td>
+                  <td>杰克</td>
+                  <td>27</td>
+                  <td>否</td>
+                  <td>120123123456093331</td>
+                  <td>二期</td>
+                  <td>二期</td>
+                </tr>
+                <!--<tr *ngFor="let rows of result" class="table-cont">-->
+                <!--<td>{{rows.customerId ? rows.customerId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerAuthId ? rows.customerAuthId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerName ? rows.customerName : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerCallNumber ? rows.customerCallNumber : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.callCount ? rows.callCount : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.duplicateCallCount ? rows.duplicateCallCount : "&nbsp;"}}</td>-->
+                <!--<td *ngIf="showCallReason">{{rows.callReason ? rows.callReason : "&nbsp;"}}</td>-->
+                <!--</tr>-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </li>
+        <li class="navI">
+          <input class="navI-radio" name="nav" type="radio" id="jn">
+          <label class="navI-tit" for="jn">HDFS</label>
+          <div class=" navI-txt ml2">
+            <div class="form-group">
+              <label class="form-control-label col-sm-2">选择数据库:</label>
+              <div class="col-sm-8">
+
+                <select id="category" name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">HDFS</option>
+                  <option value="医疗影像">医疗影像</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2">选择表:</label>
+              <div class="col-sm-8">
+
+                <select name="category" [(ngModel)]="dataSourcesRequest.categoryId" required
+                        #categoryId="ngModel"
+                        class="form-control">
+                  <option value="健康档案" selected="selected">DB_U789892</option>
+                  <option value="医疗影像">DATA_12</option>
+                  <!--<option class="option" *ngFor="let category of categoryList" [value]="category.id">{{category.value}}-->
+                  <!--</option>-->
+                </select>
+              </div>
+
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-default" >+ 添加表</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="form-control-label col-sm-2"></label>
+              <div class="col-sm-8">
+                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+            <div class="data-preview">
+              <h5>预览数据结果</h5>
+              <table class="table-data">
+                <thead class="table-nav">
+                <tr class="table-header">
+                  <th>编号</th>
+                  <th>姓名</th>
+                  <th>年龄</th>
+                  <th>婚否</th>
+                  <th>识别ID</th>
+                  <th>心脏病</th>
+                  <th>肺结核</th>
+                </tr>
+                </thead>
+                <tbody class="table-nav">
+                <tr class="table-cont">
+                  <td>1</td>
+                  <td>王新</td>
+                  <td>22</td>
+                  <td>是</td>
+                  <td>120123123456098731</td>
+                  <td>无</td>
+                  <td>无</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>2</td>
+                  <td>李娜</td>
+                  <td>21</td>
+                  <td>否</td>
+                  <td>120123123456098722</td>
+                  <td>一期</td>
+                  <td>一期</td>
+                </tr>
+                <tr class="table-cont">
+                  <td>3</td>
+                  <td>郝红</td>
+                  <td>27</td>
+                  <td>否</td>
+                  <td>120123123456093331</td>
+                  <td>二期</td>
+                  <td>二期</td>
+                </tr>
+                <!--<tr *ngFor="let rows of result" class="table-cont">-->
+                <!--<td>{{rows.customerId ? rows.customerId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerAuthId ? rows.customerAuthId : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerName ? rows.customerName : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.customerCallNumber ? rows.customerCallNumber : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.callCount ? rows.callCount : "&nbsp;"}}</td>-->
+                <!--<td>{{rows.duplicateCallCount ? rows.duplicateCallCount : "&nbsp;"}}</td>-->
+                <!--<td *ngIf="showCallReason">{{rows.callReason ? rows.callReason : "&nbsp;"}}</td>-->
+                <!--</tr>-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="choose-content">
+    <h3>选择目标数据集</h3>
+    <div class="data-traget">
+      <ul>
+        <li>
+          <input type="radio" class="data-radio" name="name">
+          <label>MongoDB</label>
+        </li>
+        <li>
+          <input type="radio" class="data-radio" name="name">
+          <label>HDFS</label>
+        </li>
+        <li>
+          <input type="radio" class="data-radio" name="name">
+          <label>Hbase</label>
+        </li>
+        <li>
+          <input type="radio" class="data-radio" name="name">
+          <label>MySQL</label>
+        </li>
+        <li>
+          <input type="radio" class="data-radio" name="name">
+          <label>PostgreSQL</label>
+        </li>
+      </ul>
     </div>
   </div>
 

@@ -1,0 +1,113 @@
+<app-header></app-header>
+
+<div class="platform-nav">
+  <h5>
+    <img src="/assets/images/globe.png" alt="">
+    <span>平台导航／结构化医疗信息平台／我的机器</span>
+  </h5>
+</div>
+
+<div class="data-content">
+  <div class="home-content">
+    <div class="list-right">
+      <h4>我的资源</h4>
+      <div class="data-preview">
+        <table class="table-data">
+          <thead class="table-nav">
+          <tr class="table-header">
+            <th>资源</th>
+            <th>CPU</th>
+            <th>内存</th>
+            <th>IP地址</th>
+            <th>用户名</th>
+            <th>类别</th>
+          </tr>
+          </thead>
+          <tbody class="table-nav">
+          <tr class="table-cont">
+            <td>Chome</td>
+            <td>2核</td>
+            <td>16G</td>
+            <td>123.123.12.1</td>
+            <td>Administrator</td>
+            <td>私有</td>
+          </tr>
+          <tr class="table-cont">
+            <td>Firedo</td>
+            <td>4核</td>
+            <td>16G</td>
+            <td>123.123.12.1</td>
+            <td>Administrator</td>
+            <td>私有</td>
+          </tr>
+          <tr class="table-cont">
+            <td>MIyou</td>
+            <td>1核</td>
+            <td>8G</td>
+            <td>123.123.12.1</td>
+            <td>Administrator</td>
+            <td>私有</td>
+          </tr>
+          <!--<tr *ngFor="let rows of result" class="table-cont">-->
+          <!--<td>{{rows.customerId ? rows.customerId : "&nbsp;"}}</td>-->
+          <!--<td>{{rows.customerAuthId ? rows.customerAuthId : "&nbsp;"}}</td>-->
+          <!--<td>{{rows.customerName ? rows.customerName : "&nbsp;"}}</td>-->
+          <!--<td>{{rows.customerCallNumber ? rows.customerCallNumber : "&nbsp;"}}</td>-->
+          <!--<td>{{rows.callCount ? rows.callCount : "&nbsp;"}}</td>-->
+          <!--<td>{{rows.duplicateCallCount ? rows.duplicateCallCount : "&nbsp;"}}</td>-->
+          <!--<td *ngIf="showCallReason">{{rows.callReason ? rows.callReason : "&nbsp;"}}</td>-->
+          <!--</tr>-->
+          </tbody>
+        </table>
+      </div>
+      <div class="put-apply">
+        <button type="button" class="btn btn-default btn-preview">申请机器资源</button>
+      </div>
+
+      <div class="link-message">
+        <div class="form-group">
+          <label for="title" class="form-control-label col-sm-1">名称</label>
+          <div class="col-sm-8">
+            <input id="title" name="title" type="text" [(ngModel)]="applyForRequest.title" required
+                   #title="ngModel" placeholder="输入名称"
+                   class="form-control"><span>*</span>
+          </div>
+        </div>
+        <div id="alert" class="alert alert-danger" [hidden]="title.valid || title.pristine">
+          申请名称不能为空
+        </div>
+        <div class="form-group">
+          <label for="name" class="form-control-label col-sm-1">CPU</label>
+          <div class="col-sm-8">
+            <input id="name" name="name" type="text" [(ngModel)]="applyForRequest.name" required
+                   #name="ngModel" placeholder="输入CPU的核数"
+                   class="form-control"><span>*</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+          CPU核数不能为空
+        </div>
+        <div class="form-group">
+          <label for="company" class="form-control-label col-sm-1">内存</label>
+          <div class="col-sm-8">
+            <input id="company" name="company" type="text" [(ngModel)]="applyForRequest.company" required
+                   #company="ngModel" placeholder="输入内存容量，例如16G"
+                   class="form-control"><span>*</span>
+          </div>
+        </div>
+        <div class="alert alert-danger" [hidden]="company.valid || company.pristine">内存容量不能为空</div>
+        <div class="put-apply">
+          <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="gotoMyMachine()">提交申请</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+

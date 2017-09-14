@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="platform-nav">
+  <h5>
+    <img src="/assets/images/globe.png" alt="">
+    <span>结构化医疗信息平台／我的数据</span>
+  </h5>
+</div>
+
+<div class="data-content">
+  <div class="home-content">
+    <div class="list-left">
+     <h3>选择结构化数据</h3>
+
+     <div>
+       文件树
+     </div>
+    </div>
+
+    <div class="list-left list-right">
+      <h4>链接信息</h4>
+      <div class="link-message">
+        <p><span>ClientURL :</span> ClientMySQL://127.0.10.80/LoginSecurity</p>
+        <p><span>UserName :</span> Root</p>
+      </div>
+
+      <h4>输入脚本</h4>
+      <div class="link-message">
+        <p>
+          mysql -uroot -p123456 -e "<br>
+          tee /tmp/temp.log <br>
+          drop database if exists tempdb;<br>
+          create database tempdb;
+        </p>
+      </div>
+      <div class="put-apply">
+        <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="gotoMyData()">提取</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+

@@ -1,28 +1,264 @@
- <app-header></app-header>
 
-   <div class="container-fluid data-content">
-     <div class="row home-content">
-       <div class="col-lg-4 col-md-4 col-sm-4 list-left">
-        轮播图
-         六大服务板块
-         入驻公司
+<app-layout-header></app-layout-header>
 
 
-         首页开发中········
-         <div class="put-apply">
-           <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="gotoStructuring()">申请</button>
+<div class="main-content">
+   <div class="topbar">
+  <div class="nav-region">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="/#/home" class="nav-link" routerLinkActive="active">
+          首页
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/#/enterprise" class="nav-link">
+          企业服务
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/#/government" class="nav-link" routerLinkActive="active">
+          政府服务
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/#/personage" class="nav-link" routerLinkActive="active">
+          个人服务
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/#/scientific-research" class="nav-link" routerLinkActive="active">
+          科研服务
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/#/cloud" class="nav-link" routerLinkActive="active">
+          云服务
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/#/security" class="nav-link" routerLinkActive="active">
+          安全服务
+        </a>
+      </li>
+    </ul>
+
+    <div class="status-area">
+      <div *ngIf="!authenticated">
+        <a class="color-white" href="/#/login">登录</a>
+        <a class="color-white" href="/#/register">注册 </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <div class="data-content">
+
+       <div class="bannerContainer">
+         <ul class="bannerPicList">
+           <li [class.active]="currentPic==0"> <img src="/assets/home/luobo1.jpg"/></li>
+           <li [class.active]="currentPic==1"> <img src="/assets/home/luobo2.jpg"/></li>
+           <li [class.active]="currentPic==2"> <img src="/assets/home/luobo3.jpg"/></li>
+           <li [class.active]="currentPic==3"> <img src="/assets/home/luobo4.jpg"/></li>
+         </ul>
+         <ul class="bannerBtnList">
+           <li><span class="picBtn" (click)="changebanner(0)"></span></li>
+           <li><span class="picBtn" (click)="changebanner(1)"></span></li>
+           <li><span class="picBtn" (click)="changebanner(2)"></span></li>
+           <li><span class="picBtn" (click)="changebanner(3)"></span></li>
+         </ul>
+         <div class="button-left"><button class="btn-default btn-left"> < </button></div>
+         <div class="button-right"><button class="btn-default btn-right"> > </button></div>
+       </div>
+
+       <div class="data-capacity">
+         <h4>数据智能</h4>
+         <div class="data-services">
+           <dl>
+             <dt><img src="/assets/home/enterprise.png" alt=""></dt>
+             <dd>企业服务</dd>
+           </dl>
+           <dl>
+             <dt><img src="/assets/home/government.png" alt=""></dt>
+             <dd>政府服务</dd>
+           </dl>
+           <dl>
+             <dt><img src="/assets/home/personage.png" alt=""></dt>
+             <dd>个人服务</dd>
+           </dl>
+           <dl>
+             <dt><img src="/assets/home/scientific-research.png" alt=""></dt>
+             <dd>科研服务</dd>
+           </dl>
+           <dl>
+             <dt><img src="/assets/home/cloud.png" alt=""></dt>
+             <dd>云服务</dd>
+           </dl>
+           <dl>
+             <dt><img src="/assets/home/security.png" alt=""></dt>
+             <dd>安全服务</dd>
+           </dl>
+         </div>
+         <div class="data-map">
+           <!--<div id="line_chart_style1" class="line_chart_style"></div>-->
+
+           <app-map [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map>
          </div>
        </div>
 
-       <div class="col-lg-7 col-md-7 col-sm-7 list-left list-right">
-         未开发的首页
+       <div class="policy-trend">
+         <div class="trend">
+           <h5>政策动态</h5>
+         </div>
+
+         <div class="discounts">
+           <a href="">
+             <img src="/assets/home/administration.png" alt="">
+             <p>
+               <span>惠政</span><br>
+               <button class="btn-default btn-enter">进入</button>
+             </p>
+           </a>
+           <a href="">
+             <img src="/assets/home/company.png" alt="">
+             <p>
+               <span>惠企</span><br>
+               <button class="btn-default btn-enter btn-company">进入</button>
+             </p>
+           </a>
+           <a href="">
+             <img src="/assets/home/people.png" alt="">
+             <p>
+               <span>惠民</span><br>
+               <button class="btn-default btn-enter btn-people">进入</button>
+             </p>
+           </a>
+         </div>
+       </div>
+
+       <div class="enter-company">
+       <div class="enter-title">
+         <h5>入驻单位</h5>
+         <span (click)="gotoStructuring()">合作入口 ></span>
+       </div>
+
+       <div class="companys">
+         <ul class="company">
+           <li class="discounts company-list">
+             <a href=""><img src="/assets/home/qinghua.png" alt=""></a>
+             <a href=""><img src="/assets/home/beijing.png" alt=""></a>
+             <a href=""><img src="/assets/home/greatwall.png" alt=""></a>
+             <a href=""><img src="/assets/home/dell.png" alt=""></a>
+             <a href=""><img src="/assets/home/fhilips.png" alt=""></a>
+           </li>
+           <li class="discounts company-list">
+             <a href=""><img src="/assets/home/tengxun.png" alt=""></a>
+             <a href=""><img src="/assets/home/IBM.png" alt=""></a>
+             <a href=""><img src="/assets/home/ruantong.png" alt=""></a>
+             <a href=""><img src="/assets/home/langchao.png" alt=""></a>
+             <a href=""><img src="/assets/home/skymind.png" alt=""></a>
+           </li>
+           <li class="discounts company-list">
+             <a href=""><img src="/assets/home/senyi.png" alt=""></a>
+             <a href=""><img src="/assets/home/dingxiang.png" alt=""></a>
+             <a href=""><img src="/assets/home/beirui.png" alt=""></a>
+             <a href=""><img src="/assets/home/youyi.png" alt=""></a>
+             <a href=""><img src="/assets/home/judian.png" alt=""></a>
+           </li>
+         </ul>
        </div>
      </div>
 
+       <div class="enter-company strategy-cooperation">
+         <div class="enter-title">
+           <h5>战略合作</h5>
+           <span (click)="gotoStructuring()">战略合作 ></span>
+         </div>
+         <div class="companys">
+         <ul class="company">
+           <li class="strategy">
+             <a href=""><img src="/assets/home/Ibms.png" alt=""></a>
+             <a href=""><img src="/assets/home/yaoming.png" alt=""></a>
+             <a href=""><img src="/assets/home/philips.png" alt=""></a>
+           </li>
+         </ul>
+       </div>
+      </div>
+
+       <div class="enter-company capital-zoology">
+         <div class="enter-title">
+           <h5>资本生态</h5>
+           <span (click)="gotoStructuring()">生态合作 ></span>
+         </div>
+
+         <div class="companys">
+           <ul class="company">
+             <li class="capital">
+               <a href=""><img src="/assets/home/sequola.png" alt=""></a>
+               <a href=""><img src="/assets/home/dianzi.png" alt=""></a>
+               <a href=""><img src="/assets/home/shugang.png" alt=""></a>
+               <a href=""><img src="/assets/home/shurong.png" alt=""></a>
+             </li>
+             <li class="capital">
+               <a href=""><img src="/assets/home/zhineng.png" alt=""></a>
+               <a href=""><img src="/assets/home/medlinker.png" alt=""></a>
+               <a href=""><img src="/assets/home/taimei.png" alt=""></a>
+               <a href=""><img src="/assets/home/yiliao.png" alt=""></a>
+             </li>
+           </ul>
+         </div>
+     </div>
    </div>
+</div>
 
-  <app-footer></app-footer>
+<footer class="footer-box">
 
+  <div class="new-footer">
+    <div class="row link-box">
+      <ul class="col-sm-3 link-list">
+        <li class="list-title">政务信息</li>
+        <li><a href="http://www.nhfpc.gov.cn" target="_blank">国家卫生和计划生育委员会</a></li>
+        <li><a href="http://www.chia-moh.org.cn" target="_blank">中国卫生信息学会</a></li>
+        <li><a href="http://www.chinacdc.cn" target="_blank">中国疾病预防控制中心</a></li>
+        <li><a href="http://www.cfsa.net.cn" target="_blank">国家食品安全风险评估中心</a></li>
+        <li><a href="https://www.jdzx.net.cn" target="_blank">国家卫生计生委卫生和计划生育监督中心</a></li>
+        <li><a href="http://www.cec.com.cn" target="_blank">中国电子信息产业集团有限公司</a></li>
+        <li><a href="http://www.chinadep.com/" target="_blank">上海数据交易中心</a></li>
+      </ul>
 
+      <ul class="col-sm-3 link-list">
+        <li class="list-title">智能服务</li>
+        <li><a href="">企业服务</a></li>
+        <li><a href="">政府服务</a></li>
+        <li><a href="">个人服务</a></li>
+        <li><a href="">科研服务</a></li>
+        <li><a href="">云服务</a></li>
+        <li><a href="">安全服务</a></li>
+      </ul>
+
+      <ul class="col-sm-3 link-list">
+        <li class="list-title">关于我们</li>
+        <li><a routerLink="">企业愿景</a></li>
+        <li><a routerLink="">慈善事业</a></li>
+        <li><a routerLink="">多元管理</a></li>
+        <li><a routerLink="n">媒体播报</a></li>
+      </ul>
+      <ul class="col-sm-3 link-list">
+        <li class="list-title">战略合作</li>
+        <li><a routerLink="">IBM</a></li>
+      </ul>
+    </div>
+
+    <div class="login-copy">
+      <div class="copy-right">
+        <p class="copy_p">中电数据服务有限公司版权所有@ 2017 All Rights Reserved</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
 
 
