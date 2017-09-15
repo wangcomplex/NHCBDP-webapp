@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-my-laboratory',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyLaboratoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  greatNew(){
+  greatNew() {
 
   }
 
-  extract(){
-
+  extract() {
+    this.router.navigateByUrl('/apply-for');
   }
 
 

@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
-import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-discounts-company',
-  templateUrl: './discounts-company.component.html',
-  styleUrls: ['./discounts-company.component.scss']
+  selector: 'app-data-govern',
+  templateUrl: './data-govern.component.html',
+  styleUrls: ['./data-govern.component.scss']
 })
-export class DiscountsCompanyComponent implements OnInit {
-
+export class DataGovernComponent implements OnInit {
   authenticated = false;
   userName: string;
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
     this.authenticated = !!this.loginService.username;
@@ -22,10 +20,6 @@ export class DiscountsCompanyComponent implements OnInit {
 
   logout() {
     this.loginService.username = null;
-  }
-
-  enterKnow() {
-    this.router.navigateByUrl('/data-govern');
   }
 
 }
