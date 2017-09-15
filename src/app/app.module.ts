@@ -11,7 +11,6 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {CustomFormsModule} from 'ng2-validation';
 import {SelectModule} from './select/select.module';
 import {MapService} from './core/api/map.service';
-import {Ng2Echarts} from 'ng2-echarts';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -19,9 +18,6 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     ...COMPONENT_PROVIDERS,
     ...PIPE_PROVIDERS,
-    Ng2Echarts,
-
-
   ],
   imports: [
     BrowserModule,

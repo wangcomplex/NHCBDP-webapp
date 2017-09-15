@@ -62,11 +62,11 @@
             <div class="form-group">
               <label  class="form-control-label col-sm-2"></label>
               <div class="col-sm-8">
-                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+                <button type="button" class="btn btn-default btn-preview" (click)="previewData('MySQL')">数据预览</button>
               </div>
               <div class="col-sm-2"></div>
             </div>
-            <div class="data-preview">
+            <div class="data-preview" *ngIf="isShownMySQL">
               <h5>预览数据结果</h5>
               <table class="table-data">
                 <thead class="table-nav">
@@ -160,11 +160,11 @@
             <div class="form-group">
               <label  class="form-control-label col-sm-2"></label>
               <div class="col-sm-8">
-                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+                <button type="button" class="btn btn-default btn-preview" (click)="previewData('MongoDB')">数据预览</button>
               </div>
               <div class="col-sm-2"></div>
             </div>
-            <div class="data-preview">
+            <div class="data-preview" *ngIf="isShownMongoDB">
               <h5>预览数据结果</h5>
               <table class="table-data">
                 <thead class="table-nav">
@@ -260,11 +260,11 @@
             <div class="form-group">
               <label  class="form-control-label col-sm-2"></label>
               <div class="col-sm-8">
-                <button type="button" class="btn btn-default btn-preview" >数据预览</button>
+                <button type="button" class="btn btn-default btn-preview" (click)="previewData('HDFS')">数据预览</button>
               </div>
               <div class="col-sm-2"></div>
             </div>
-            <div class="data-preview">
+            <div class="data-preview" *ngIf="isShownHDFS">
               <h5>预览数据结果</h5>
               <table class="table-data">
                 <thead class="table-nav">

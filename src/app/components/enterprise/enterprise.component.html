@@ -1,0 +1,146 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/enterprise" class="nav-link">
+            企业服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            政府服务
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-personage" class="nav-link" routerLinkActive="active">
+            个人服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-company" class="nav-link" routerLinkActive="active">
+            科研服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/cloud" class="nav-link" routerLinkActive="active">
+            云服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/security" class="nav-link" routerLinkActive="active">
+            安全服务
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <div class="recommend">
+      <div class="boutique">
+        <h5><img src="/assets/images/medal-gold.png" alt="">精品推荐</h5>
+      </div>
+      <dl class="jingpin">
+        <dt><img src="/assets/images/tuijian.png" alt=""></dt>
+        <dd>
+          <h4>门诊智能预诊预检平台</h4>
+          <p>通过“智能预检系统”和“智能辅助判诊”算法同时以多方位安全防护为核心，提高整体医患体系配置效率，是数据安全健康应用的典范。</p>
+          <b>价格 ： 699元／月</b>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="recommend adhibition">
+      <div class="boutique more">
+        <h5><img src="/assets/images/medal-bronze.png" alt="">医院应用</h5>
+        <span>更多 ></span>
+      </div>
+      <div class="hospital">
+        <dl>
+          <dt><img src="/assets/images/menzhen.png" alt=""></dt>
+          <dd>
+            <h4>门诊智能预诊预检平台</h4>
+            <b>价格 ： 699元／月</b>
+          </dd>
+        </dl>
+        <dl>
+          <dt><img src="/assets/images/yunzhong.png" alt=""></dt>
+          <dd>
+            <h4>云中医工作站</h4>
+            <b>价格 ： 699元／月</b>
+          </dd>
+        </dl>
+        <dl>
+          <dt><img src="/assets/images/zhihui.png" alt=""></dt>
+          <dd>
+            <h4>智慧中医</h4>
+            <b>价格 ： 699元／月</b>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+
+    <div class="recommend adhibition">
+      <div class="boutique more">
+        <h5><img src="/assets/images/medal-bronze.png" alt="">药物应用</h5>
+        <span>更多 ></span>
+      </div>
+      <div class="hospital">
+        <dl>
+          <dt><img src="/assets/images/yaoxing.png" alt=""></dt>
+          <dd>
+            <h4>药性分析</h4>
+            <b>价格 ： 1299元／月</b>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="recommend adhibition">
+      <div class="boutique more">
+        <h5><img src="/assets/images/medal-bronze.png" alt="">保险应用</h5>
+        <span>更多 ></span>
+      </div>
+      <div class="hospital">
+        <dl>
+          <dt><img src="/assets/images/jiankang.png" alt=""></dt>
+          <dd>
+            <h4>健康险投保风险分析</h4>
+            <b>价格 ： 4399元／月</b>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>
+
+

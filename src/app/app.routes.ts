@@ -8,6 +8,14 @@ import {PlatformNavComponent} from './components/platform-nav/platform-nav.compo
 import {HealthRecordComponent} from './components/health-record/health-record.component';
 import {MyDataComponent} from './components/my-data/my-data.component';
 import {MyMachineComponent} from './components/my-machine/my-machine.component';
+import {MedicalImageComponent} from './components/medical-image/medical-image.component';
+import {MedicineDetailComponent} from './components/medicine-detail/medicine-detail.component';
+import {SearchResultComponent} from './components/search-result/search-result.component';
+import {MyLaboratoryComponent} from './components/my-laboratory/my-laboratory.component';
+import {EnterpriseComponent} from './components/enterprise/enterprise.component';
+import {DiscountsGovernmentComponent} from './components/discounts-government/discounts-government.component';
+import {DiscountsCompanyComponent} from "./components/discounts-company/discounts-company.component";
+import {DiscountsPeopleComponent} from "./components/discounts-people/discounts-people.component";
 
 export const ROUTES: Routes = [
   {
@@ -50,5 +58,37 @@ export const ROUTES: Routes = [
   {
     path: 'my-machine',
     component:   MyMachineComponent,
+  },
+  {
+    path: 'medical-image',
+    component: MedicalImageComponent,
+  },
+  {
+    path: 'medicine-detail',
+    component: MedicineDetailComponent,
+  },
+  {
+    path: 'search-result',
+    component: SearchResultComponent,
+  },
+  {
+    path: 'my-laboratory',
+    component: MyLaboratoryComponent,
+  },
+  {
+    path: 'enterprise',
+    component: EnterpriseComponent,
+  },
+  {
+    path: 'discounts-government',
+    component: DiscountsGovernmentComponent,
+  },
+  {
+    path: 'discounts-company',
+    component: DiscountsCompanyComponent,
+  },
+  {
+    path: 'discounts-people',
+    component: DiscountsPeopleComponent,
   },
 ];

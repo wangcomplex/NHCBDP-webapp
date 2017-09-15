@@ -1,0 +1,112 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/enterprise" class="nav-link">
+            企业服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            政府服务
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            个人服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-company" class="nav-link" routerLinkActive="active">
+            科研服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/cloud" class="nav-link" routerLinkActive="active">
+            云服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/security" class="nav-link" routerLinkActive="active">
+            安全服务
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="adhibition">
+      <h5>惠民</h5>
+      <div class="hospital">
+        <div class="scale">
+          <h6>精准医疗</h6>
+          <dl>
+            <dt><img src="/assets/images/ranshi.png" alt=""></dt>
+            <dd>
+              <h4>燃石医学</h4>
+              <p class="content">
+                燃石医学专注于肿瘤患者个体化治疗指导，以二代测序及医学生物信息学为核心，常规肿瘤分子病理检测为基石，致力于打造肿瘤个体化治疗临
+床检测服务及科研一站式解决方案              </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>科研创新</h6>
+          <dl>
+            <dt><img src="/assets/images/keyan.png" alt=""></dt>
+            <dd>
+              <h4>Skymind</h4>
+              <p class="content">
+                燃石医学专注于肿瘤患者个体化治疗指导，以二代测序及医学生物信息学为核心，常规肿瘤分子病理检测为基石，致力于打造肿瘤个体化治疗临床检测服务及科研一站式解决方案</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>健康管理</h6>
+          <dl>
+            <dt><img src="/assets/images/guanli.png" alt=""></dt>
+            <dd>
+              <h4>Philips</h4>
+              <p class="content">
+                燃石医学专注于肿瘤患者个体化治疗指导，以二代测序及医学生物信息学为核心，常规肿瘤分子病理检测为基石，致力于打造肿瘤个体化治疗临床检测服务及科研一站式解决方案              </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>
+
+

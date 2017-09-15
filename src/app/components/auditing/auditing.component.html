@@ -1,38 +1,78 @@
 <app-header></app-header>
 
-<div class="container-fluid data-content">
-  <div class="row home-content">
-    <div class="col-lg-4 col-md-4 col-sm-4 list-left">
-      <div class="data-lists">
-        <h5>健康档案</h5>
-        <ul class="data-list">
-          <li class="list-li">申请1</li>
-          <li class="list-li">申请2</li>
-          <li class="list-li">申请3</li>
-        </ul>
-      </div>
+<div class="platform-nav">
+  <h5>
+    <img src="/assets/images/globe.png" alt="">
+    <span>结构化医疗信息平台／审核进度查询</span>
+  </h5>
+</div>
 
-      <div class="data-lists">
-        <h5>医学影像</h5>
-        <ul class="data-list">
-          <li class="list-li">申请1</li>
-          <li class="list-li">申请2</li>
-          <li class="list-li">申请3</li>
-        </ul>
-      </div>
+<div class="data-content">
+  <div class="home-content">
+    <div class="list-left">
+      <h3>已发起的申请</h3>
 
-    </div>
-
-    <div class="col-lg-7 col-md-7 col-sm-7 list-left list-right">
-      <div class="basic_show">
-        <ul>
-          <li class="active">审核进度<em></em></li>
-          <li>审核详情<em></em></li>
-        </ul>
+      <div>
+        文件树
       </div>
     </div>
+
+    <div class="list-left list-right">
+      <div class="schedule">
+        <h4>审核进度</h4>
+        <div class="link-message">
+             <p>
+               申请单号 ： 123456 <br>
+               <span>2017年9月15日16：00</span>
+             </p>
+            <ul>
+              <li>
+                <img src="/assets/images/true.png" alt="">
+                <label>提交审核</label>
+                <img src="/assets/images/jiantou.png" alt="">
+              </li>
+              <li>
+                <img src="/assets/images/false.png" alt="">
+                <label>技术审核</label>
+                <img src="/assets/images/jiantou.png" alt="">
+              </li>
+              <li>
+                <img src="/assets/images/false.png" alt="">
+                <label>法务审核</label>
+                <img src="/assets/images/jiantou.png" alt="">
+              </li>
+              <li>
+                <img src="/assets/images/false.png" alt="">
+                <label>完成</label>
+              </li>
+            </ul>
+        </div>
+
+        <div class="link-message detail">
+          <p>
+            申请单号 <br>
+            <span>名称 ：申请1</span>
+          </p>
+          <ul>
+            <li>申请人姓名：刘德芳</li>
+            <li>证件号码：138762312234567890</li>
+            <li>公司名称：北医三院</li>
+            <li>申请内容：数据表、医学影像、分析结果</li>
+          </ul>
+        </div>
+      </div>
+
+
+
 
   </div>
+  </div>
+
 </div>
 
 <app-footer></app-footer>
+
+
+
+
+

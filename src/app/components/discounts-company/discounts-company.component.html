@@ -1,0 +1,151 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/enterprise" class="nav-link">
+            企业服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            政府服务
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            个人服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-company" class="nav-link" routerLinkActive="active">
+            科研服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/cloud" class="nav-link" routerLinkActive="active">
+            云服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/security" class="nav-link" routerLinkActive="active">
+            安全服务
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="adhibition">
+      <h5>惠企</h5>
+      <div class="hospital">
+        <div class="scale">
+          <h6>临床决策</h6>
+          <dl>
+            <dt><img src="/assets/images/juece.png" alt=""></dt>
+            <dd>
+              <h4>矩点医疗</h4>
+              <p class="buttons">
+                <a href="">决策支持</a>
+              </p>
+              <p class="content">
+                评估和提高医疗质量，减少医疗差错，从而控制医疗费用的支出。临床医生可以通过CDSS的帮助来深入分析病历资料，从而做出最为恰当的诊疗决策
+              </p>
+              <b>价格 ： 199元／人／年</b>
+              <button class="btn btn-default btn-apply">立即试用</button>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>信息化建设</h6>
+          <dl>
+            <dt><img src="/assets/images/taimeikeji.png" alt=""></dt>
+            <dd>
+              <h4>太美医疗科技</h4>
+              <p class="buttons">
+                <a href="">信息化</a>
+                <a href="">药物</a>
+                <a href="">临床</a>
+              </p>
+              <p class="content">
+                临床研究信息化 指建立基于网络的数据高度结构化的药物临床试验电子化管理系统，并将其应用到药物临床试验管理中，以解决药物临床试验纸质化管理中数据采集慢，核查···</p>
+              <b>价格 ： 1000000元／年</b>
+              <button class="btn btn-default btn-apply">了解进入</button>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>数据治理</h6>
+          <dl>
+            <dt><img src="/assets/images/senyizhi.png" alt=""></dt>
+            <dd>
+              <h4>森亿智能</h4>
+              <p class="buttons">
+                <a href="">医学文本</a>
+                <a href="">结构化</a>
+                <a href="">病理分析</a>
+              </p>
+              <p class="content">
+                专注于医学文本分析的医疗人工智能。帮助医院客户将积压的病历自动批量转化为结构化数据库；为企业用户开放中文病历语义API；为保险公司提供取代人工点智能病历
+              </p>
+              <b>价格 ： 面议</b>
+              <button class="btn btn-default btn-apply">了解进入</button>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="hospital">
+        <div class="scale">
+          <h6>安全服务</h6>
+          <dl>
+            <dt><img src="/assets/images/changcheng.png" alt=""></dt>
+            <dd>
+              <h4>长城网际</h4>
+              <p class="buttons">
+                <a href="">决策支持</a>
+              </p>
+              <p class="content">
+                评估和提高医疗质量，减少医疗差错，从而控制医疗费用的支出。临床医生可以通过CDSS的帮助来深入分析病历资料，从而做出最为恰当的诊疗决策
+              </p>
+              <b>价格 ： 199元／人／年</b>
+              <button class="btn btn-default btn-apply">立即试用</button>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>
+
+

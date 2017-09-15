@@ -20,18 +20,21 @@
     <div class="list-left list-right">
       <h4>链接信息</h4>
       <div class="link-message">
-        <p><span>ClientURL :</span> ClientMySQL://127.0.10.80/LoginSecurity</p>
-        <p><span>UserName :</span> Root</p>
+        <textarea>
+            ClientURL : ClientMySQL://127.0.10.80/LoginSecurity
+            UserName : Root
+        </textarea>
+
       </div>
 
       <h4>输入脚本</h4>
       <div class="link-message">
-        <p>
+        <textarea>
           mysql -uroot -p123456 -e "<br>
           tee /tmp/temp.log <br>
           drop database if exists tempdb;<br>
           create database tempdb;
-        </p>
+        </textarea>
       </div>
       <div class="put-apply">
         <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="gotoMyData()">提取</button>

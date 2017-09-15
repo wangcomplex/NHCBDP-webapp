@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<div class="platform-nav">
+  <h5>
+    <img src="/assets/images/globe.png" alt="">
+    <span>平台导航／我的实验室</span>
+  </h5>
+</div>
+
+<div class="data-content">
+  <div class="home-content">
+    <div class="list-left great-new">
+      <h3>
+        项目类别
+        <button type="button" class="btn btn-default btn-great" (click)="greatNew()">+ 创建项目</button>
+      </h3>
+
+      <div>
+        <ul class="project-list">
+          <li>项目一</li>
+          <li>项目二</li>
+          <li>项目三️</li>
+          <li>项目四</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="list-left list-right">
+      <h4>输入代码</h4>
+      <div class="link-message">
+        <textarea>
+            ClientURL : ClientMySQL://127.0.10.80/LoginSecurity
+            UserName : Root
+        </textarea>
+      </div>
+
+      <div class="put-apply">
+        <button type="button" class="btn btn-default">保存</button>
+        <button type="button" class="btn btn-default">保存结果</button>
+      </div>
+
+      <h4 style="margin-top: 20px">运行结果</h4>
+      <div class="link-message">
+        <textarea>
+          mysql -uroot -p123456 -e "<br>
+          tee /tmp/temp.log <br>
+          drop database if exists tempdb;<br>
+          create database tempdb;
+        </textarea>
+      </div>
+      <div class="put-apply">
+        <button type="button" class="btn btn-default">保存</button>
+        <button type="button" class="btn btn-default">下载</button>
+        <button id="btn-apply" type="button" class="btn btn-primary btn-apply" (click)="extract()">申请提取</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+

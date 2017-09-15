@@ -1,0 +1,128 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/enterprise" class="nav-link">
+            企业服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            政府服务
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            个人服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-company" class="nav-link" routerLinkActive="active">
+            科研服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/cloud" class="nav-link" routerLinkActive="active">
+            云服务
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/security" class="nav-link" routerLinkActive="active">
+            安全服务
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="adhibition">
+      <h5>惠政</h5>
+      <div class="hospital">
+        <div class="scale">
+          <h6>分级诊疗</h6>
+          <dl>
+            <dt><img src="/assets/images/fenji.png" alt=""></dt>
+            <dd>
+              <h4>福州市第一医院医疗联合体</h4>
+              <p class="buttons">
+                <button class="btn btn-default">分级诊疗</button>
+                <button class="btn btn-default">双向转诊</button>
+              </p>
+              <p>
+                福州市第一医院牵头,23家基层医疗机构组建了全省首个医疗联合体,其中包括1家三甲医院(市一医院)、9家二级医院(县医院)、3家,福州市第一医院牵头,23家基层医疗机构组建了全省首个医疗联合体,其中包括1家三甲医院(市一医院)、9家二级医院(县医院)、3家,福州市第一医院牵头,23家基层医疗机构组建了全省首个医疗联合体,其中包括1家三甲医院(市一医院)、9家二级医院(县医院)、3家,福州市第一医院牵头,23家基层医疗机构组建了全省首个医疗联合体,其中包括1家三甲医院(市一医院)、9家二级医院(县医院)、3家,福州市第一医院牵头,23家基层医疗机构组建了全省首个医疗联合体,其中包括1家三甲医院(市一医院)
+              </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>医保监管</h6>
+          <dl>
+            <dt><img src="/assets/images/youyishu.png" alt=""></dt>
+            <dd>
+              <h4>优易数据</h4>
+              <p class="buttons">
+                <button class="btn btn-default">医保审核</button>
+                <button class="btn btn-default">决策系统</button>
+              </p>
+              <p>
+                医保审核监管与决策系统以循证医学库为基础，以大数据反欺诈引擎为核心，采用自主研发的数百种医疗保险大数据算法模型，为医保局等机构提供智能审核、基金监管和决策支持等全流程解决方案</p>
+              <b>价格 ： 请联系客服</b>
+              <button class="btn btn-default btn-apply">联系客服</button>
+            </dd>
+          </dl>
+        </div>
+        <div class="scale">
+          <h6>产业园建设</h6>
+          <dl>
+            <dt><img src="/assets/images/guodian.png" alt=""></dt>
+            <dd>
+              <h4>中国电子</h4>
+              <p class="buttons">
+                <button class="btn btn-default">产业建设</button>
+                <button class="btn btn-default">园区管理</button>
+              </p>
+              <p>
+                医保审核监管与决策系统以循证医学库为基础，以大数据反欺诈引擎为核心，采用自主研发的数百种医疗保险大数据算法模型，为医保局等机构提供智能审核、基金监管和决策支持等全流程解决方案
+              </p>
+            </dd>
+          </dl>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>
+
+

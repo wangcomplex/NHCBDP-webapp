@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import {Cities, Provinces} from '../components/map/province-city';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
   parent = '';
   data = [];
 
-  constructor(private router: Router, public http: Http, ) {
+  constructor(private router: Router, public http: Http, private loginService: LoginService) {
     setInterval(() => {
       const id = (this.currentPic + 1) % 4;
       this.currentPic = id;
@@ -36,22 +37,10 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.http.get('/user').subscribe(
-    //   response => {
-    //     if (response.json().name !== null) {
-    //       this.userName = response.json().name;
-    //       this.authenticated = true;
-    //     } else {
-    //       this.userName = 'N/A';
-    //       this.authenticated = false;
-    //     }
-    //   },
-    //   error => {
-    //     this.userName = 'N/A';
-    //     this.authenticated = false;
-    //   }
-    // );
-
+    this.authenticated = !!this.loginService.username;
+    if (this.authenticated) {
+      this.userName = this.loginService.username;
+    }
     this.mapType = 'china';
     this.data = this.provinces;
 }
@@ -66,5 +55,8 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/platform-nav');
   }
 
+  logout() {
+    this.loginService.username = null;
+  }
 
 }

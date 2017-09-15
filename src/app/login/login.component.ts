@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Http} from '@angular/http';
 import {LoginService} from '../services/login.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class LoginComponent implements OnInit {
     error: string;
     submitting = '登陆';
 
-    constructor(private router: Router, private http: Http, private loginService: LoginService) {
+    constructor(private router: Router, private loginService: LoginService) {
     }
 
     ngOnInit() {
@@ -24,7 +23,8 @@ export class LoginComponent implements OnInit {
         this.submitting = '登陆中...';
         this.loginService.login(this.form).subscribe(response => {
                 if (response.status === 200) {
-                    this.router.navigateByUrl('/home');
+                  this.loginService.username = this.form.username;
+                  this.router.navigateByUrl('/home');
                 }
             },
             error => {

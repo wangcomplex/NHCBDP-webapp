@@ -87,11 +87,12 @@ export class MapComponent implements OnInit, OnChanges {
   getOption() {
     const option = {
       title: {
-        text: '各地区信息化程度信息',
+        text: '全国医院医疗大数据覆盖概括',
         textStyle: {
-          color: '#fff'
+          color: '#333',
+          fonSize: '16px'
         },
-        left: 'middle'
+        left: '40%'
       },
       tooltip: {
         trigger: 'item',
@@ -110,11 +111,11 @@ export class MapComponent implements OnInit, OnChanges {
         left: 'left',
         top: 'bottom',
         categories: [0, 1, 2],
-        // inRange: {
-        //   color: ['#a1c3e5', '#88b7e7', '#fff']
-        // },
+        inRange: {
+          color: ['#a3d1f8', '#b2d9fa', '#96caf6']
+        },
         textStyle: {
-          color: '#fff'
+          color: '#0d121f'
         },
         formatter: function (value) {
           switch (value) {
