@@ -24,6 +24,21 @@ export class HomeComponent implements OnInit {
   parent = '';
   data = [];
 
+  bValue = 3558;
+
+  flag00 = true;
+  flag01 = false;
+  flag02 = false;
+  flag03 = false;
+  flag04 = false;
+  flag05 = false;
+  flag06 = false;
+  flag07 = false;
+  flag08 = false;
+
+  resultCount = [3558, 255, 182, 171, 161, 110, 80, 59, 200];
+
+
   constructor(private router: Router, public http: Http, private loginService: LoginService) {
     setInterval(() => {
       const id = (this.currentPic + 1) % 4;
@@ -58,5 +73,13 @@ export class HomeComponent implements OnInit {
   logout() {
     this.loginService.username = null;
   }
+
+
+  toDataSet(type) {
+    this.router.navigateByUrl('/data-set/' + type);
+  }
+
+
+
 
 }

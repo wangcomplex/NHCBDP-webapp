@@ -30,6 +30,25 @@
         background: rgba(0,0,0,0.2);
         font-weight: bold;
       }
+      .dropdown-menu{
+        margin: 0;
+        padding: 0;
+        a{
+          color: #0A77BD;
+          font-size: 14px;
+          line-height: 32px;
+          img{
+            width:20px;
+            height: 20px;
+            margin-right: 10px;
+          }
+        }
+        a:hover{
+          background: #eee;
+          font-weight:bold;
+        }
+
+      }
     }
   }
 }

@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     ...COMPONENT_PROVIDERS,
     ...PIPE_PROVIDERS,
+
   ],
   imports: [
     BrowserModule,

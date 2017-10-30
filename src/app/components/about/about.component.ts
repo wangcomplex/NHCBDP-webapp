@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-discounts-government',
-  templateUrl: './discounts-government.component.html',
-  styleUrls: ['./discounts-government.component.scss']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
-export class DiscountsGovernmentComponent implements OnInit {
+export class AboutComponent implements OnInit {
+
 
   authenticated = false;
   userName: string;
-  constructor(private loginService: LoginService, private router: Router, ) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.authenticated = !!this.loginService.username;

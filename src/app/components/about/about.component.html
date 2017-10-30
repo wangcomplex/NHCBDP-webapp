@@ -1,0 +1,103 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/data-set/0" class="nav-link" routerLinkActive="active">
+            数据集
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            机构
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            反馈
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/#/discounts-company" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+            开发商
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/#/data-api">数据API</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/#/enterprise" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            主题
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
+            <li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>
+            <li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
+            <li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>
+            <li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>
+            <li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>
+            <li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
+            <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/#/about" class="nav-link" routerLinkActive="active">
+            关于
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h1>关于</h1>
+    <div style="margin-top: 20px;">
+      <p class="title-cont">释放数据和创新的力量，以改善健康</p>
+      <p>欢迎来到<a href="">国家健康医疗大数据平台</a>！该网站致力于为企业家，研究人员和决策者提供高价值的健康数据，以期为所有人带来更好的健康结果。</p>
+      <br>
+      <p class="title-cont title-small">“解放”数据</p>
+      <p>20世纪80年代政府决定全面推行全球定位系统数据，已经产生了广泛的私营部门创新，创造了大量的公共利益和经济价值。</p>
+
+      <p>以同样的方式，HHS已经开始通过<a href="">国家健康医疗大数据平台</a>“释放”健康数据- 使HHS的保险库越来越多的数据（来自CMS，CDC，FDA和NIH，名称为几个来源）容易获得和访问公众和全国的创新者。该信息包括临床护理提供者质量信息，全国卫生服务提供者目录，最新的医学和科学知识数据库，消费者产品数据，社区健康状况信息，政府支出数据等等。</p>
+
+      <p>除了发布全新的数据之外，我们还将重点放在使开发人员更容易使现有数据（即通过应用程序编程接口使其可读取，下载和访问），同时严格保护隐私和机密性。我们已经通过<a href="">国家健康医疗大数据平台</a>网站，在中央位置使这种日益增长的公开数据资源库存轻松找到并可访问。我们正在通过草根“聚会”，公开竞赛，“代码”等方面，帮助推动我们的数据向全国各地的创新者提供。</p>
+
+      <p>我们的目标是发挥私营部门创新者和企业家利用HHS数据创造有助于改善健康和医疗保健的应用程序，产品，服务和功能的力量，同时也有助于同时创造未来的工作。通过开放我们的数据，这个想法是帮助推动美国各地创新者分散化，自我推进的“生态系统”的出现，这些创新者利用HHS数据来帮助消费者，护理提供者，雇主，记者，地方政策制定者和其他人任何一个组织都不可能想象 - 更不用说构建，部署和扩展。</p>
+      <br>
+      <p class="title-cont title-small">健康数据计划论坛成功见证</p>
+      <p>健康数据计划的增长势头在2011年6月9日由医学研究所和HHS主办的第一届年度<a href="">健康数据计划论坛</a>（又名“Health Datapalooza”）上得到强调。该论坛展示了50家利用HHS数据开发的最佳产品和服务，帮助消费者获取所需信息，帮助医生提供更好的护理，帮助雇主促进健康和健康，帮助当地政策制定者做出更明智的决策更多。</p>
+      <br>
+      <p>在论坛上提出的解决方案，真正鼓舞人心，展示了美国的创业精神和创造力，体现了开放数据和开放创新的力量。</p>
+
+      <p>要了解更多有关今年“健康Datapalooza”的信息，请访问<a href="">HealthDatapalooza.org</a>。</p>
+    </div>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

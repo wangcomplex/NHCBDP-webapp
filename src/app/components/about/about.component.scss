@@ -22,7 +22,7 @@
         color: #fff;
         font-size: 14px;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(7){
         background: rgba(0,0,0,0.2);
         font-weight: bold;
       }
@@ -77,70 +77,30 @@
   margin: 0 auto;
 }
 
-
-.adhibition{
-  height: 700px;
-  h5{
-    line-height: 40px;
-    font-size: 24px;
-    color:#d6290e;
-    padding-left: 20px;
+.data-content{
+  h1{
+    color: #666666;
     font-weight: bold;
+    font-size: 28px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
   }
-  .hospital{
-    width: 100%;
-    height: 660px;
-    display: flex;
-    margin-top: 20px;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    .scale{
-      width: 32%;
-      float: left;
-      margin-left:1%;
-      border: 1px solid #c4d4e2;
-      border-radius: 5px;
-      background: #f1f9ff;
-      h6{
-        font-size: 15px;
-        font-weight: bold;
-        color: #1170c2;
-        padding-left: 15px;
-        padding-top: 10px
-      }
-    }
-    dl{
-     width: 90%;
-      margin:20px auto;
-      dt{
-        width: 100%;
-        height: 220px;
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-      dd{
 
-        line-height: 10px;
-        padding-top: 6px;
-        h4{
-          font-size: 14px;
-          font-weight: bold;
-          color: #333;
-        }
-        p{
-          line-height: 24px;
-          font-size: 12px;
-        }
-        b{
-          line-height: 40px;
-          color: red;
-        }
-      }
-    }
+  .title-cont{
+    font-size: 22px;
+    font-weight: normal;
+    color: #bbb;
+    line-height: 32px;
+  }
+  .title-small{
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 32px;
   }
 }
+
 
 .btn-default{
   margin-left: 0;

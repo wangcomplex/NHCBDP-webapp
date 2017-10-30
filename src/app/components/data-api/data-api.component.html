@@ -1,0 +1,139 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/data-set/0" class="nav-link" routerLinkActive="active">
+            数据集
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            机构
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            反馈
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/#/discounts-company" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+            开发商
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/#/data-api">数据API</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/#/enterprise" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            主题
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
+            <li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>
+            <li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
+            <li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>
+            <li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>
+            <li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>
+            <li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
+            <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/#/about" class="nav-link" routerLinkActive="active">
+            关于
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h1>数据API</h1>
+    <div style="margin-top: 20px;">
+      <p><a href="">国家健康医疗大数据平台</a>正在为国家健康医疗大数据平台目录中的数据集中的数据推出API。该Data API为应用程序开发人员提供了启用API的数据集中的数据搜索和查询功能。Data API可以促进围绕健康数据快速开发应用程序。</p>
+      <br>
+      <p>下面描述的Data API补充了可用于目录中列出的数据集的批量数据下载。Catalog API也可用，它提供对Healthdata.gov数据目录中完整元数据的编程访问。</p>
+
+      <p>目前，对于三个数据集启用了Data API：</p>
+      <ul class="data-list">
+        <li><a href="">TXT4Tots消息库 — 英文</a></li>
+        <li><a href="">TXT4Tots消息库 - 西班牙语</a></li>
+        <li><a href="">医院比较</a></li>
+      </ul>
+      <h3>例子</h3>
+      <p>以下是您可以使用Data API的一些示例：</p>
+      <p style="font-size: 20px;color: #999">TXT4Tots</p>
+      <p>该TXT4Tots消息库中的数据集提供了年龄适当的营养和体力活动提醒推荐文本。使用Data API构建一个应用程序，该应用程序向照顾者发送短信提醒，适合其孩子的年龄。考虑到孩子的年龄，应用程序可以查询Data API以发送下一个消息。</p>
+      <br>
+      <p>以下示例使用“curl”命令行工具来演示此API查询。查询参数以JSON格式在POST请求中传递。</p>
+      <br>
+      <h3>医院比较</h3>
+      <p>该医院比较数据集提供高质量的措施的医院。使用Data API按名称或邮政编码搜索医院。以下是使用“curl”命令行工具执行此类查询的方法。查询参数以JSON格式在POST请求中传递。</p>
+      <br>
+      <h3>查找数据API资源</h3>
+      <p>要开始使用Data API，您必须在hub.Healthdata.gov上找到资源页面，这是API所在的位置。</p>
+      <p>从数据集列表页面开始，如TXT4Tots消息库 - 英文，滚动到页面的底部，找到“CKAN Page”链接，这是hub.Healthdata.gov上的一个地址。按照该链接。对于TXT4Tots，该链接将带您进入此页面。它是hub.Healthdata.gov上的数据集页面。</p>
+      <p>每个数据集可能在“数据和资源”下列出一个或多个资源。每个资源都是单个数据表，单击资源标题打开资源页面在TXT4Tots消息库 - 英文数据集中，单个CSV表资源，单击“CSV”打开此资源页面。</p>
+      <p>资源页面显示数据表的预览，包括可在API中使用的字段名称列表。页面右上方还会显示“下载”和“数据API”按钮。“下载”按钮下载资源的原始原始数据文件（在本示例中为CSV文件）。单击Data API按钮，以查找此资源的Data API的示例URL。</p>
+      <br>
+      <h3>使用Data API</h3>
+      <p>Data API的搜索方法允许开发人员搜索数据集的行。它可以返回：</p>
+      <ul class="data-list">
+        <li>所有行（使用“limit”和“offset”参数分页）。</li>
+        <li>匹配全文搜索的行（使用'q'参数）。</li>
+        <li>匹配特定字段值的行（使用“过滤器”）。</li>
+      </ul>
+      <p>Data API查询是对http：//hub.Healthdata.gov/api/action/datastore_search的POST请求。查询参数以URL编码的JSON指令发送。参数如下：</p>
+      <ul class="data-list">
+        <li>resource_id：必需。要查询的资源的GUID。您可以在hub.Healthdata.gov上的资源页面的URL中找到GUID。例如，医院比较医院特征（HOSP）表的GUID 为“391792b5-9c0a-48a1-918f-2ee63caa1c54”。</li>
+        <li>limit：可选。要返回的最大行数。</li>
+        <li>offset：可选。返回结果的起始行号（从零开始）。</li>
+        <li>q：可选。用于全文搜索的文本。</li>
+        <li>过滤器：可选。用于过滤特定列值结果的字段值对的JSON dict。</li>
+      </ul>
+      <p>响应是具有以下字段的JSON dict：</p>
+      <ul class="data-list">
+        <li>success：一个布尔值，指示查询是否成功。</li>
+        <li>错误：失败时，包含错误信息的dict。</li>
+        <li>结果：成功时，包含查询结果的dict。</li>
+      </ul>
+      <p>结果对象具有以下字段：</p>
+      <ul class="data-list">
+        <li>total：表中匹配行的总数。</li>
+        <li>记录：一组匹配的行。每一行都是具有与表列相对应的名称/值键的dict。</li>
+      </ul>
+      <p>有关 更多详细信息和其他搜索方法，请参阅关于datastore_search的CKAN文档。</p>
+
+    </div>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

@@ -1,0 +1,1465 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/data-set/0"  class="nav-link" routerLinkActive="active">
+            数据集
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            机构
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            反馈
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+            开发商
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/#/data-api">数据API</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/#/enterprise" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            主题
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="showContent(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
+            <li><a (click)="showContent(2)"><img src="/assets/home/baoxian.png">保险</a></li>
+            <li><a (click)="showContent(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
+            <li><a (click)="showContent(4)"><img src="/assets/home/jishu.png">技术</a></li>
+            <li><a (click)="showContent(5)"><img src="/assets/home/safe.png">安全</a></li>
+            <li><a (click)="showContent(6)"><img src="/assets/home/rengong.png">AI</a></li>
+            <li><a (click)="showContent(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
+            <li><a (click)="showContent(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/#/about" class="nav-link" routerLinkActive="active">
+            关于
+          </a>
+        </li>
+      </ul>
+
+      <div class="status-area">
+        <div *ngIf="!authenticated">
+          <a class="color-white" href="/#/login">登录</a>
+          <a class="color-white" href="/#/register">注册 </a>
+        </div>
+        <div *ngIf="authenticated">
+          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
+          <a class="color-white" href="/" (click)="logout()">退出 </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div style="width: 100%;">
+            <div class="panel-group" id="accordion2">
+              <div class="panel-heading">
+                <strong style="font-size: 30px;">数据集</strong>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  <a class="accordion-toggle">内容类型</a>
+                </div>
+                <div id="collapseOne" class="panel-collapse in" style="height: auto;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag00)" (click)="showContent(0)"><a>数据集</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  <a class="accordion-toggle">主题</a>
+                </div>
+                <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a><img src="/assets/home/zhengfu.png">政府（<b>255</b>）</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag02)" (click)="showContent(2)"><a><img src="/assets/home/baoxian.png">保险（<b>182</b>）</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag03)" (click)="showContent(3)"><a><img src="/assets/home/yaoqi.png">药企（<b>171</b>）</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag04)" (click)="showContent(4)"><a><img src="/assets/home/jishu.png">技术（<b>161</b>）</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag05)" (click)="showContent(5)"><a><img
+                        src="/assets/home/safe.png">安全（<b>110</b>）</a></li>
+                      <li [ngStyle]="getStyle(flag06)" (click)="showContent(6)"><a><img src="/assets/home/rengong.png">AI（<b>80</b>）</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag07)" (click)="showContent(7)"><a><img
+                        src="/assets/home/yiliaojigou.png">医疗机构（<b>59</b>）</a></li>
+                      <li [ngStyle]="getStyle(flag08)" (click)="showContent(8)"><a><img
+                        src="/assets/home/shujukaifang.png">数据开放（<b>200</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                  <a class="accordion-toggle">标签</a>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">医疗补助（<b>255</b>）</a></li>
+                      <li><a href="#">健康（<b>182</b>）</a></li>
+                      <li><a href="#">国家（<b>171</b>）</a></li>
+                      <li><a href="#">医院（<b>161</b>）</a></li>
+                      <li><a href="#">医疗保健（<b>110</b>）</a></li>
+                      <li><a href="#">状态（<b>80</b>）</a></li>
+                      <li><a href="#">心理健康（<b>59</b>）</a></li>
+                      <li><a href="#">药物滥用（<b>200</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                  <a class="accordion-toggle">格式</a>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">csv（<b>255</b>）</a></li>
+                      <li><a href="#">json（<b>182</b>）</a></li>
+                      <li><a href="#">rdf（<b>171</b>）</a></li>
+                      <li><a href="#">text/xml（<b>161</b>）</a></li>
+                      <li><a href="#">html（<b>110</b>）</a></li>
+                      <li><a href="#">pdf（<b>80</b>）</a></li>
+                      <li><a href="#">xsl（<b>59</b>）</a></li>
+                      <li><a href="#">docx（<b>200</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                  <a class="accordion-toggle">出版者</a>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">陕西（<b>305</b>）</a></li>
+                      <li><a href="#">福州（<b>299</b>）</a></li>
+                      <li><a href="#">合肥（<b>17</b>）</a></li>
+                      <li><a href="#">天津（<b>11</b>）</a></li>
+                      <li><a href="#">邯郸（<b>10</b>）</a></li>
+                      <li><a href="#">广州（<b>80</b>）</a></li>
+                      <li><a href="#">成都（<b>5</b>）</a></li>
+                      <li><a href="#">武汉（<b>90</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                  <a class="accordion-toggle">作者</a>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">北京大学第三医院（<b>35</b>）</a></li>
+                      <li><a href="#">中国人民解放军空军总医院（<b>82</b>）</a></li>
+                      <li><a href="#">首都医科大学附属北京中医医院（<b>17</b>）</a></li>
+                      <li><a href="#">北京肿瘤医院（<b>61</b>）</a></li>
+                      <li><a href="#">北京大学口腔医院（<b>101</b>）</a></li>
+                      <li><a href="#">中国医学科学院肿瘤医院（<b>280</b>）</a></li>
+                      <li><a href="#">北京大学人民医院（<b>159</b>）</a></li>
+                      <li><a href="#">中国中医科学院西苑医院（<b>20</b>）</a></li>
+                      <li><a href="#">北京市公安医院（<b>80</b>）</a></li>
+                      <li><a href="#">北京市急救中心（<b>59</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                  <a class="accordion-toggle">执照</a>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">开放式数据库许可证（<b>255</b>）</a></li>
+                      <li><a href="#">许可证未指定（<b>182</b>）</a></li>
+                      <li><a href="#">开放数据库许可证（<b>17</b>）</a></li>
+                      <li><a href="#">公共域（<b>11</b>）</a></li>
+                      <li><a href="#">其他(公共域)（<b>11</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <div class="find-want">
+            <p>看不到你要找的东西？</p>
+            <p>
+              <button class="btn btn-primary">添加反馈</button>
+            </p>
+          </div>
+
+          <div class="view-header">
+            <h3><b>{{bValue}}</b>个结果</h3>
+            <div class="row">
+              <div class="col-md-5 search-cont">
+                <h4>搜索</h4>
+                <input type="text" placeholder="Search">
+              </div>
+              <div class="col-md-2 search-cont">
+                <h4>排列方式</h4>
+                <select name="" id="">
+                  <option value="">日期更改</option>
+                  <option value="">标题</option>
+                </select>
+              </div>
+              <div class="col-md-1 search-cont">
+                <h4>订购</h4>
+                <select name="" id="">
+                  <option value="">降序</option>
+                  <option value="">升序</option>
+                </select>
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-primary" style="margin-top: 34px;">应用</button>
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-primary" style="margin-top: 34px;">重启</button>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+
+          <div *ngIf="flag00" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>每周网页浏览量来自CDC.gov的热门联合页面</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>HSA 90天紧急避难候诊</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>食品检查</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>医疗保健提供者凭证数据</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 华盛顿州</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>需求证明书：1974年开始</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>流感实验室向NYSDOH报告的病例：2009-10季度开始</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>CDC国家电子烟法律 - 税收</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>学校饮用水中的铅测试：2016年开始实行无铅管道建筑</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>学校饮用水抽样和结果的铅测试：最近报道的2016年初</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>西尼罗病毒病例，2006年至今</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 加利福尼亚州</i></p>
+                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>DMH退伍军人提供者注册</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 密苏里州</i></p>
+                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
+                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，第7区 - 堪萨斯城</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>驾驶员和前排乘客百分比佩戴安全带，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>饮酒过多后（过去30天），所有国家，2012年和2014年的成年人的百分比</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">资料来源：行为风险因素监测系统（BRFSS），2012年和2014年。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div *ngIf="flag01" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>区域统计</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">区域统计展示图</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>政府预算管理与服务</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>健康医疗行业治理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>健康医疗数据统计和评价预测</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>健全医院评价体系，优化资源布局</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">福州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>医院药品行业行业监管，医疗、医药、医保联动</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集包含从“福州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>公共卫生</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>各公共卫生业务信息系统及移动平台信息共享</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">1995年至2017年。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>疾病信息预警机制，动态分析疫情风险</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>整合多方监测数据，评价社会健康因素</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>整合重大疾病监测数据，建立识别和监测体系</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>新型业态应用 </h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
+                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>构架新产业链，推动产业协同发展</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>合理用药业务监管</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>疾病管理协同</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <div *ngIf="flag02" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>保险公司自动识别骗保行为</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 广州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>个人评估报告、精准营销</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 广州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>食品检查</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 芝加哥市</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>医疗保健提供者凭证数据</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 华盛顿州</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>需求证明书：1974年开始</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>流感实验室向NYSDOH报告的病例：2009-10季度开始</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>CDC国家电子烟法律 - 税收</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>学校饮用水中的铅测试：2016年开始实行无铅管道建筑</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>学校饮用水抽样和结果的铅测试：最近报道的2016年初</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
+                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>西尼罗病毒病例，2006年至今</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 加利福尼亚州</i></p>
+                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>DMH退伍军人提供者注册</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 密苏里州</i></p>
+                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
+                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，第7区 - 堪萨斯城</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>驾驶员和前排乘客百分比佩戴安全带，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>饮酒过多后（过去30天），所有国家，2012年和2014年的成年人的百分比</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">资料来源：行为风险因素监测系统（BRFSS），2012年和2014年。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div *ngIf="flag03" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>药厂开展药物药效追踪和使用市场占有分析，以获知未被满足的临床需求以指导新药研发</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>对于数据字段清洗、统计分析，数据统一视图访问查询</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>病历\诊断\临床疗法\用药\随访 </h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>虚拟桌面 统计分析工具 药厂封闭系统</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>药品名称、治疗领域、药物靶点和作用机制同义词词库和索引体系、数据标准 数据准备和脱敏</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>独立的计算机环境 单独进行防护 需对药厂应用行为进行审计 需要药厂人员访问行为进行审计</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>疾病与靶点通路相关性分析、流行病学数据</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>循证医学：关于某个药物的RCT和RWE的跟踪</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>对于患者流的分析，做可视化统计分析；跟踪实体药店数据，作出可视化统计结果</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>建立可扩展的科学索引体系，具有自动补全功能，可以检索单药、复方、适应症、公司、地区等内容</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <div *ngIf="flag04" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>大数据标准化、集成、质量评价</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">技术CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>健康医疗大数据的终端用户</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>以政府和医院为代表的数据资源型用户</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>以药企和商保为代表的数据应用型用户</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>以医生和患者为代表的个人用户</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据应用型用户是当前的核心支付方</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 武汉</i></p>
+                  <p class="lianmeng">该数据集包括符合卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <div *ngIf="flag05" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>基础设施安全：物理安全、技术安全、人员安全</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>平台安全：大数据安全管控、数据隐私保护</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>应用安全（商务、运营、支付服务的安全保障）：代码审计、行为审计、渗透测试</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据安全开放：区块链、数据访问审计</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>应急响应体系、容灾备份体系</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>信息安全管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>安全大数据、态势、应急、管控</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>应用设计，网站安全</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <div *ngIf="flag06" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>支持结构化、非结构化数据的抽取与导入，以及多源数据的融合</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>支持python、java、R、C++等常用机器学习建模开发环境</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>机器学习算法库（python接口、java接口、R接口）</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>用户模型的上传、发布与导出功能</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>多租户资源配置</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>GPU操作系统管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
+                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>图数据库，知识数据库等</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>用户模型与应用的封装与部署</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>模型运行资源监控并且根据模型使用的资源计费</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据使用者、模型使用者、模型开发者权限认证</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <div *ngIf="flag07" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>健康管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>合理用药检测</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>对于患者流统计的分析：患者-病因-诊断-就诊-含同类药物方案-随访-患者情况-统计结果</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>精准医疗、医生辅助诊疗</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>DMH退伍军人提供者注册</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 密苏里州</i></p>
+                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
+                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，第7区 - 堪萨斯城</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>驾驶员和前排乘客百分比佩戴安全带，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>饮酒过多后（过去30天），所有国家，2012年和2014年的成年人的百分比</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">资料来源：行为风险因素监测系统（BRFSS），2012年和2014年。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div *ngIf="flag08" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据采集、数据格式机器读取</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>如何使用：网站直接下载、根据相关接口下载</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>模型安全隐患评估</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>DMH退伍军人提供者注册</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 密苏里州</i></p>
+                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
+                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，第7区 - 堪萨斯城</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>驾驶员和前排乘客百分比佩戴安全带，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，所有国家</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>饮酒过多后（过去30天），所有国家，2012年和2014年的成年人的百分比</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
+                  <p class="lianmeng">资料来源：行为风险因素监测系统（BRFSS），2012年和2014年。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

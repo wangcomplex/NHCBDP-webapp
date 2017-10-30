@@ -22,6 +22,11 @@ import {EnterpriseComponent} from './components/enterprise/enterprise.component'
 import {DiscountsGovernmentComponent} from './components/discounts-government/discounts-government.component';
 import {DiscountsCompanyComponent} from './components/discounts-company/discounts-company.component';
 import {DiscountsPeopleComponent} from './components/discounts-people/discounts-people.component';
+import {DataGovernComponent} from './components/data-govern/data-govern.component';
+import {AboutComponent} from './components/about/about.component';
+import {DataSetComponent} from './components/data-set/data-set.component';
+import {DataApiComponent} from './components/data-api/data-api.component';
+import {DataCartogramComponent} from './components/data-cartogram/data-cartogram.component';
 
 export const COMPONENT_PROVIDERS = [
     LoginComponent,
@@ -46,6 +51,11 @@ export const COMPONENT_PROVIDERS = [
     DiscountsGovernmentComponent,
     DiscountsCompanyComponent,
     DiscountsPeopleComponent,
+    DataGovernComponent,
+    AboutComponent,
+    DataSetComponent,
+    DataApiComponent,
+    DataCartogramComponent,
 
 ];
 export const PIPE_PROVIDERS = [

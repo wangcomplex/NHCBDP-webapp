@@ -14,8 +14,13 @@ import {SearchResultComponent} from './components/search-result/search-result.co
 import {MyLaboratoryComponent} from './components/my-laboratory/my-laboratory.component';
 import {EnterpriseComponent} from './components/enterprise/enterprise.component';
 import {DiscountsGovernmentComponent} from './components/discounts-government/discounts-government.component';
-import {DiscountsCompanyComponent} from "./components/discounts-company/discounts-company.component";
-import {DiscountsPeopleComponent} from "./components/discounts-people/discounts-people.component";
+import {DiscountsCompanyComponent} from './components/discounts-company/discounts-company.component';
+import {DiscountsPeopleComponent} from './components/discounts-people/discounts-people.component';
+import {DataGovernComponent} from './components/data-govern/data-govern.component';
+import {AboutComponent} from './components/about/about.component';
+import {DataSetComponent} from './components/data-set/data-set.component';
+import {DataApiComponent} from './components/data-api/data-api.component';
+import {DataCartogramComponent} from './components/data-cartogram/data-cartogram.component';
 
 export const ROUTES: Routes = [
   {
@@ -90,5 +95,25 @@ export const ROUTES: Routes = [
   {
     path: 'discounts-people',
     component: DiscountsPeopleComponent,
+  },
+  {
+    path: 'data-govern',
+    component: DataGovernComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'data-set/:type',
+    component: DataSetComponent,
+  },
+  {
+    path: 'data-api',
+    component: DataApiComponent,
+  },
+  {
+    path: 'data-cartogram',
+    component: DataCartogramComponent,
   },
 ];
