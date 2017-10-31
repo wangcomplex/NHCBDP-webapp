@@ -45,16 +45,7 @@
         </li>
       </ul>
 
-      <div class="status-area">
-        <div *ngIf="!authenticated">
-          <a class="color-white" href="/#/login">登录</a>
-          <a class="color-white" href="/#/register">注册 </a>
-        </div>
-        <div *ngIf="authenticated">
-          <span style="color: white;padding-right: 10px">欢迎您： {{userName}}</span>
-          <a class="color-white" href="/" (click)="logout()">退出 </a>
-        </div>
-      </div>
+      <app-user-state></app-user-state>
     </div>
   </div>
 

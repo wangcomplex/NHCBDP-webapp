@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 import {Cities, Provinces} from '../components/map/province-city';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
-import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +13,6 @@ import {LoginService} from '../services/login.service';
 
 export class HomeComponent implements OnInit {
 
-  authenticated = false;
-  userName: string;
   currentPic = 0;
 
   provinces = Provinces;
@@ -24,7 +21,7 @@ export class HomeComponent implements OnInit {
   parent = '';
   data = [];
 
-  constructor(private router: Router, public http: Http, private loginService: LoginService) {
+  constructor(private router: Router, public http: Http) {
     setInterval(() => {
       const id = (this.currentPic + 1) % 4;
       this.currentPic = id;
@@ -37,10 +34,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    this.authenticated = !!this.loginService.username;
-    if (this.authenticated) {
-      this.userName = this.loginService.username;
-    }
     this.mapType = 'china';
     this.data = this.provinces;
 }
@@ -54,11 +47,6 @@ export class HomeComponent implements OnInit {
   gotoStructuring() {
     this.router.navigateByUrl('/platform-nav');
   }
-
-  logout() {
-    this.loginService.username = null;
-  }
-
 
   toDataSet(type) {
     this.router.navigateByUrl('/data-set/' + type);

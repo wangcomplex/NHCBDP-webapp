@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from '../../services/login.service';
-import {Router, ActivatedRoute} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-data-set',
@@ -8,10 +7,6 @@ import {Router, ActivatedRoute} from '@angular/router';
   styleUrls: ['./data-set.component.scss']
 })
 export class DataSetComponent implements OnInit {
-
-
-  authenticated = false;
-  userName: string;
 
   bValue = 3558;
 
@@ -29,7 +24,7 @@ export class DataSetComponent implements OnInit {
 
   selectedType;
 
-  constructor(private loginService: LoginService, private router: ActivatedRoute) {
+  constructor(private router: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -37,14 +32,6 @@ export class DataSetComponent implements OnInit {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
     });
-    this.authenticated = !!this.loginService.username;
-    if (this.authenticated) {
-      this.userName = this.loginService.username;
-    }
-  }
-
-  logout() {
-    this.loginService.username = null;
   }
 
   showContent(type) {

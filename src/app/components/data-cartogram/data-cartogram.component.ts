@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../../services/login.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -9,10 +8,6 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class DataCartogramComponent implements OnInit {
 
-
-  authenticated = false;
-  userName: string;
-
   flag01 = true;
   flag02 = false;
   flag03 = false;
@@ -20,7 +15,7 @@ export class DataCartogramComponent implements OnInit {
   flag05 = false;
   selectedType;
 
-  constructor(private loginService: LoginService, private router: ActivatedRoute) {
+  constructor(private router: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -28,14 +23,6 @@ export class DataCartogramComponent implements OnInit {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
     });
-    this.authenticated = !!this.loginService.username;
-    if (this.authenticated) {
-      this.userName = this.loginService.username;
-    }
-  }
-
-  logout() {
-    this.loginService.username = null;
   }
 
   showContent(type) {
