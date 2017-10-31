@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-enterprise',
@@ -9,7 +10,7 @@ import {LoginService} from '../../services/login.service';
 export class EnterpriseComponent implements OnInit {
   authenticated = false;
   userName: string;
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.authenticated = !!this.loginService.username;
@@ -20,5 +21,8 @@ export class EnterpriseComponent implements OnInit {
 
   logout() {
     this.loginService.username = null;
+  }
+  toDataSet(type) {
+    this.router.navigateByUrl('/data-set/' + type);
   }
 }
