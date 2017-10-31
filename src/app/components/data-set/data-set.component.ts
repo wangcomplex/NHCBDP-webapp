@@ -111,7 +111,6 @@ export class DataSetComponent implements OnInit {
         background: '#ccc'
       };
     }
-
   }
 
 

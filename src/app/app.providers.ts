@@ -27,6 +27,11 @@ import {AboutComponent} from './components/about/about.component';
 import {DataSetComponent} from './components/data-set/data-set.component';
 import {DataApiComponent} from './components/data-api/data-api.component';
 import {DataCartogramComponent} from './components/data-cartogram/data-cartogram.component';
+import {ShowChartComponent} from './components/show-echarts/show-chart/show-chart';
+import {ShowLineComponent} from './components/show-echarts/show-line/show-line';
+import {ShowBarComponent} from './components/show-echarts/show-bar/show-bar';
+import {ShowpieComponent} from './components/show-echarts/show-pie/show-pie';
+import {ShowEchartComponent} from './components/show-echarts/show-echart/show-echart';
 
 export const COMPONENT_PROVIDERS = [
     LoginComponent,
@@ -56,6 +61,11 @@ export const COMPONENT_PROVIDERS = [
     DataSetComponent,
     DataApiComponent,
     DataCartogramComponent,
+    ShowChartComponent,
+    ShowLineComponent,
+    ShowBarComponent,
+    ShowpieComponent,
+    ShowEchartComponent
 
 ];
 export const PIPE_PROVIDERS = [
