@@ -113,7 +113,7 @@ export const ROUTES: Routes = [
     component: DataApiComponent,
   },
   {
-    path: 'data-cartogram',
+    path: 'data-cartogram/:type',
     component: DataCartogramComponent,
   },
 ];

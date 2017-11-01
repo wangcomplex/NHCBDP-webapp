@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-data-set',
@@ -24,7 +24,7 @@ export class DataSetComponent implements OnInit {
 
   selectedType;
 
-  constructor(private router: ActivatedRoute) {
+  constructor(private router: ActivatedRoute, private router1: Router) {
   }
 
   ngOnInit() {
@@ -98,6 +98,10 @@ export class DataSetComponent implements OnInit {
         background: '#ccc'
       };
     }
+  }
+
+  toDataSet() {
+    this.router1.navigateByUrl('/data-cartogram/1');
   }
 
 

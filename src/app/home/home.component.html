@@ -1,291 +1,294 @@
-
 <app-layout-header></app-layout-header>
 
 
 <div class="main-content">
-   <div class="topbar">
-  <div class="nav-region">
-    <ul class="nav navbar-nav nav-pills">
-      <li class="nav-item">
-        <a href="/#/home" class="nav-link" routerLinkActive="active">
-          首页
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/#/data-set/0" class="nav-link" routerLinkActive="active">
-          数据集
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
-          机构
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
-          反馈
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
-          开发商
-          <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="/#/data-api">数据API</a></li>
-        </ul>
-      </li>
+  <div class="topbar">
+    <div class="nav-region">
+      <ul class="nav navbar-nav nav-pills">
+        <li class="nav-item">
+          <a href="/#/home" class="nav-link" routerLinkActive="active">
+            首页
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/data-set/0" class="nav-link" routerLinkActive="active">
+            数据集
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+            机构
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+            反馈
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+            开发商
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/#/data-api">数据API</a></li>
+          </ul>
+        </li>
 
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          主题
-          <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
-          <li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>
-          <li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
-          <li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>
-          <li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>
-          <li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>
-          <li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
-          <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="/#/about" class="nav-link" routerLinkActive="active">
-          关于
-        </a>
-      </li>
-    </ul>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            主题
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
+            <li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>
+            <li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
+            <li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>
+            <li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>
+            <li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>
+            <li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
+            <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/#/about" class="nav-link" routerLinkActive="active">
+            关于
+          </a>
+        </li>
+      </ul>
 
-    <app-user-state></app-user-state>
+      <app-user-state></app-user-state>
 
+    </div>
   </div>
-</div>
 
-   <div class="data-content">
+  <div class="data-content">
 
-       <div class="bannerContainer">
-         <ul class="bannerPicList">
-           <li [class.active]="currentPic==0"> <img src="/assets/home/luobo1.jpg"/></li>
-           <li [class.active]="currentPic==1"> <img src="/assets/home/luobo2.jpg"/></li>
-           <li [class.active]="currentPic==2"> <img src="/assets/home/luobo3.jpg"/></li>
-           <li [class.active]="currentPic==3"> <img src="/assets/home/luobo4.jpg"/></li>
-         </ul>
-         <ul class="bannerBtnList">
-           <li><span class="picBtn" (click)="changebanner(0)"></span></li>
-           <li><span class="picBtn" (click)="changebanner(1)"></span></li>
-           <li><span class="picBtn" (click)="changebanner(2)"></span></li>
-           <li><span class="picBtn" (click)="changebanner(3)"></span></li>
-         </ul>
-         <div class="button-left"><button class="btn-default btn-left"> < </button></div>
-         <div class="button-right"><button class="btn-default btn-right"> > </button></div>
-       </div>
+    <div class="bannerContainer">
+      <ul class="bannerPicList">
+        <li [class.active]="currentPic==0"><img src="/assets/home/luobo1.jpg"/></li>
+        <li [class.active]="currentPic==1"><img src="/assets/home/luobo2.jpg"/></li>
+        <li [class.active]="currentPic==2"><img src="/assets/home/luobo3.jpg"/></li>
+        <li [class.active]="currentPic==3"><img src="/assets/home/luobo4.jpg"/></li>
+      </ul>
+      <ul class="bannerBtnList">
+        <li><span class="picBtn" (click)="changebanner(0)"></span></li>
+        <li><span class="picBtn" (click)="changebanner(1)"></span></li>
+        <li><span class="picBtn" (click)="changebanner(2)"></span></li>
+        <li><span class="picBtn" (click)="changebanner(3)"></span></li>
+      </ul>
+      <div class="button-left">
+        <button class="btn-default btn-left"> <</button>
+      </div>
+      <div class="button-right">
+        <button class="btn-default btn-right"> ></button>
+      </div>
+    </div>
 
-       <div class="data-capacity">
-         <h4>数据智能</h4>
-         <div class="data-services">
-           <a href="/#/enterprise">
-           <dl>
-             <dt><img src="/assets/home/enterprise.png" alt=""></dt>
-             <dd>企业服务</dd>
-           </dl>
-           </a>
+    <div class="data-capacity">
+      <h4>数据智能</h4>
+      <div class="data-services">
+        <a href="/#/enterprise">
+          <dl>
+            <dt><img src="/assets/home/enterprise.png" alt=""></dt>
+            <dd>企业服务</dd>
+          </dl>
+        </a>
 
-           <a href="/#/discounts-government">
-           <dl>
-             <dt><img src="/assets/home/government.png" alt=""></dt>
-             <dd>政府服务</dd>
-           </dl>
-           </a>
+        <a href="/#/discounts-government">
+          <dl>
+            <dt><img src="/assets/home/government.png" alt=""></dt>
+            <dd>政府服务</dd>
+          </dl>
+        </a>
 
-           <a href="/#/discounts-people">
-           <dl>
-             <dt><img src="/assets/home/personage.png" alt=""></dt>
-             <dd>个人服务</dd>
-           </dl>
-           </a>
-           <a href="/#/discounts-company">
-           <dl>
-             <dt><img src="/assets/home/scientific-research.png" alt=""></dt>
-             <dd>科研服务</dd>
-           </dl>
-           </a>
-           <a href="/#/cloud">
-           <dl>
-             <dt><img src="/assets/home/cloud.png" alt=""></dt>
-             <dd>云服务</dd>
-           </dl>
-           </a>
-           <a href="/#/security">
-           <dl>
-             <dt><img src="/assets/home/security.png" alt=""></dt>
-             <dd>安全服务</dd>
-           </dl>
-           </a>
-         </div>
-         <div class="data-map">
-           <app-map [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map>
-         </div>
-
-       </div>
-
-       <div class="policy-trend">
-         <div class="trend">
-           <h5>政策动态</h5>
-         </div>
-
-         <div class="discounts">
-           <a href="/#/discounts-government">
-             <img src="/assets/home/administration.png" alt="">
-             <p>
-               <span>惠政</span><br>
-               <button class="btn-default btn-enter">进入</button>
-             </p>
-           </a>
-           <a href="/#/discounts-company">
-             <img src="/assets/home/company.png" alt="">
-             <p>
-               <span>惠企</span><br>
-               <button class="btn-default btn-enter btn-company">进入</button>
-             </p>
-           </a>
-           <a href="/#/discounts-people">
-             <img src="/assets/home/people.png" alt="">
-             <p>
-               <span>惠民</span><br>
-               <button class="btn-default btn-enter btn-people">进入</button>
-             </p>
-           </a>
-         </div>
-       </div>
-
-       <div class="enter-company">
-         <div class="enter-title">
-           <h5>入驻单位</h5>
-           <span (click)="gotoStructuring()">合作入口 ></span>
-         </div>
-
-        <div class="companys">
-         <ul class="company">
-           <li class="discounts company-list">
-             <a href="http://www.tsinghua.edu.cn/publish/newthu/index.html">
-               <img src="/assets/home/qinghua.png" alt="">
-             </a>
-             <a href="http://www.pku.edu.cn/">
-               <img src="/assets/home/beijing.png" alt="">
-             </a>
-             <a href="http://www.greatwall.cn/">
-               <img src="/assets/home/greatwall.png" alt="">
-             </a>
-             <a href="http://www.dell.com/zh-cn/">
-               <img src="/assets/home/dell.png" alt="">
-             </a>
-             <a href="https://www.philips.com.cn/">
-               <img src="/assets/home/fhilips.png" alt="">
-             </a>
-           </li>
-           <li class="discounts company-list">
-             <a href="http://www.qq.com/">
-               <img src="/assets/home/tengxun.png" alt="">
-             </a>
-             <a href="https://www.ibm.com/cn-zh/">
-               <img src="/assets/home/IBM.png" alt="">
-             </a>
-             <a href="http://www.isoftstone.com/">
-               <img src="/assets/home/ruantong.png" alt="">
-             </a>
-             <a href="http://www.inspur.com/">
-               <img src="/assets/home/langchao.png" alt="">
-             </a>
-             <a href="https://skymind.ai/">
-               <img src="/assets/home/skymind.png" alt="">
-             </a>
-           </li>
-           <li class="discounts company-list">
-             <a href="https://www.synyi.com/">
-               <img src="/assets/home/senyi.png" alt="">
-             </a>
-             <a href="https://www.dingxiang-inc.com/">
-               <img src="/assets/home/dingxiang.png" alt="">
-             </a>
-             <a href="http://www.berrygenomics.com/">
-               <img src="/assets/home/beirui.png" alt="">
-             </a>
-             <a href="http://www.youedata.com/">
-               <img src="/assets/home/youyi.png" alt="">
-             </a>
-             <a href="http://www.dothealth.cn/">
-               <img src="/assets/home/judian.png" alt="">
-             </a>
-           </li>
-         </ul>
-       </div>
-       </div>
-
-       <div class="enter-company strategy-cooperation">
-         <div class="enter-title">
-           <h5>战略合作</h5>
-           <span (click)="gotoStructuring()">战略合作 ></span>
-         </div>
-         <div class="companys">
-         <ul class="company">
-           <li class="strategy">
-             <a href="https://www.ibm.com/cn-zh/">
-               <img src="/assets/home/Ibms.png" alt="">
-             </a>
-             <a href="https://www.wuxiapptec.com.cn/">
-               <img src="/assets/home/yaoming.png" alt="">
-             </a>
-             <a href="https://www.philips.com.cn/">
-               <img src="/assets/home/philips.png" alt="">
-             </a>
-           </li>
-         </ul>
-       </div>
+        <a href="/#/discounts-people">
+          <dl>
+            <dt><img src="/assets/home/personage.png" alt=""></dt>
+            <dd>个人服务</dd>
+          </dl>
+        </a>
+        <a href="/#/discounts-company">
+          <dl>
+            <dt><img src="/assets/home/scientific-research.png" alt=""></dt>
+            <dd>科研服务</dd>
+          </dl>
+        </a>
+        <a href="/#/cloud">
+          <dl>
+            <dt><img src="/assets/home/cloud.png" alt=""></dt>
+            <dd>云服务</dd>
+          </dl>
+        </a>
+        <a href="/#/security">
+          <dl>
+            <dt><img src="/assets/home/security.png" alt=""></dt>
+            <dd>安全服务</dd>
+          </dl>
+        </a>
+      </div>
+      <div class="data-map">
+        <app-map [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map>
       </div>
 
-       <div class="enter-company capital-zoology">
-         <div class="enter-title">
-           <h5>资本生态</h5>
-           <span (click)="gotoStructuring()">生态合作 ></span>
-         </div>
+    </div>
 
-         <div class="companys">
-           <ul class="company">
-             <li class="capital">
-               <a href="https://www.sequoiacap.com/china/">
-                 <img src="/assets/home/sequola.png" alt="">
-               </a>
-               <a href="http://www.cec.com.cn/">
-                 <img src="/assets/home/dianzi.png" alt="">
-               </a>
-               <a href="">
-                 <img src="/assets/home/shugang.png" alt="">
-               </a>
-               <a href="">
-                 <img src="/assets/home/shurong.png" alt="">
-               </a>
-             </li>
-             <li class="capital">
-               <a href="https://www.synyi.com/">
-                 <img src="/assets/home/zhineng.png" alt="">
-               </a>
-               <a href="http://www.medlinker.com/">
-                 <img src="/assets/home/medlinker.png" alt="">
-               </a>
-               <a href="http://www.mobilemd.cn/">
-                 <img src="/assets/home/taimei.png" alt="">
-               </a>
-               <a href="http://www.dothealth.cn/">
-                 <img src="/assets/home/yiliao.png" alt="">
-               </a>
-             </li>
-           </ul>
-         </div>
-     </div>
-   </div>
+    <div class="policy-trend">
+      <div class="trend">
+        <h5>政策动态</h5>
+      </div>
+
+      <div class="discounts">
+        <a href="/#/discounts-government">
+          <img src="/assets/home/administration.png" alt="">
+          <p>
+            <span>惠政</span><br>
+            <button class="btn-default btn-enter">进入</button>
+          </p>
+        </a>
+        <a href="/#/discounts-company">
+          <img src="/assets/home/company.png" alt="">
+          <p>
+            <span>惠企</span><br>
+            <button class="btn-default btn-enter btn-company">进入</button>
+          </p>
+        </a>
+        <a href="/#/discounts-people">
+          <img src="/assets/home/people.png" alt="">
+          <p>
+            <span>惠民</span><br>
+            <button class="btn-default btn-enter btn-people">进入</button>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div class="enter-company">
+      <div class="enter-title">
+        <h5>入驻单位</h5>
+        <span (click)="gotoStructuring()">合作入口 ></span>
+      </div>
+
+      <div class="companys">
+        <ul class="company">
+          <li class="discounts company-list">
+            <a href="http://www.tsinghua.edu.cn/publish/newthu/index.html">
+              <img src="/assets/home/qinghua.png" alt="">
+            </a>
+            <a href="http://www.pku.edu.cn/">
+              <img src="/assets/home/beijing.png" alt="">
+            </a>
+            <a href="http://www.greatwall.cn/">
+              <img src="/assets/home/greatwall.png" alt="">
+            </a>
+            <a href="http://www.dell.com/zh-cn/">
+              <img src="/assets/home/dell.png" alt="">
+            </a>
+            <a href="https://www.philips.com.cn/">
+              <img src="/assets/home/fhilips.png" alt="">
+            </a>
+          </li>
+          <li class="discounts company-list">
+            <a href="http://www.qq.com/">
+              <img src="/assets/home/tengxun.png" alt="">
+            </a>
+            <a href="https://www.ibm.com/cn-zh/">
+              <img src="/assets/home/IBM.png" alt="">
+            </a>
+            <a href="http://www.isoftstone.com/">
+              <img src="/assets/home/ruantong.png" alt="">
+            </a>
+            <a href="http://www.inspur.com/">
+              <img src="/assets/home/langchao.png" alt="">
+            </a>
+            <a href="https://skymind.ai/">
+              <img src="/assets/home/skymind.png" alt="">
+            </a>
+          </li>
+          <li class="discounts company-list">
+            <a href="https://www.synyi.com/">
+              <img src="/assets/home/senyi.png" alt="">
+            </a>
+            <a href="https://www.dingxiang-inc.com/">
+              <img src="/assets/home/dingxiang.png" alt="">
+            </a>
+            <a href="http://www.berrygenomics.com/">
+              <img src="/assets/home/beirui.png" alt="">
+            </a>
+            <a href="http://www.youedata.com/">
+              <img src="/assets/home/youyi.png" alt="">
+            </a>
+            <a href="http://www.dothealth.cn/">
+              <img src="/assets/home/judian.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="enter-company strategy-cooperation">
+      <div class="enter-title">
+        <h5>战略合作</h5>
+        <span (click)="gotoStructuring()">战略合作 ></span>
+      </div>
+      <div class="companys">
+        <ul class="company">
+          <li class="strategy">
+            <a href="https://www.ibm.com/cn-zh/">
+              <img src="/assets/home/Ibms.png" alt="">
+            </a>
+            <a href="https://www.wuxiapptec.com.cn/">
+              <img src="/assets/home/yaoming.png" alt="">
+            </a>
+            <a href="https://www.philips.com.cn/">
+              <img src="/assets/home/philips.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="enter-company capital-zoology">
+      <div class="enter-title">
+        <h5>资本生态</h5>
+        <span (click)="gotoStructuring()">生态合作 ></span>
+      </div>
+
+      <div class="companys">
+        <ul class="company">
+          <li class="capital">
+            <a href="https://www.sequoiacap.com/china/">
+              <img src="/assets/home/sequola.png" alt="">
+            </a>
+            <a href="http://www.cec.com.cn/">
+              <img src="/assets/home/dianzi.png" alt="">
+            </a>
+            <a href="">
+              <img src="/assets/home/shugang.png" alt="">
+            </a>
+            <a href="">
+              <img src="/assets/home/shurong.png" alt="">
+            </a>
+          </li>
+          <li class="capital">
+            <a href="https://www.synyi.com/">
+              <img src="/assets/home/zhineng.png" alt="">
+            </a>
+            <a href="http://www.medlinker.com/">
+              <img src="/assets/home/medlinker.png" alt="">
+            </a>
+            <a href="http://www.mobilemd.cn/">
+              <img src="/assets/home/taimei.png" alt="">
+            </a>
+            <a href="http://www.dothealth.cn/">
+              <img src="/assets/home/yiliao.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 

@@ -21,6 +21,7 @@ export class UserStateComponent implements OnInit {
 
   logout() {
     this.loginService.username = null;
+    this.authenticated = !!this.loginService.username;
   }
 
 }
