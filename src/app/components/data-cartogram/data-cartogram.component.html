@@ -5,59 +5,7 @@
 <div class="main-content">
   <div class="topbar">
     <div class="nav-region">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a href="/#/home" class="nav-link" routerLinkActive="active">
-            首页
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/#/data-set/1"  class="nav-link" routerLinkActive="active">
-            数据集
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
-            机构
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
-            反馈
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
-            开发商
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/#/data-api">数据API</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="/#/enterprise" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            主题
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a (click)="showContent(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
-            <li><a (click)="showContent(2)"><img src="/assets/home/baoxian.png">保险</a></li>
-            <li><a (click)="showContent(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
-            <li><a (click)="showContent(4)"><img src="/assets/home/jishu.png">技术</a></li>
-            <li><a (click)="showContent(5)"><img src="/assets/home/safe.png">安全</a></li>
-            <li><a (click)="showContent(6)"><img src="/assets/home/rengong.png">AI</a></li>
-            <li><a (click)="showContent(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
-            <li><a (click)="showContent(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="/#/about" class="nav-link" routerLinkActive="active">
-            关于
-          </a>
-        </li>
-      </ul>
+      <app-nav-bar></app-nav-bar>
 
       <app-user-state></app-user-state>
     </div>
@@ -75,7 +23,7 @@
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  <a class="accordion-toggle">主题</a>
+                  <a class="accordion-toggle">统计图展示</a>
                 </div>
                 <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
                   <div class="panel-body">

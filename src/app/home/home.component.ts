@@ -48,9 +48,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/platform-nav');
   }
 
-  toDataSet(type) {
-    this.router.navigateByUrl('/data-set/' + type);
-  }
+
 
 
 

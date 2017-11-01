@@ -18,8 +18,4 @@ export class DiscountsCompanyComponent implements OnInit {
     this.router.navigateByUrl('/data-govern');
   }
 
-  toDataSet(type) {
-    this.router.navigateByUrl('/data-set/' + type);
-  }
-
 }

@@ -9,15 +9,9 @@ import {Router} from '@angular/router';
 export class DiscountsGovernmentComponent implements OnInit {
 
 
-  constructor( private router: Router, ) { }
+  constructor() { }
 
   ngOnInit() {
 
   }
-
-
-  toDataSet(type) {
-    this.router.navigateByUrl('/data-set/' + type);
-  }
-
 }

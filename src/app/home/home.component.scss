@@ -12,46 +12,7 @@
   width: 1000px;
   margin: 0 auto;
   height: 40px;
-  .nav-pills {
-    float: left;
-    width:60%;
-    .nav-item {
-      height: 40px;
-      border-right: 1px solid #de543e;
-      a{
-        color: #fff;
-        font-size: 14px;
-        line-height: 10px;
-      }
-      &:nth-of-type(1){
-        background: rgba(0,0,0,0.2);
-        font-weight: bold;
-      }
-      a:hover{
-        background: rgba(0,0,0,0.2);
-        font-weight: bold;
-      }
-      .dropdown-menu{
-        margin: 0;
-        padding: 0;
-        a{
-          color: #0A77BD;
-          font-size: 14px;
-          line-height: 32px;
-          img{
-            width:20px;
-            height: 20px;
-            margin-right: 10px;
-          }
-        }
-        a:hover{
-          background: #eee;
-          font-weight:bold;
-        }
 
-      }
-    }
-  }
 }
 
 

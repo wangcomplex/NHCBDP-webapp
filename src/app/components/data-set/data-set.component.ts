@@ -24,11 +24,11 @@ export class DataSetComponent implements OnInit {
 
   selectedType;
 
-  constructor(private router: ActivatedRoute, private router1: Router) {
+  constructor(private router1: ActivatedRoute, private router: Router ) {
   }
 
   ngOnInit() {
-    this.router.params.subscribe(params => {
+    this.router1.params.subscribe(params => {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
     });
@@ -100,8 +100,8 @@ export class DataSetComponent implements OnInit {
     }
   }
 
-  toDataSet() {
-    this.router1.navigateByUrl('/data-cartogram/1');
+  toDateCartogram() {
+    this.router.navigateByUrl('/data-cartogram/1');
   }
 
 

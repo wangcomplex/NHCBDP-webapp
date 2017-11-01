@@ -33,6 +33,7 @@ import {ShowBarComponent} from './components/show-echarts/show-bar/show-bar';
 import {ShowpieComponent} from './components/show-echarts/show-pie/show-pie';
 import {ShowEchartComponent} from './components/show-echarts/show-echart/show-echart';
 import {UserStateComponent} from './_layout/user-state/user-state.component';
+import {NavBarComponent} from './_layout/nav-bar/nav-bar.component';
 
 export const COMPONENT_PROVIDERS = [
     LoginComponent,
@@ -68,6 +69,7 @@ export const COMPONENT_PROVIDERS = [
     ShowpieComponent,
     ShowEchartComponent,
     UserStateComponent,
+    NavBarComponent,
 
 ];
 export const PIPE_PROVIDERS = [
