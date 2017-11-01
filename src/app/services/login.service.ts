@@ -12,10 +12,10 @@ export class LoginService {
     }
 
     login(form: any): Observable<any> {
-        return this.http.get(`/webModule/user/login?userName=${form.username}&password=${Md5.hashStr(form.password)}`);
+        return this.http.get(`/api/webModule/user/login?userName=${form.username}&password=${Md5.hashStr(form.password)}`);
     }
     register(form: any): Observable<any> {
-        return this.http.get(`/webModule/user/register?userName=${form.username}&password=${Md5.hashStr(form.password)}`);
+        return this.http.get(`/api/webModule/user/register?userName=${form.username}&password=${Md5.hashStr(form.password)}`);
         // return this.http.post(`/webModule/user/register`, {username: form.username, password: Md5.hashStr(form.password)});
   }
 }

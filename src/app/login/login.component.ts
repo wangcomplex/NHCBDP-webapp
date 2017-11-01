@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from '../services/login.service';
+import {DataService} from "../services/data.service";
 
 @Component({
     selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     error: string;
     submitting = '登陆';
 
-    constructor(private router: Router, private loginService: LoginService) {
+    constructor(private router: Router, private loginService: LoginService, private dataService: DataService) {
     }
 
     ngOnInit() {
@@ -35,5 +36,7 @@ export class LoginComponent implements OnInit {
               }
                 this.submitting = '登陆';
             });
+
+
     }
 }

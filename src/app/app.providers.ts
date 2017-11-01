@@ -34,49 +34,50 @@ import {ShowpieComponent} from './components/show-echarts/show-pie/show-pie';
 import {ShowEchartComponent} from './components/show-echarts/show-echart/show-echart';
 import {UserStateComponent} from './_layout/user-state/user-state.component';
 import {NavBarComponent} from './_layout/nav-bar/nav-bar.component';
+import {DataService} from './services/data.service';
 
 export const COMPONENT_PROVIDERS = [
-    LoginComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    LayoutHeaderComponent,
-    LayoutFooterComponent,
-    ApplyForComponent,
-    RegisterComponent,
-    AuditingComponent,
-    PlatformNavComponent,
-    HealthRecordComponent,
-    MyDataComponent,
-    MyMachineComponent,
-    MapComponent,
-    MedicalImageComponent,
-    MedicineDetailComponent,
-    SearchResultComponent,
-    MyLaboratoryComponent,
-    EnterpriseComponent,
-    DiscountsGovernmentComponent,
-    DiscountsCompanyComponent,
-    DiscountsPeopleComponent,
-    DataGovernComponent,
-    AboutComponent,
-    DataSetComponent,
-    DataApiComponent,
-    DataCartogramComponent,
-    ShowChartComponent,
-    ShowLineComponent,
-    ShowBarComponent,
-    ShowpieComponent,
-    ShowEchartComponent,
-    UserStateComponent,
-    NavBarComponent,
+  LoginComponent,
+  HomeComponent,
+  HeaderComponent,
+  FooterComponent,
+  LayoutHeaderComponent,
+  LayoutFooterComponent,
+  ApplyForComponent,
+  RegisterComponent,
+  AuditingComponent,
+  PlatformNavComponent,
+  HealthRecordComponent,
+  MyDataComponent,
+  MyMachineComponent,
+  MapComponent,
+  MedicalImageComponent,
+  MedicineDetailComponent,
+  SearchResultComponent,
+  MyLaboratoryComponent,
+  EnterpriseComponent,
+  DiscountsGovernmentComponent,
+  DiscountsCompanyComponent,
+  DiscountsPeopleComponent,
+  DataGovernComponent,
+  AboutComponent,
+  DataSetComponent,
+  DataApiComponent,
+  DataCartogramComponent,
+  ShowChartComponent,
+  ShowLineComponent,
+  ShowBarComponent,
+  ShowpieComponent,
+  ShowEchartComponent,
+  UserStateComponent,
+  NavBarComponent,
+  MapComponent
 
 ];
-export const PIPE_PROVIDERS = [
-
-];
+export const PIPE_PROVIDERS = [];
 
 export const SERVICE_PROVIDERS = [
-    LoginService,
-    ApplyForAuditService
+  LoginService,
+  ApplyForAuditService,
+  DataService
 ];

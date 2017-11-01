@@ -1,6 +1,7 @@
 import {Component, ElementRef,  OnInit,  ViewChild} from '@angular/core';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
+import {DataService} from '../../../services/data.service';
 
 
 @Component({
@@ -14,16 +15,22 @@ export class ShowLineComponent implements OnInit  {
   @ViewChild('canvas')
   canvas: ElementRef;
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    echarts.dispose(this.canvas.nativeElement);
-    const chart = echarts.init(this.canvas.nativeElement);
-    chart.setOption(this.getOption());
+    this.dataService.getMahiData().subscribe(response => {
+
+      echarts.dispose(this.canvas.nativeElement);
+      const chart = echarts.init(this.canvas.nativeElement);
+      chart.setOption(this.getOption(response._body));
+    });
+
+
+
   }
 
-  getOption(): any {
+  getOption(data): any {
     return {
       title : {
         text: '全国医疗卫生机构住院量及增长速度',

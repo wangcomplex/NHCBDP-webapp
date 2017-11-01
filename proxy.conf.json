@@ -1,6 +1,12 @@
 {
-  "/":{
+  "/api":{
     "target": "http://10.1.11.109:80",
-    "secure": false
+    "secure": false,
+    "pathRewrite": {"^/api" : ""}
+  },
+  "/data":{
+    "target": "http://10.1.11.109:9090",
+    "secure": false,
+    "pathRewrite": {"^/data" : ""}
   }
 }
