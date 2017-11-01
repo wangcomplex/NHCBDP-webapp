@@ -24,118 +24,75 @@ export class ShowLineComponent implements OnInit  {
   }
 
   getOption(): any {
-    const category = [];
-    let dottedBase = +new Date();
-    const lineData = [];
-    const barData = [];
-
-    for (let i = 0; i < 20; i++) {
-      const date = new Date(dottedBase += 1000 * 3600 * 24);
-      category.push([
-        date.getFullYear(),
-        date.getMonth() + 1,
-        date.getDate()
-      ].join('-'));
-      const b = Math.random() * 200;
-      const d = Math.random() * 200;
-      barData.push(b);
-      lineData.push(d + b);
-    }
-
     return {
-      backgroundColor: '#0f375f',
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow',
-          label: {
-            show: true,
-            backgroundColor: '#333'
-          }
-        }
+      title : {
+        text: '全国医疗卫生机构住院量及增长速度',
+      },
+      tooltip : {
+        trigger: 'axis'
       },
       legend: {
-        data: ['line', 'bar'],
-        textStyle: {
-          color: '#ccc'
+        x: 'left',
+        y: '5%',
+        data: ['住院量', '增长速度']
+      },
+      toolbox: {
+        show : true,
+        feature : {
+          dataView : {show: true, readOnly: false},
+          magicType : {show: true, type: ['line', 'bar']},
+          restore : {show: true},
+          saveAsImage : {show: true}
         }
       },
-      xAxis: {
-        data: category,
-        axisLine: {
-          lineStyle: {
-            color: '#ccc'
+      calculable : true,
+      xAxis : [
+        {
+          type : 'category',
+          data : ['2012', '2013', '2014', '2015', '2016']
+        }
+      ],
+      yAxis : [
+        {
+          type : 'value'
+        }
+      ],
+      series : [
+        {
+          name: '住院量',
+          type: 'bar',
+          data: [68.9, 73.1, 76.0, 76.9, 79.3],
+          markPoint : {
+            data : [
+              {type : 'max', name: '最大值'},
+              {type : 'min', name: '最小值'}
+            ]
+          },
+          markLine : {
+            data : [
+              {type : 'average', name: '平均值'}
+            ]
+          }
+        },
+        {
+          name: '增长速度',
+          type: 'line',
+          data: [9.9, 6.1, 4.0, 1.2, 3.1],
+          markPoint : {
+            data : [
+              {type : 'max', name: '最大值'},
+              {type : 'min', name: '最小值'}
+            ]
+          },
+          markLine : {
+            data : [
+              {type : 'average', name : '平均值'}
+            ]
           }
         }
-      },
-      yAxis: {
-        splitLine: {show: false},
-        axisLine: {
-          lineStyle: {
-            color: '#ccc'
-          }
-        }
-      },
-      series: [{
-        name: 'line',
-        type: 'line',
-        smooth: true,
-        showAllSymbol: true,
-        symbol: 'emptyCircle',
-        symbolSize: 15,
-        data: lineData
-      }, {
-        name: 'bar',
-        type: 'bar',
-        barWidth: 10,
-        itemStyle: {
-          normal: {
-            barBorderRadius: 5,
-            color: new echarts.graphic.LinearGradient(
-              0, 0, 0, 1,
-              [
-                {offset: 0, color: '#14c8d4'},
-                {offset: 1, color: '#43eec6'}
-              ]
-            )
-          }
-        },
-        data: barData
-      }, {
-        name: 'line',
-        type: 'bar',
-        barGap: '-100%',
-        barWidth: 10,
-        itemStyle: {
-          normal: {
-            color: new echarts.graphic.LinearGradient(
-              0, 0, 0, 1,
-              [
-                {offset: 0, color: 'rgba(20,200,212,0.5)'},
-                {offset: 0.2, color: 'rgba(20,200,212,0.2)'},
-                {offset: 1, color: 'rgba(20,200,212,0)'}
-              ]
-            )
-          }
-        },
-        z: -12,
-        data: lineData
-      }, {
-        name: 'dotted',
-        type: 'pictorialBar',
-        symbol: 'rect',
-        itemStyle: {
-          normal: {
-            color: '#0f375f'
-          }
-        },
-        symbolRepeat: true,
-        symbolSize: [12, 4],
-        symbolMargin: 1,
-        z: -10,
-        data: lineData
-      }]
+      ]
     };
+
   }
 
 

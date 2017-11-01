@@ -24,7 +24,7 @@ export class ShowChartComponent implements OnInit {
   }
  getOption(): any {
    return {
-     backgroundColor: "#404A59",
+     backgroundColor: '#404A59',
      color: ['#ffd285', '#ff733f', '#ec4863'],
 
      title: [{
@@ -62,20 +62,20 @@ export class ShowChartComponent implements OnInit {
        containLabel: true
      },
      toolbox: {
-       "show": false,
+       'show': false,
        feature: {
          saveAsImage: {}
        }
      },
      xAxis: {
        type: 'category',
-       "axisLine": {
+       'axisLine': {
          lineStyle: {
            color: '#FF4500'
          }
        },
-       "axisTick": {
-         "show": false
+       'axisTick': {
+         'show': false
        },
        axisLabel: {
          textStyle: {
@@ -86,7 +86,7 @@ export class ShowChartComponent implements OnInit {
        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
      },
      yAxis: {
-       "axisLine": {
+       'axisLine': {
          lineStyle: {
            color: '#fff'
          }
@@ -97,8 +97,8 @@ export class ShowChartComponent implements OnInit {
            color: '#fff'
          }
        },
-       "axisTick": {
-         "show": false
+       'axisTick': {
+         'show': false
        },
        axisLabel: {
          textStyle: {
@@ -127,7 +127,7 @@ export class ShowChartComponent implements OnInit {
        type: 'line',
        symbolSize: 8,
        symbol: 'circle',
-       data: [290, 200,20, 132, 15, 200, 90]
+       data: [290, 200, 20, 132, 15, 200, 90]
      },
        {
          type: 'pie',

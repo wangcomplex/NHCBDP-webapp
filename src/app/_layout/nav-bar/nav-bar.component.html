@@ -1,36 +1,36 @@
 <ul class="nav navbar-nav nav-pills">
-  <li class="nav-item" [ngStyle]="getStyle(flag01)" (click)="showContent(1)">
-    <a href="/#/home" class="nav-link" routerLinkActive="active">
+  <li class="nav-item">
+    <a href="/#/home"  [ngStyle]="getStyle(flag01)" class="nav-link" routerLinkActive="active">
       首页
     </a>
   </li>
-  <li class="nav-item" [ngStyle]="getStyle(flag02)" (click)="showContent(2)">
-    <a href="/#/data-set/0" class="nav-link" routerLinkActive="active">
+  <li class="nav-item">
+    <a href="/#/data-set/0" [ngStyle]="getStyle(flag02)" class="nav-link" routerLinkActive="active">
       数据集
     </a>
   </li>
-  <li class="nav-item" [ngStyle]="getStyle(flag03)" (click)="showContent(3)">
-    <a href="/#/discounts-government" class="nav-link" routerLinkActive="active">
+  <li class="nav-item">
+    <a href="/#/discounts-government" [ngStyle]="getStyle(flag03)" class="nav-link" routerLinkActive="active">
       机构
     </a>
   </li>
-  <li class="nav-item" [ngStyle]="getStyle(flag04)" (click)="showContent(4)">
-    <a href="/#/discounts-people" class="nav-link" routerLinkActive="active">
+  <li class="nav-item">
+    <a href="/#/discounts-people" [ngStyle]="getStyle(flag04)" class="nav-link" routerLinkActive="active">
       反馈
     </a>
   </li>
-  <li class="nav-item dropdown" [ngStyle]="getStyle(flag05)" (click)="showContent(5)">
-    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+  <li class="nav-item dropdown">
+    <a href="" [ngStyle]="getStyle(flag05)" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
       开发商
       <b class="caret"></b>
     </a>
-    <ul class="dropdown-menu" [ngStyle]="getStyle(flag06)" (click)="showContent(6)">
-      <li><a href="/#/data-api">数据API</a></li>
+    <ul class="dropdown-menu">
+      <li><a href="/#/data-api" [ngStyle]="getStyle(flag06)">数据API</a></li>
     </ul>
   </li>
 
-  <li class="nav-item dropdown" [ngStyle]="getStyle(flag07)" (click)="showContent(7)">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+  <li class="nav-item dropdown">
+    <a href="#" [ngStyle]="getStyle(flag07)" class="nav-link dropdown-toggle" data-toggle="dropdown">
       主题
       <b class="caret"></b>
     </a>
@@ -45,8 +45,8 @@
       <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
     </ul>
   </li>
-  <li class="nav-item" [ngStyle]="getStyle(flag08)" (click)="showContent(8)">
-    <a href="/#/about" class="nav-link" routerLinkActive="active">
+  <li class="nav-item">
+    <a href="/#/about" [ngStyle]="getStyle(flag08)" class="nav-link" routerLinkActive="active">
       关于
     </a>
   </li>

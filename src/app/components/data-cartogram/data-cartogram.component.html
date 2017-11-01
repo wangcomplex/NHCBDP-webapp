@@ -28,16 +28,15 @@
                 <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
                   <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
-                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a><img src="/assets/home/yuebao.png">月报</a>
+                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a>医疗卫生机构总数</a>
                       </li>
-                      <li [ngStyle]="getStyle(flag02)" (click)="showContent(2)"><a><img src="/assets/home/gongbao.png">公报</a>
+                      <li [ngStyle]="getStyle(flag02)" (click)="showContent(2)"><a>卫生总费用</a>
                       </li>
-                      <li [ngStyle]="getStyle(flag03)" (click)="showContent(3)"><a><img src="/assets/home/jibao.png">季报</a>
+                      <li [ngStyle]="getStyle(flag03)" (click)="showContent(3)"><a>全国医疗卫生机构住院量增长速度</a>
                       </li>
-                      <li [ngStyle]="getStyle(flag04)" (click)="showContent(4)"><a><img src="/assets/home/nianbao.png">年报</a>
+                      <li [ngStyle]="getStyle(flag04)" (click)="showContent(4)"><a>各地医疗卫生机构数</a>
                       </li>
-                      <li [ngStyle]="getStyle(flag05)" (click)="showContent(5)"><a><img
-                        src="/assets/home/nianjian.png">统计年鉴</a></li>
+                      <li [ngStyle]="getStyle(flag05)" (click)="showContent(5)"><a>全国丙类传染病发病以及死亡数</a></li>
                     </ul>
                   </div>
                 </div>
@@ -56,19 +55,19 @@
           </div>
 
           <div *ngIf="flag01" class="view-cont">
-            <app-show-pie></app-show-pie>
-          </div>
-
-          <div *ngIf="flag02" class="view-cont">
-            <app-show-line></app-show-line>
-          </div>
-
-          <div *ngIf="flag03" class="view-cont">
             <app-show-bar></app-show-bar>
           </div>
 
+          <div *ngIf="flag02" class="view-cont">
+            <app-show-pie></app-show-pie>
+          </div>
+
+          <div *ngIf="flag03" class="view-cont">
+            <app-show-line></app-show-line>
+          </div>
+
           <div *ngIf="flag04" class="view-cont">
-            <app-show-chart></app-show-chart>
+            <app-map [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map>
           </div>
 
           <div *ngIf="flag05" class="view-cont">

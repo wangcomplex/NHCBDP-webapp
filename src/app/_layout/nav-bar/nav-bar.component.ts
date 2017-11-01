@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class NavBarComponent implements OnInit {
 
 
-  flag01 = true;
+  flag01 = false;
   flag02 = false;
   flag03 = false;
   flag04 = false;
@@ -17,19 +17,17 @@ export class NavBarComponent implements OnInit {
   flag06 = false;
   flag07 = false;
   flag08 = false;
-  selectedType;
+
+  @Input()
+  type;
 
   constructor(private router: Router, private router1: ActivatedRoute) { }
 
   ngOnInit() {
-    this.router1.params.subscribe(params => {
-      this.selectedType = params['type'];
-      this.showContent(parseInt(this.selectedType));
-    });
+    this.initFlag(this.type);
   }
 
-  showContent(type) {
-    this.initFlag();
+  initFlag(type) {
     switch (type) {
       case 1: {
         this.flag01 = true;
@@ -65,17 +63,6 @@ export class NavBarComponent implements OnInit {
       }
 
     }
-  }
-
-  initFlag() {
-    this.flag01 = false;
-    this.flag02 = false;
-    this.flag03 = false;
-    this.flag04 = false;
-    this.flag05 = false;
-    this.flag06 = false;
-    this.flag07 = false;
-    this.flag08 = false;
   }
 
   getStyle(flag) {

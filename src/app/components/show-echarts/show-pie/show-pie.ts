@@ -23,64 +23,75 @@ export class ShowpieComponent implements OnInit  {
     chart.setOption(this.getOption());
   }
   getOption(): any {
-    const data = [];
-    const labelData = [];
-    for (let i = 0; i < 24; ++i) {
-      data.push({
-        value: Math.random() * 10 + 10 - Math.abs(i - 12),
-        name: i + ':00'
-      });
-      labelData.push({
-        value: 1,
-        name: i + ':00'
-      });
-    }
-
     return {
+      backgroundColor: '#2c343c',
+
       title: {
-        text: '基础能量消耗',
-        left: '50%',
-        textAlign: 'center',
-        top: '20%'
+        text: '卫生总费用',
+        left: 'center',
+        top: 20,
+        textStyle: {
+          color: '#ccc'
+        }
       },
-      color: ['#22C3AA'],
-      series: [{
-        type: 'pie',
-        data: data,
-        roseType: 'area',
-        itemStyle: {
-          normal: {
-            color: 'white',
-            borderColor: '#22C3AA'
-          }
-        },
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        label: {
-          normal: {
-            show: false
+
+      tooltip : {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+      },
+
+      visualMap: {
+        show: false,
+        min: 80,
+        max: 600,
+        inRange: {
+          colorLightness: [0, 1]
+        }
+      },
+      series : [
+        {
+          name: '访问来源',
+          type: 'pie',
+          radius : '55%',
+          center: ['50%', '50%'],
+          data: [
+            {value: 12475.3, name: '政府卫生支出'},
+            {value: 16506.7, name: '社会卫生支出'},
+            {value: 11992.7, name: '个人卫生现金支出'},
+          ].sort(function (a, b) { return a.value - b.value; }),
+          roseType: 'radius',
+          label: {
+            normal: {
+              textStyle: {
+                color: 'rgba(255, 255, 255, 0.3)'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              lineStyle: {
+                color: 'rgba(255, 255, 255, 0.3)'
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
+            }
+          },
+          itemStyle: {
+            normal: {
+              color: '#c23531',
+              shadowBlur: 200,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          },
+
+          animationType: 'scale',
+          animationEasing: 'elasticOut',
+          animationDelay: function (idx) {
+            return Math.random() * 200;
           }
         }
-      }, {
-        type: 'pie',
-        data: labelData,
-        radius: ['75%', '100%'],
-        zlevel: -2,
-        itemStyle: {
-          normal: {
-            color: '#22C3AA',
-            borderColor: 'white'
-          }
-        },
-        label: {
-          normal: {
-            position: 'inside'
-          }
-        }
-      }]
+      ]
     };
   }
 

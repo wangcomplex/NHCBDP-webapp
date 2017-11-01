@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
+import {Cities, Provinces} from '../map/province-city';
 
 @Component({
   selector: 'app-data-cartogram',
@@ -7,6 +8,11 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./data-cartogram.component.scss']
 })
 export class DataCartogramComponent implements OnInit {
+  provinces = Provinces;
+  cities = Cities;
+  mapType = '';
+  parent = '';
+  data = [];
 
   flag01 = true;
   flag02 = false;
@@ -23,6 +29,14 @@ export class DataCartogramComponent implements OnInit {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
     });
+    this.mapType = 'china';
+    this.data = this.provinces;
+  }
+
+  reset(event) {
+    this.data = event.mapType !== 'china' ? this.cities : this.provinces;
+    this.mapType = event.mapType;
+    this.parent = (event.parent == null) ? 'china' : event.parent;
   }
 
   showContent(type) {

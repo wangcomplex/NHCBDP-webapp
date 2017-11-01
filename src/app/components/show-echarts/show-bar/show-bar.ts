@@ -24,90 +24,92 @@ export class ShowBarComponent implements OnInit  {
   }
 
   getOption(): any {
-    const dataAxis = ['点', '击', '柱', '子', '或', '者', '两', '指', '在', '触', '屏', '上', '滑', '动', '能', '够', '自', '动', '缩', '放'];
-    const data = [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149, 210, 122, 133, 334, 198, 123, 125, 220];
-    const yMax = 500;
-    const dataShadow = [];
-
-    for (let i = 0; i < data.length; i++) {
-      dataShadow.push(yMax);
-    }
 
     return {
-      title: {
-        text: '特性示例：渐变色 阴影 点击缩放',
-        subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
-      },
-      xAxis: {
-        data: dataAxis,
-        axisLabel: {
-          inside: true,
-          textStyle: {
-            color: '#fff'
-          }
-        },
-        axisTick: {
-          show: false
-        },
-        axisLine: {
-          show: false
-        },
-        z: 10
-      },
-      yAxis: {
-        axisLine: {
-          show: false
-        },
-        axisTick: {
-          show: false
-        },
-        axisLabel: {
-          textStyle: {
-            color: '#999'
-          }
+      tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+          type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         }
       },
-      dataZoom: [
+      legend: {
+        right: '20%',
+        data: ['公立医院', '民营医院', '社区卫生服务中心站', '乡镇卫生院', '村卫生室', '诊所（医务室）', '疾病预防控制中心', '专科疾病防治机构', '妇幼保健机构', '卫生计生监督机构']
+      },
+      toolbox: {
+        show : true,
+        feature : {
+          dataView : {show: true, readOnly: false},
+          magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+          restore : {show: true},
+          saveAsImage : {show: true}
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis : [
         {
-          type: 'inside'
+          type : 'category',
+          data : ['2015', '2016']
         }
       ],
-      series: [
-        { // For shadow
+      yAxis : [
+        {
+          type : 'value'
+        }
+      ],
+      series : [
+        {
+          name: '公立医院',
           type: 'bar',
-          itemStyle: {
-            normal: {color: 'rgba(0,0,0,0.05)'}
-          },
-          barGap: '-100%',
-          barCategoryGap: '40%',
-          data: dataShadow,
-          animation: false
+          stack: '医院',
+          data: [13069, 12708]
         },
         {
+          name: '民营医院',
           type: 'bar',
-          itemStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(
-                0, 0, 0, 1,
-                [
-                  {offset: 0, color: '#83bff6'},
-                  {offset: 0.5, color: '#188df0'},
-                  {offset: 1, color: '#188df0'}
-                ]
-              )
-            },
-            emphasis: {
-              color: new echarts.graphic.LinearGradient(
-                0, 0, 0, 1,
-                [
-                  {offset: 0, color: '#2378f7'},
-                  {offset: 0.7, color: '#2378f7'},
-                  {offset: 1, color: '#83bff6'}
-                ]
-              )
-            }
-          },
-          data: data
+          stack: '医院',
+          data: [14518, 16432]
+        },
+        {
+          name: '社区卫生服务中心站',
+          type: 'bar',
+          stack: '基层医疗卫生机构',
+          data: [34321, 32327]
+        },
+        {
+          name: '乡镇卫生院',
+          type: 'bar',
+          stack: '基层医疗卫生机构',
+          data: [36817, 36795]
+        },
+        {
+          name: '疾病预防控制中心',
+          type: 'bar',
+          stack: '专业公共卫生机构',
+          data: [3478, 3481]
+        },
+        {
+          name: '专科疾病防治机构',
+          type: 'bar',
+          stack: '专业公共卫生机构',
+          data: [1234, 1213]
+        },
+        {
+          name: '妇幼保健机构',
+          type: 'bar',
+          stack: '专业公共卫生机构',
+          data: [3078, 3063]
+        },
+        {
+          name: '卫生计生监督机构',
+          type: 'bar',
+          stack: '专业公共卫生机构',
+          data: [2986, 2986]
         }
       ]
     };
