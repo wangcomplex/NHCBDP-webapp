@@ -1,41 +1,32 @@
-.header{
-  margin: 0;
-  padding: 0;
-  height:136px;
-  position: relative;
 
-}
-
-@media (max-width: 1440px){
   .header{
     margin: 0;
     padding: 0;
-    height:136px;
+    height:134px;
     position: relative;
-    background:url('/assets/images/Group.png') no-repeat center;
+    z-index: 1000;
+    background: url("/assets/images/login-top-repeat.jpg") repeat-x;
     background-size:100% 100%;
   }
-}
-@media screen and (min-width: 1441px) and (max-width: 2560px){
+
   .header-left{
-    float: left;
-    width:29%;
-    height:136px;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 10000;
+    width:710px;
+    height:134px;
     background: url("/assets/images/login-top-left.jpg") no-repeat left;
     background-size:100% 100%;
   }
-  .header-center{
-    float: left;
-    width:50%;
-    height:136px;
-    background: url("/assets/images/login-top-repeat.jpg") repeat-x;
-    background-size: 100% 100%;
-  }
+
   .header-right{
-    float: right;
-    width:21%;
-    height: 136px;
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 9999;
+    width:560px;
+    height: 134px;
     background: url("/assets/images/login-top-right.jpg") no-repeat right;
     background-size:100% 100%;
   }
-}
