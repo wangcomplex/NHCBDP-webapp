@@ -35,6 +35,7 @@ import {ShowEchartComponent} from './components/show-echarts/show-echart/show-ec
 import {UserStateComponent} from './_layout/user-state/user-state.component';
 import {NavBarComponent} from './_layout/nav-bar/nav-bar.component';
 import {DataService} from './services/data.service';
+import {MapEchartComponent} from './components/show-echarts/map-echart/map-echart.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -71,7 +72,8 @@ export const COMPONENT_PROVIDERS = [
   ShowEchartComponent,
   UserStateComponent,
   NavBarComponent,
-  MapComponent
+  MapComponent,
+  MapEchartComponent
 
 ];
 export const PIPE_PROVIDERS = [];

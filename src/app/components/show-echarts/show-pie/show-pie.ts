@@ -1,6 +1,7 @@
 import {Component, ElementRef,  OnInit,  ViewChild} from '@angular/core';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
+import {DataService} from '../../../services/data.service';
 
 
 @Component({
@@ -14,15 +15,19 @@ export class ShowpieComponent implements OnInit  {
   @ViewChild('canvas')
   canvas: ElementRef;
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    echarts.dispose(this.canvas.nativeElement);
-    const chart = echarts.init(this.canvas.nativeElement);
-    chart.setOption(this.getOption());
+    this.dataService.getMedcostData().subscribe(response => {
+      const data = JSON.parse(response._body);
+      const dataName = data.map(item => item.name);
+      echarts.dispose(this.canvas.nativeElement);
+      const chart = echarts.init(this.canvas.nativeElement);
+      chart.setOption(this.getOption(data, dataName));
+    });
   }
-  getOption(): any {
+  getOption(data, dataName): any {
     return {
       backgroundColor: '#2c343c',
 
@@ -34,12 +39,18 @@ export class ShowpieComponent implements OnInit  {
           color: '#ccc'
         }
       },
-
       tooltip : {
         trigger: 'item',
         formatter: '{a} <br/>{b} : {c} ({d}%)'
       },
-
+      legend: {
+        left: '5%',
+        bottom: 25,
+        textStyle: {
+          color: '#ccc'
+        },
+        data: dataName
+      },
       visualMap: {
         show: false,
         min: 80,
@@ -54,11 +65,7 @@ export class ShowpieComponent implements OnInit  {
           type: 'pie',
           radius : '55%',
           center: ['50%', '50%'],
-          data: [
-            {value: 12475.3, name: '政府卫生支出'},
-            {value: 16506.7, name: '社会卫生支出'},
-            {value: 11992.7, name: '个人卫生现金支出'},
-          ].sort(function (a, b) { return a.value - b.value; }),
+          data: data.sort(function (a, b) { return a.value - b.value; }),
           roseType: 'radius',
           label: {
             normal: {

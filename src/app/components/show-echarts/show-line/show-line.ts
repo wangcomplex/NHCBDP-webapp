@@ -19,18 +19,19 @@ export class ShowLineComponent implements OnInit  {
   }
 
   ngOnInit() {
-    this.dataService.getMahiData().subscribe(response => {
-
+    this.dataService.getZyspeedData().subscribe(response => {
+      const data = JSON.parse(response._body);
+      const dataName = data.map(item => item.name);
       echarts.dispose(this.canvas.nativeElement);
       const chart = echarts.init(this.canvas.nativeElement);
-      chart.setOption(this.getOption(response._body));
+      chart.setOption(this.getOption(data, dataName));
     });
 
 
 
   }
 
-  getOption(data): any {
+  getOption(data, dataName): any {
     return {
       title : {
         text: '全国医疗卫生机构住院量及增长速度',
@@ -41,7 +42,7 @@ export class ShowLineComponent implements OnInit  {
       legend: {
         x: 'left',
         y: '5%',
-        data: ['住院量', '增长速度']
+        data: dataName
       },
       toolbox: {
         show : true,
@@ -64,40 +65,7 @@ export class ShowLineComponent implements OnInit  {
           type : 'value'
         }
       ],
-      series : [
-        {
-          name: '住院量',
-          type: 'bar',
-          data: [68.9, 73.1, 76.0, 76.9, 79.3],
-          markPoint : {
-            data : [
-              {type : 'max', name: '最大值'},
-              {type : 'min', name: '最小值'}
-            ]
-          },
-          markLine : {
-            data : [
-              {type : 'average', name: '平均值'}
-            ]
-          }
-        },
-        {
-          name: '增长速度',
-          type: 'line',
-          data: [9.9, 6.1, 4.0, 1.2, 3.1],
-          markPoint : {
-            data : [
-              {type : 'max', name: '最大值'},
-              {type : 'min', name: '最小值'}
-            ]
-          },
-          markLine : {
-            data : [
-              {type : 'average', name : '平均值'}
-            ]
-          }
-        }
-      ]
+      series : data
     };
 
   }

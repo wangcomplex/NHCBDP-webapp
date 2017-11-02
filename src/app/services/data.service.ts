@@ -14,4 +14,19 @@ export class DataService {
     return this.http.get('/data/api/bar/mahi');
   }
 
+  getMedcostData(): Observable<any> {
+    return this.http.get('/data/api/pie/medcost');
+  }
+
+  getZyspeedData(): Observable<any> {
+    return this.http.get('/data/api/bar/zyspeed');
+  }
+
+  getMedregionData(): Observable<any> {
+    return this.http.get('/data/api/map/medregion');
+  }
+
+  getInfectionData(): Observable<any> {
+    return this.http.get('/data/api/radar/infectionC');
+  }
 }

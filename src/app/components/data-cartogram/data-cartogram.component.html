@@ -19,11 +19,11 @@
           <div style="width: 100%;">
             <div class="panel-group" id="accordion2">
               <div class="panel-heading">
-                <strong style="font-size: 24px; color: #666">区域统计图</strong>
+                <strong style="font-size: 24px; color: #666">区域监控图</strong>
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  <a class="accordion-toggle">统计图展示</a>
+                  <a class="accordion-toggle">监控图展示</a>
                 </div>
                 <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
                   <div class="panel-body">
@@ -67,7 +67,7 @@
           </div>
 
           <div *ngIf="flag04" class="view-cont">
-            <app-map [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map>
+            <app-map-echart [data]="data" [mapType]="mapType" [parent]="parent" (emitValue)="reset($event)"></app-map-echart>
           </div>
 
           <div *ngIf="flag05" class="view-cont">

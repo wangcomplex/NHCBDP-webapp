@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
+import {DataService} from "../../../services/data.service";
 
 
 @Component({
@@ -14,15 +15,19 @@ export class ShowEchartComponent implements OnInit {
   @ViewChild('canvas')
   canvas: ElementRef;
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    echarts.dispose(this.canvas.nativeElement);
-    const chart = echarts.init(this.canvas.nativeElement);
-    chart.setOption(this.getOption());
+    this.dataService.getInfectionData().subscribe(response => {
+      const data = JSON.parse(response._body);
+      const dataName = data.map(item => item.name);
+      echarts.dispose(this.canvas.nativeElement);
+      const chart = echarts.init(this.canvas.nativeElement);
+      chart.setOption(this.getOption(data, dataName));
+    });
   }
- getOption(): any {
+ getOption(data, dataName): any {
    return {
      backgroundColor: '#2c343c',
      title: {
@@ -38,7 +43,11 @@ export class ShowEchartComponent implements OnInit {
      },
      legend: {
        x: 'center',
-       data: ['流行性感冒', '流行性腮腺炎', '急性出血性结膜炎', '感染性腹泻病', '手足口病']
+       top: '8%',
+       textStyle: {
+         color: '#fff'
+       },
+       data: dataName
      },
      radar: [
        {
@@ -57,16 +66,7 @@ export class ShowEchartComponent implements OnInit {
        {
          type: 'radar',
          radarIndex: 0,
-         data: [
-           {
-             value: [195723, 182833, 34576, 937616, 1997371],
-             name: '2015'
-           },
-           {
-             value: [306682, 175001, 34253, 1018605, 2442138],
-             name: '2016'
-           }
-         ]
+         data: data
        }
      ]
    };
