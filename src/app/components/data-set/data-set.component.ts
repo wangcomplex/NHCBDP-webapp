@@ -103,6 +103,8 @@ export class DataSetComponent implements OnInit {
   toDateCartogram() {
     this.router.navigateByUrl('/data-cartogram/1');
   }
-
+  toDateMedicine() {
+    this.router.navigateByUrl('/data-medicine/1');
+  }
 
 }

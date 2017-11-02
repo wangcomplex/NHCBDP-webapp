@@ -29,4 +29,12 @@ export class DataService {
   getInfectionData(): Observable<any> {
     return this.http.get('/data/api/radar/infectionC');
   }
+
+  getMedTypeData(): Observable<any> {
+    return this.http.get('/data/api/bar/med/type1');
+  }
+
+  getMedType2Data(): Observable<any> {
+    return this.http.get('/data/api/bar/med/type2');
+  }
 }

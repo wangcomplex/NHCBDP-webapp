@@ -21,6 +21,8 @@ import {AboutComponent} from './components/about/about.component';
 import {DataSetComponent} from './components/data-set/data-set.component';
 import {DataApiComponent} from './components/data-api/data-api.component';
 import {DataCartogramComponent} from './components/data-cartogram/data-cartogram.component';
+import {DataMedicineComponent} from './components/data-medicine/data-medicine.component';
+import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
 
 export const ROUTES: Routes = [
   {
@@ -115,5 +117,13 @@ export const ROUTES: Routes = [
   {
     path: 'data-cartogram/:type',
     component: DataCartogramComponent,
+  },
+  {
+    path: 'data-medicine/:type',
+    component: DataMedicineComponent,
+  },
+  {
+    path: 'show-bar-line',
+    component: ShowBarLineComponent
   },
 ];

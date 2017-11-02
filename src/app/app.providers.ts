@@ -36,6 +36,8 @@ import {UserStateComponent} from './_layout/user-state/user-state.component';
 import {NavBarComponent} from './_layout/nav-bar/nav-bar.component';
 import {DataService} from './services/data.service';
 import {MapEchartComponent} from './components/show-echarts/map-echart/map-echart.component';
+import {DataMedicineComponent} from './components/data-medicine/data-medicine.component';
+import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -73,7 +75,9 @@ export const COMPONENT_PROVIDERS = [
   UserStateComponent,
   NavBarComponent,
   MapComponent,
-  MapEchartComponent
+  MapEchartComponent,
+  DataMedicineComponent,
+  ShowBarLineComponent
 
 ];
 export const PIPE_PROVIDERS = [];

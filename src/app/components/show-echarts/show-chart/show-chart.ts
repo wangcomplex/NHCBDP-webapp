@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
+import {DataService} from '../../../services/data.service';
 
 
 @Component({
@@ -14,222 +15,56 @@ export class ShowChartComponent implements OnInit {
   @ViewChild('canvas')
   canvas: ElementRef;
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    echarts.dispose(this.canvas.nativeElement);
-    const chart = echarts.init(this.canvas.nativeElement);
-    chart.setOption(this.getOption());
+    this.dataService.getMedTypeData().subscribe(response => {
+      const data = JSON.parse(response._body);
+      const dataName = data.map(item => item.name);
+      echarts.dispose(this.canvas.nativeElement);
+      const chart = echarts.init(this.canvas.nativeElement);
+      chart.setOption(this.getOption(data, dataName));
+    });
   }
- getOption(): any {
+ getOption(data, dataName): any {
    return {
-     backgroundColor: '#404A59',
-     color: ['#ffd285', '#ff733f', '#ec4863'],
-
-     title: [{
-       text: '城市宝周新增用户报表',
-       left: '1%',
-       top: '6%',
-       textStyle: {
-         color: '#fff'
-       }
-     }, {
-       text: '用户来源占比',
-       left: '83%',
-       top: '6%',
-       textAlign: 'center',
-       textStyle: {
-         color: '#fff'
-       }
-     }],
-     tooltip: {
+     title : {
+       text: '统计人数及平均年龄'
+     },
+     tooltip : {
        trigger: 'axis'
      },
      legend: {
-       x: 300,
-       top: '7%',
-       textStyle: {
-         color: '#ffd285',
-       },
-       data: ['在大理', '标准版', '潍V']
-     },
-     grid: {
-       left: '1%',
-       right: '35%',
-       top: '16%',
-       bottom: '6%',
-       containLabel: true
+       x: 'left',
+       y: '5%',
+       data: dataName
      },
      toolbox: {
-       'show': false,
-       feature: {
-         saveAsImage: {}
+       show : true,
+       feature : {
+         dataView : {show: true, readOnly: false},
+         magicType : {show: true, type: ['line', 'bar']},
+         restore : {show: true},
+         saveAsImage : {show: true}
        }
      },
-     xAxis: {
-       type: 'category',
-       'axisLine': {
-         lineStyle: {
-           color: '#FF4500'
-         }
-       },
-       'axisTick': {
-         'show': false
-       },
-       axisLabel: {
-         textStyle: {
-           color: '#fff'
-         }
-       },
-       boundaryGap: false,
-       data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-     },
-     yAxis: {
-       'axisLine': {
-         lineStyle: {
-           color: '#fff'
-         }
-       },
-       splitLine: {
-         show: true,
-         lineStyle: {
-           color: '#fff'
-         }
-       },
-       'axisTick': {
-         'show': false
-       },
-       axisLabel: {
-         textStyle: {
-           color: '#fff'
-         }
-       },
-       type: 'value'
-     },
-     series: [{
-       name: '在大理',
-       smooth: true,
-       type: 'line',
-       symbolSize: 8,
-       symbol: 'circle',
-       data: [90, 50, 39, 50, 120, 82, 80]
-     }, {
-       name: '标准版',
-       smooth: true,
-       type: 'line',
-       symbolSize: 8,
-       symbol: 'circle',
-       data: [70, 50, 50, 87, 90, 80, 70]
-     }, {
-       name: '潍V',
-       smooth: true,
-       type: 'line',
-       symbolSize: 8,
-       symbol: 'circle',
-       data: [290, 200, 20, 132, 15, 200, 90]
-     },
+     calculable : true,
+     xAxis : [
        {
-         type: 'pie',
-         center: ['83%', '33%'],
-         radius: ['25%', '30%'],
-         label: {
-           normal: {
-             position: 'center'
-           }
-         },
-         data: [{
-           value: 335,
-           name: '用户来源分析',
-           itemStyle: {
-             normal: {
-               color: '#ffd285'
-             }
-           },
-           label: {
-             normal: {
-               formatter: '{d} %',
-               textStyle: {
-                 color: '#ffd285',
-                 fontSize: 20
-
-               }
-             }
-           }
-         }, {
-           value: 180,
-           name: '占位',
-           tooltip: {
-             show: false
-           },
-           itemStyle: {
-             normal: {
-               color: '#87CEFA'
-             }
-           },
-           label: {
-             normal: {
-               textStyle: {
-                 color: '#ffd285',
-               },
-               formatter: '\n手机号注册'
-             }
-           }
-         }]
-       },
-
-
+         type : 'category',
+         data : ['赖诺普利', '福辛普利', '培哚普利', '依那普利', '贝那普利', '喹那普利', '雷米普利', '卡托普利']
+       }
+     ],
+     yAxis : [
        {
-         type: 'pie',
-         center: ['83%', '72%'],
-         radius: ['25%', '30%'],
-         label: {
-           normal: {
-             position: 'center'
-           }
-         },
-         data: [{
-           value: 435,
-           name: '用户来源分析',
-           itemStyle: {
-             normal: {
-               color: '#ff733f'
-             }
-           },
-           label: {
-             normal: {
-               formatter: '{d} %',
-               textStyle: {
-                 color: '#ff733f',
-                 fontSize: 20
-
-               }
-             }
-           }
-         }, {
-           value: 100,
-           name: '占位',
-           tooltip: {
-             show: false
-           },
-           itemStyle: {
-             normal: {
-               color: '#87CEFA'
-
-
-             }
-           },
-           label: {
-             normal: {
-               textStyle: {
-                 color: '#FF4500',
-               },
-               formatter: '\n三方快捷登陆'
-             }
-           }
-         }]
-       }]
+         type : 'value'
+       }
+     ],
+     series : data
    };
+
+
  }
 }
 

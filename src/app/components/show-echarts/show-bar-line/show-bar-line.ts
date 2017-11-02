@@ -5,12 +5,12 @@ import {DataService} from '../../../services/data.service';
 
 
 @Component({
-    selector: 'app-show-bar',
-    templateUrl: './show-bar.html',
-    styleUrls: ['./show-bar.scss']
+    selector: 'app-show-bar-line',
+    templateUrl: './show-bar-line.html',
+    styleUrls: ['./show-bar-line.scss']
 })
 
-export class ShowBarComponent implements OnInit  {
+export class ShowBarLineComponent implements OnInit  {
 
   @ViewChild('canvas')
   canvas: ElementRef;
@@ -20,7 +20,7 @@ export class ShowBarComponent implements OnInit  {
   }
 
   ngOnInit() {
-    this.dataService.getMahiData().subscribe(response => {
+    this.dataService.getMedType2Data().subscribe(response => {
       const data = JSON.parse(response._body);
       const dataName = data.map(item => item.name);
       echarts.dispose(this.canvas.nativeElement);
@@ -31,35 +31,31 @@ export class ShowBarComponent implements OnInit  {
 
   getOption(data, dataName): any {
     return {
+      title : {
+        text: '统计人数及平均年龄'
+      },
       tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-          type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
+        trigger: 'axis'
       },
       legend: {
-        right: '20%',
+        x: 'left',
+        y: '5%',
         data: dataName
       },
       toolbox: {
         show : true,
         feature : {
           dataView : {show: true, readOnly: false},
-          magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+          magicType : {show: true, type: ['line', 'bar']},
           restore : {show: true},
           saveAsImage : {show: true}
         }
       },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
+      calculable : true,
       xAxis : [
         {
           type : 'category',
-          data : ['2015', '2016']
+          data : ['赖诺普利', '福辛普利', '培哚普利', '依那普利', '贝那普利', '喹那普利', '雷米普利', '卡托普利']
         }
       ],
       yAxis : [
@@ -69,6 +65,7 @@ export class ShowBarComponent implements OnInit  {
       ],
       series : data
     };
+
   }
 
 

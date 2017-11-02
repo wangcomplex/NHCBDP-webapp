@@ -1,0 +1,73 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar></app-nav-bar>
+
+      <app-user-state></app-user-state>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div style="width: 100%;">
+            <div class="panel-group" id="accordion2">
+              <div class="panel-heading">
+                <strong style="font-size: 24px; color: #666">药物竞品调研</strong>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  <a class="accordion-toggle">调研展示</a>
+                </div>
+                <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a>统计人数及平均年龄</a>
+                      </li>
+                      <li [ngStyle]="getStyle(flag02)" (click)="showContent(2)"><a>药物各指标占比</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <div class="find-want">
+            <p>看不到你要找的东西？</p>
+            <p>
+              <button class="btn btn-primary">添加反馈</button>
+            </p>
+          </div>
+
+          <div *ngIf="flag01" class="view-cont">
+            <app-show-chart></app-show-chart>
+          </div>
+
+          <div *ngIf="flag02" class="view-cont">
+            <app-show-bar-line></app-show-bar-line>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>
