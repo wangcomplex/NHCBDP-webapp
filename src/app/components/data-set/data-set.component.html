@@ -61,6 +61,23 @@
                 </div>
               </div>
               <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+                  <a class="accordion-toggle">数据标准化</a>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag09)" (click)="showContent(9)"><a>数据标准管理（<b>25</b>）</a></li>
+                      <li [ngStyle]="getStyle(flag10)" (click)="showContent(10)"><a>资源目录管理（<b>18</b>）</a></li>
+                      <!--<li><a>数据质量管理（<b>7</b>）</a></li>-->
+                      <!--<li><a>数据价值评估（<b>11</b>）</a></li>-->
+                      <!--<li><a>数据资源监控（<b>1</b>）</a></li>-->
+                      <!--<li><a>数据服务监控（<b>1</b>）</a></li>-->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
                 <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                   <a class="accordion-toggle">标签</a>
                 </div>
@@ -203,21 +220,9 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>每周网页浏览量来自CDC.gov的热门联合页面</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
-                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>HSA 90天紧急避难候诊</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
-                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <h3>医疗保健提供者凭证数据</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 华盛顿州</i></p>
+                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
                   </p>
                 </dd>
@@ -239,9 +244,9 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>医疗保健提供者凭证数据</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 华盛顿州</i></p>
-                  <p class="lianmeng">华盛顿州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
+                  <h3>HSA 90天紧急避难候诊</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
                   </p>
                 </dd>
@@ -1400,6 +1405,143 @@
             </div>
           </div>
 
+          <div *ngIf="flag09" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>代码管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据元管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据集管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>应用系统</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <div *ngIf="flag10" class="view-cont">
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据注册</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据审核</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据分类</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>医疗服务类</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>医疗运营类</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据资源管理</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+            <div class="view-list">
+              <dl>
+                <dt><img src="/assets/home/caiji.png" alt=""></dt>
+                <dd>
+                  <h3>数据资源浏览</h3>
+                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
+                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
+                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
+                  </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
         </div>
 
 

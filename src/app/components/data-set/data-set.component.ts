@@ -19,8 +19,10 @@ export class DataSetComponent implements OnInit {
   flag06 = false;
   flag07 = false;
   flag08 = false;
+  flag09 = false;
+  flag10 = false;
 
-  resultCount = [3558, 255, 182, 171, 161, 110, 80, 59, 200];
+  resultCount = [3558, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18];
 
   selectedType;
 
@@ -74,6 +76,14 @@ export class DataSetComponent implements OnInit {
         this.flag08 = true;
         break;
       }
+      case 9: {
+        this.flag09 = true;
+        break;
+      }
+      case 10: {
+        this.flag10 = true;
+        break;
+      }
 
     }
 
@@ -90,6 +100,8 @@ export class DataSetComponent implements OnInit {
     this.flag06 = false;
     this.flag07 = false;
     this.flag08 = false;
+    this.flag09 = false;
+    this.flag10 = false;
   }
 
   getStyle(flag) {
