@@ -38,6 +38,8 @@ import {DataService} from './services/data.service';
 import {MapEchartComponent} from './components/show-echarts/map-echart/map-echart.component';
 import {DataMedicineComponent} from './components/data-medicine/data-medicine.component';
 import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
+import {CodeManagementComponent} from './components/code-management/code-management.component';
+import {MedicalServiceComponent} from './components/medical-service/medical-service.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -77,7 +79,9 @@ export const COMPONENT_PROVIDERS = [
   MapComponent,
   MapEchartComponent,
   DataMedicineComponent,
-  ShowBarLineComponent
+  ShowBarLineComponent,
+  CodeManagementComponent,
+  MedicalServiceComponent,
 
 ];
 export const PIPE_PROVIDERS = [];

@@ -23,6 +23,8 @@ import {DataApiComponent} from './components/data-api/data-api.component';
 import {DataCartogramComponent} from './components/data-cartogram/data-cartogram.component';
 import {DataMedicineComponent} from './components/data-medicine/data-medicine.component';
 import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
+import {CodeManagementComponent} from './components/code-management/code-management.component';
+import {MedicalServiceComponent} from "./components/medical-service/medical-service.component";
 
 export const ROUTES: Routes = [
   {
@@ -125,5 +127,13 @@ export const ROUTES: Routes = [
   {
     path: 'show-bar-line',
     component: ShowBarLineComponent
+  },
+  {
+    path: 'code-management/:type',
+    component: CodeManagementComponent,
+  },
+  {
+    path: 'medical-service/:type',
+    component: MedicalServiceComponent,
   },
 ];

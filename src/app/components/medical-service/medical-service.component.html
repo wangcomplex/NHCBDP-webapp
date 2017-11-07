@@ -1,0 +1,220 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar></app-nav-bar>
+
+      <app-user-state></app-user-state>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div style="width: 100%;">
+            <div class="panel-group" id="accordion2">
+              <div class="panel-heading">
+                <strong style="font-size: 24px; color: #666">数据分类</strong>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  <a class="accordion-toggle">医疗服务类</a>
+                </div>
+                <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a>医疗服务类</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <div class="find-want">
+            <p>看不到你要找的东西？</p>
+            <p>
+              <button class="btn btn-primary">添加反馈</button>
+            </p>
+          </div>
+
+          <div *ngIf="flag01" class="view-cont">
+            <div class="table-scroll">
+              <div class="grid-table">
+                <table class="table-data">
+                  <thead class="table-nav">
+                  <tr class="table-header">
+                    <th>一级类目</th>
+                    <th>二级类目及业务活动</th>
+                    <th>三级类目及业务活动</th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-nav">
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>01病人标识</td>
+                    <td>01身份登记</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>02病人服务</td>
+                    <td>01预约</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>03入出转</td>
+                    <td>03入院</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>03入出转</td>
+                    <td>03出院</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>03入出转</td>
+                    <td>03转诊</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>04医嘱</td>
+                    <td>01医嘱开立</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>04医嘱</td>
+                    <td>02医嘱处理</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>05病历文书</td>
+                    <td>01门急诊病历</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>05病历文书</td>
+                    <td>02留观病历</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>05病历文书</td>
+                    <td>02住院病历</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>06护理</td>
+                    <td>01护理</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>07检验</td>
+                    <td>01实验室检验</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>08检查</td>
+                    <td>01医学影像检查</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>08检查</td>
+                    <td>02病理检查</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>08检查</td>
+                    <td>03电生理检查</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>08检查</td>
+                    <td>04其他医技检查诊断</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>09手术麻醉</td>
+                    <td>01手术</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>09手术麻醉</td>
+                    <td>02麻醉</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>01理疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>02透析治疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>03放疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>04介入治疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>05植入治疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>10治疗</td>
+                    <td>06膳食治疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>11输血</td>
+                    <td>01输血治疗</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>12费用结算</td>
+                    <td>01门急诊费用结算</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>11费用结算</td>
+                    <td>02住院费用结算</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>医疗服务</td>
+                    <td>11费用结算</td>
+                    <td>03体检费用结算</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

@@ -1,0 +1,235 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar></app-nav-bar>
+
+      <app-user-state></app-user-state>
+    </div>
+  </div>
+
+  <div class="data-content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div style="width: 100%;">
+            <div class="panel-group" id="accordion2">
+              <div class="panel-heading">
+                <strong style="font-size: 24px; color: #666">数据标准管理</strong>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  <a class="accordion-toggle">代码管理</a>
+                </div>
+                <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)"><a>数据元</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-9">
+          <div class="find-want">
+            <p>看不到你要找的东西？</p>
+            <p>
+              <button class="btn btn-primary">添加反馈</button>
+            </p>
+          </div>
+
+          <div *ngIf="flag01" class="view-cont">
+            <div class="table-scroll">
+              <div class="grid-table">
+                <table class="table-data">
+                  <thead class="table-nav">
+                  <tr class="table-header">
+                    <th>数据元标识符</th>
+                    <th>数据元名称</th>
+                    <th>定义</th>
+                    <th>数据元值的数据类型</th>
+                    <th>表示/格式</th>
+                    <th>数据元允许值</th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-nav">
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.048</td>
+                    <td>过敏症状</td>
+                    <td>对某些物质产生高敏反应的症状</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.049</td>
+                    <td>过敏原</td>
+                    <td>对某些物质产生高敏反应的症状</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.050</td>
+                    <td>预防接种后不良反应症状代码</td>
+                    <td>标识预防接种后不良反应症状的代码</td>
+                    <td>S</td>
+                    <td>N2</td>
+                    <td>CV5101.11预防接种后不良反应症状代码</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  <tr class="table-cont">
+                    <td>HR51.01.037</td>
+                    <td>主诉</td>
+                    <td>患者向医师描述的对自身本次疾病相关的感受的主要记录</td>
+                    <td>S</td>
+                    <td>AN..100</td>
+                    <td>无</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

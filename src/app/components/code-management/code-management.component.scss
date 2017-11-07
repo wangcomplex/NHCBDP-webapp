@@ -1,0 +1,166 @@
+
+.main-content{
+  background: #fff;
+}
+
+.topbar {
+  height: 40px;
+  background: #e8231a;
+  margin-bottom: 20px;
+}
+.nav-region {
+  width: 1000px;
+  margin: 0 auto;
+  height: 40px;
+}
+
+
+.data-content{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.data-content{
+  h1{
+    color: #666666;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .title-cont{
+    font-size: 22px;
+    font-weight: normal;
+    color: #bbb;
+    line-height: 32px;
+  }
+  .title-small{
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+
+.btn-default{
+  margin-left: 0;
+  width: 80px;
+  height: 22px;
+  line-height: 8px;
+  font-size: 12px;
+}
+
+.btn-apply{
+  width: 100%;
+  height:40px;
+  line-height: 32px;
+  color: #ffffff;
+  font-size:16px;
+  margin: 10px auto 0;
+  letter-spacing: 5px;
+  background: #d6290e;
+  border: none;
+  font-weight: normal;
+}
+
+
+.panel-default {
+  .panel-heading{
+    background: #0A77BD;
+    a{
+      color: #fff;
+    }
+  }
+  .panel-body{
+    padding: 0;
+    .nav-stacked{
+      li{
+        border:1px solid #ccc;
+      }
+      img{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.find-want{
+  margin:62px 0 20px 0;
+  border-bottom: 2px solid #ccc;
+  p{
+    text-align: center;
+    line-height: 40px;
+  }
+}
+.view-cont{
+  margin-top: 30px;
+}
+.table-scroll{
+  overflow: hidden;
+  overflow-y: auto;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+.grid-table{
+  height: 600px;
+}
+
+.table-data, .table-header {
+  width: 100%;
+  table-layout: fixed;
+  border:1px solid #ccc;
+  //box-shadow: 1px 1px 1px 0;
+  overflow: hidden;
+  .table-nav{
+    margin:0;
+    padding: 0;
+    tr{
+      &:nth-child(2n){
+        background: #f6f7f8;
+      }
+    }
+    th,td{
+      width:16.6%;
+      list-style: none;
+      float: left;
+      border-right:1px solid #ddd;
+      line-height:40px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-left: 10px;
+      text-align: center;
+      &:nth-last-of-type(1){
+        border-right: none;
+      }
+    }
+  }
+}
+
+.table-cont {
+  td{
+    border-bottom: 1px solid #ddd;
+    border-right:1px solid #ddd;
+    padding-left: 5px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.table-header{
+  background: #397cd5;
+  color: #fff;
+  tr{
+    border-bottom: 1px solid #ddd;
+  }
+  th{
+    padding-left: 10px;
+  }
+}
+
+

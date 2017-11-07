@@ -118,5 +118,10 @@ export class DataSetComponent implements OnInit {
   toDateMedicine() {
     this.router.navigateByUrl('/data-medicine/1');
   }
-
+  toDateCode() {
+    this.router.navigateByUrl('/code-management/1');
+  }
+  toMedicalService() {
+    this.router.navigateByUrl('/medical-service/1');
+  }
 }
