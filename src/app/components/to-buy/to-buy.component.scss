@@ -1,0 +1,36 @@
+.price{
+  float: left;
+  b{
+    font-size: 20px;
+    color: #e8241a;
+    line-height: 80px;
+    padding-left: 20px;
+  }
+  span{
+    text-decoration: line-through;
+    padding-left: 10px;
+  }
+}
+
+.goto-buy{
+  float: right;
+  width: 60%;
+  color: #fff;
+  .btn-buy{
+    float: left;
+    margin-top: 20px;
+    width: 36%;
+    margin-left: 10%;
+    line-height: 22px;
+    height: 40px;
+    font-size: 18px;
+    color: #FF0036;
+    background:#ffeded;
+    border:1px solid #FF0036;
+    outline: none;
+    &:nth-of-type(1){
+      background:#FF0036;
+      color: #fff;
+    }
+  }
+}

@@ -40,6 +40,8 @@ import {DataMedicineComponent} from './components/data-medicine/data-medicine.co
 import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
 import {CodeManagementComponent} from './components/code-management/code-management.component';
 import {MedicalServiceComponent} from './components/medical-service/medical-service.component';
+import {ToBuyComponent} from './components/to-buy/to-buy.component';
+import {OrderDetailComponent} from './components/order-detail/order-detail.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -82,7 +84,8 @@ export const COMPONENT_PROVIDERS = [
   ShowBarLineComponent,
   CodeManagementComponent,
   MedicalServiceComponent,
-
+  ToBuyComponent,
+  OrderDetailComponent,
 ];
 export const PIPE_PROVIDERS = [];
 

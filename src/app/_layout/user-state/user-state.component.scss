@@ -1,19 +1,18 @@
 .status-area {
-  float: right;
-  width: 40%;
+  width: 310px;
   text-align: right;
   .color-white{
     cursor: pointer;
     color: #217ac6;
     font-size: 14px;
     font-weight: bold;
-    width: 15%;
+    width: 30%;
     height: 28px;
     border-radius: 3px;
     background: #fff;
     display: inline-block;
     line-height: 32px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 12px;
   }
 }

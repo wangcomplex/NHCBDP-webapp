@@ -1,34 +1,83 @@
+  //
+  //.header{
+  //  margin: 0;
+  //  padding: 0;
+  //  height:134px;
+  //  position: relative;
+  //  z-index: 1000;
+  //  background: url("/assets/images/login-top-repeat.jpg") repeat-x;
+  //  background-size:100% 100%;
+  //}
+  //
+  //.header-left{
+  //  position: absolute;
+  //  left:0;
+  //  top:0;
+  //  z-index: 10000;
+  //  width:710px;
+  //  height:134px;
+  //  background: url("/assets/images/login-top-left.jpg") no-repeat left;
+  //  background-size:100% 100%;
+  //}
+  //
+  //.header-right{
+  //  position: absolute;
+  //  right:0;
+  //  top:0;
+  //  z-index: 9999;
+  //  width:560px;
+  //  height: 134px;
+  //  background: url("/assets/images/login-top-right.jpg") no-repeat right;
+  //  background-size:100% 100%;
+  //}
 
-  .header{
+
+  section {
     margin: 0;
     padding: 0;
-    height:134px;
-    position: relative;
-    z-index: 1000;
-    background: url("/assets/images/login-top-repeat.jpg") repeat-x;
-    background-size:100% 100%;
+    .topbar {
+      height: 30px;
+      background: #292B2F;
+      h6{
+        float: left;
+        color: #fff;
+        padding-left: 20px;
+        line-height: 12px
+      }
+    }
+
+    .nav-select {
+      display: none;
+    }
+    .nav-region {
+      position: absolute;
+      right:100px;
+      .nav {
+        .nav-item {
+          height:20px;
+          line-height: 12px;
+          a{
+            font-weight: normal;
+            color: #fff;
+            font-size: 12px;
+          }
+          a:hover{
+            background: none;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .status-area {
+      display: inline-block;
+      float: right;
+      margin-right: 38px;
+      line-height: 30px;
+      .color-white{
+        cursor: pointer;
+        color: #fff;
+        font-size: 12px;
+      }
+    }
   }
-
-  .header-left{
-    position: absolute;
-    left:0;
-    top:0;
-    z-index: 10000;
-    width:710px;
-    height:134px;
-    background: url("/assets/images/login-top-left.jpg") no-repeat left;
-    background-size:100% 100%;
-  }
-
-  .header-right{
-    position: absolute;
-    right:0;
-    top:0;
-    z-index: 9999;
-    width:560px;
-    height: 134px;
-    background: url("/assets/images/login-top-right.jpg") no-repeat right;
-    background-size:100% 100%;
-  }
-
-

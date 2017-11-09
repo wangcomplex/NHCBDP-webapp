@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {LoginService} from '../services/login.service';
 import {DataService} from "../services/data.service";
 
@@ -10,14 +10,27 @@ import {DataService} from "../services/data.service";
 })
 export class LoginComponent implements OnInit {
 
+  flag01 = false;
+  flag02 = false;
+  flag03 = false;
+  flag04 = false;
+  flag05 = false;
+  flag06 = false;
+  flag07 = false;
+  flag08 = false;
+
+  @Input()
+  type;
+
     form: any = {};
     error: string;
     submitting = '登陆';
 
-    constructor(private router: Router, private loginService: LoginService, private dataService: DataService) {
+    constructor(private router: Router, private loginService: LoginService, private dataService: DataService, private router1: ActivatedRoute) {
     }
 
     ngOnInit() {
+      this.initFlag(this.type);
     }
 
     login() {
@@ -36,7 +49,61 @@ export class LoginComponent implements OnInit {
               }
                 this.submitting = '登陆';
             });
-
+    }
+  initFlag(type) {
+    switch (type) {
+      case 1: {
+        this.flag01 = true;
+        break;
+      }
+      case 2: {
+        this.flag02 = true;
+        break;
+      }
+      case 3: {
+        this.flag03 = true;
+        break;
+      }
+      case 4: {
+        this.flag04 = true;
+        break;
+      }
+      case 5: {
+        this.flag05 = true;
+        break;
+      }
+      case 6: {
+        this.flag06 = true;
+        break;
+      }
+      case 7: {
+        this.flag07 = true;
+        break;
+      }
+      case 8: {
+        this.flag08 = true;
+        break;
+      }
 
     }
+  }
+
+  getStyle(flag) {
+    if (flag) {
+      return {
+        background: '#424A55',
+        fontWeight: 'bold'
+      };
+    }
+  }
+
+  toDataSet(type) {
+    this.router.navigateByUrl('/data-set/' + type);
+  }
+
+
+
+
+
+
 }

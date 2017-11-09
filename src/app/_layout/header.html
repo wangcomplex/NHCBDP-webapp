@@ -1,15 +1,7 @@
 <section>
   <header>
     <div class="topbar">
-      <div class="logo">
-        <a href="/#/home" title="返回首页"></a>
-      </div>
-      <div class="title-style">
-        <a href="/#/home">
-        <h3>国家健康医疗大数据平台</h3>
-        </a>
-      </div>
-
+      <h6>欢迎使用</h6>
       <div class="status-area">
 
         <div *ngIf="!authenticated">
@@ -18,7 +10,6 @@
           <a class="color-white" href="/#/login">注销</a>
         </div>
       </div>
-
       <div class="nav-region">
         <ul class="nav nav-pills">
           <li class="nav-item">
@@ -47,10 +38,8 @@
       </div>
     </div>
 
-    <div class="header-banner">
-      <div class="banner-left"></div>
-      <div class="banner-center"></div>
-      <div class="banner-right"></div>
+    <div class="top-nav">
+      <app-nav-bar [type]="1"></app-nav-bar>
     </div>
 
   </header>

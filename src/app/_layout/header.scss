@@ -17,40 +17,40 @@ a {
   position: relative;
 
 }
-
-@media (max-width: 1440px){
-  .header-banner{
-    margin: 0;
-    padding: 0;
-    height:80px;
-    position: relative;
-    background:url('/assets/images/login-group.png') no-repeat center;
-    background-size:100% 100%;
-  }
-}
-@media screen and (min-width: 1441px) and (max-width: 2560px){
-  .banner-left{
-    float: left;
-    width:16%;
-    height:80px;
-    background: url("/assets/images/login-left.png") no-repeat left;
-    background-size:100% 100%;
-  }
-  .banner-center{
-    float: left;
-    width:65%;
-    height:80px;
-    background: url("/assets/images/login-repeat.png") repeat-x;
-    background-size: 100% 100%;
-  }
-  .banner-right{
-    float: right;
-    width:19%;
-    height: 80px;
-    background: url("/assets/images/login-right.png") no-repeat right;
-    background-size:100% 100%;
-  }
-}
+//
+//@media (max-width: 1440px){
+//  .header-banner{
+//    margin: 0;
+//    padding: 0;
+//    height:80px;
+//    position: relative;
+//    background:url('/assets/images/login-group.png') no-repeat center;
+//    background-size:100% 100%;
+//  }
+//}
+//@media screen and (min-width: 1441px) and (max-width: 2560px){
+//  .banner-left{
+//    float: left;
+//    width:16%;
+//    height:80px;
+//    background: url("/assets/images/login-left.png") no-repeat left;
+//    background-size:100% 100%;
+//  }
+//  .banner-center{
+//    float: left;
+//    width:65%;
+//    height:80px;
+//    background: url("/assets/images/login-repeat.png") repeat-x;
+//    background-size: 100% 100%;
+//  }
+//  .banner-right{
+//    float: right;
+//    width:19%;
+//    height: 80px;
+//    background: url("/assets/images/login-right.png") no-repeat right;
+//    background-size:100% 100%;
+//  }
+//}
 
 
 
@@ -58,34 +58,16 @@ section {
   margin: 0;
   padding: 0;
   .topbar {
-    height: 42px;
-    background: #1F68B7;
-  }
-  .logo {
-    height: 24px;
-    width: 24px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 14px;
-    a {
-      width: 100%;
-      height: 100%;
-      display: block;
-      background: url("/assets/images/logo.png") no-repeat;
-    }
-  }
-  .title-style {
-    float: left;
-    height: 42px;
-    width: 260px;
-    text-align: center;
-    h3 {
-      font-size:16px;
-      font-weight: normal;
-      line-height: 2px;
+    height: 30px;
+    background: #292B2F;
+    h6{
+      float: left;
       color: #fff;
+      padding-left: 20px;
+      line-height: 12px
     }
   }
+
   .nav-select {
     display: none;
   }
@@ -94,8 +76,8 @@ section {
     right:100px;
     .nav {
       .nav-item {
-        height: 42px;
-        line-height: 22px;
+        height:20px;
+        line-height: 12px;
         a{
            font-weight: normal;
            color: #fff;
@@ -113,7 +95,7 @@ section {
     display: inline-block;
     float: right;
     margin-right: 38px;
-    line-height: 42px;
+    line-height: 30px;
     .color-white{
       cursor: pointer;
       color: #fff;
@@ -175,8 +157,11 @@ section {
   //  }
   //}
 
-
-
   }
 
 
+.top-nav{
+  height: 50px;
+  background: #131418;
+  box-shadow: 0 3px 0 0 #0098F6;
+}
