@@ -24,9 +24,12 @@ import {DataCartogramComponent} from './components/data-cartogram/data-cartogram
 import {DataMedicineComponent} from './components/data-medicine/data-medicine.component';
 import {ShowBarLineComponent} from './components/show-echarts/show-bar-line/show-bar-line';
 import {CodeManagementComponent} from './components/code-management/code-management.component';
-import {MedicalServiceComponent} from "./components/medical-service/medical-service.component";
-import {ToBuyComponent} from "./components/to-buy/to-buy.component";
-import {OrderDetailComponent} from "./components/order-detail/order-detail.component";
+import {MedicalServiceComponent} from './components/medical-service/medical-service.component';
+import {ToBuyComponent} from './components/to-buy/to-buy.component';
+import {OrderDetailComponent} from './components/order-detail/order-detail.component';
+import {FeedBackComponent} from './components/feed-back/feed-back.component';
+import {ExtractionDataComponent} from './components/extraction-data/extraction-data.component';
+import {ShowResultComponent} from './components/show-result/show-result.component';
 
 export const ROUTES: Routes = [
   {
@@ -145,5 +148,17 @@ export const ROUTES: Routes = [
   {
     path: 'order-detail',
     component:  OrderDetailComponent,
+  },
+  {
+    path: 'feed-back',
+    component:  FeedBackComponent,
+  },
+  {
+    path: 'extraction-data',
+    component:  ExtractionDataComponent,
+  },
+  {
+    path: 'show-result',
+    component:  ShowResultComponent,
   },
 ];

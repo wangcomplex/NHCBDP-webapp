@@ -1,0 +1,78 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar [type]="4"></app-nav-bar>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h4>赖诺普利的查询结果：</h4>
+    <div class="show-yao">
+     <div class="show-echart">
+       <app-show-result-pie></app-show-result-pie>
+     </div>
+      <div class="show-echart">
+        <app-show-result-pie></app-show-result-pie>
+      </div>
+      <div class="show-echart">
+        <app-show-result-pie></app-show-result-pie>
+      </div>
+    </div>
+
+    <div class="data-preview">
+      <h5>数据预览</h5>
+      <table class="table-data">
+        <thead class="table-nav">
+        <tr class="table-header">
+          <th>身份证号</th>
+          <th>心肌梗死</th>
+          <th>药品名称</th>
+          <th>平均年龄</th>
+          <th>随访周期</th>
+          <th>停药率</th>
+          <th>其他治疗</th>
+        </tr>
+        </thead>
+        <tbody class="table-nav">
+        <tr class="table-cont">
+          <td>123456789012345678</td>
+          <td>30%</td>
+          <td>赖诺普利</td>
+          <td>1985-1995年</td>
+          <td>每月一次</td>
+          <td>50%</td>
+          <td>30%</td>
+        </tr>
+        <tr class="table-cont">
+          <td>123456789012345678</td>
+          <td>50%</td>
+          <td>赖诺普利</td>
+          <td>1985-1995年</td>
+          <td>每月一次</td>
+          <td>20%</td>
+          <td>10%</td>
+        </tr>
+        <tr class="table-cont">
+          <td>123456789012345678</td>
+          <td>70%</td>
+          <td>赖诺普利</td>
+          <td>1965-1975年</td>
+          <td>每月一次</td>
+          <td>30%</td>
+          <td>10%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-primary tijiao" (click)="gotoDownload()">下载全部数据</button>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

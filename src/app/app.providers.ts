@@ -42,6 +42,10 @@ import {CodeManagementComponent} from './components/code-management/code-managem
 import {MedicalServiceComponent} from './components/medical-service/medical-service.component';
 import {ToBuyComponent} from './components/to-buy/to-buy.component';
 import {OrderDetailComponent} from './components/order-detail/order-detail.component';
+import {FeedBackComponent} from './components/feed-back/feed-back.component';
+import {ExtractionDataComponent} from './components/extraction-data/extraction-data.component';
+import {ShowResultComponent} from './components/show-result/show-result.component';
+import {ShowResultPieComponent} from './components/show-echarts/show-result-pie/show-result-pie';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -86,6 +90,10 @@ export const COMPONENT_PROVIDERS = [
   MedicalServiceComponent,
   ToBuyComponent,
   OrderDetailComponent,
+  FeedBackComponent,
+  ExtractionDataComponent,
+  ShowResultComponent,
+  ShowResultPieComponent
 ];
 export const PIPE_PROVIDERS = [];
 
