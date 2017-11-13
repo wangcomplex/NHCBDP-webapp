@@ -21,12 +21,12 @@
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  <a class="accordion-toggle">内容类型</a>
+                  <a class="accordion-toggle">数据元</a>
                 </div>
                 <div id="collapseOne" class="panel-collapse in" style="height: auto;">
                   <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
-                      <li [ngStyle]="getStyle(flag00)" (click)="showContent(0)"><a>数据集</a></li>
+                      <li [ngStyle]="getStyle(flag00)" (click)="showContent(0)"><a>健康档案</a></li>
                     </ul>
                   </div>
                 </div>
@@ -214,175 +214,36 @@
           </div>
 
           <div *ngIf="flag00" class="view-cont">
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>医疗保健提供者凭证数据</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
-                  <p class="lianmeng">福州卫生部将此信息提供给公众。我们提供者凭据搜索网站提供了1998年7月之后采取的法律纪律处分的正确和正确的副本。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>食品检查</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 成都</i></p>
-                  <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>HSA 90天紧急避难候诊</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
-                  <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>需求证明书：1974年开始</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
-                  <p class="lianmeng">该数据集包含从“纽约州卫生署”许可的卫生保健和长期护理提供者提交的需求证书（CON）申请，有限审查申请（LRAs）和通知书提取的信息。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>流感实验室向NYSDOH报告的病例：2009-10季度开始</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
-                  <p class="lianmeng">该数据集包括符合纽约州卫生局（NYS DOH）的临床实验室证实的流感病例，对以下任何流行性感冒实验室检测中的阳性结果进行定义：快速抗原检测</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>CDC国家电子烟法律 - 税收</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
-                  <p class="lianmeng">1995年至2017年。疾病控制和预防中心（CDC）。国家烟草活动跟踪和评估（STATE）体系。电子烟立法税</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>学校饮用水中的铅测试：2016年开始实行无铅管道建筑</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
-                  <p class="lianmeng">每个NYS公立学校和BOCES（不包括纽约市）的建筑物清单都报告为无铅认证，因此不需要测试。空白的建筑物名称表明学校没有无铅管道的建筑物。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>学校饮用水抽样和结果的铅测试：最近报道的2016年初</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 纽约州</i></p>
-                  <p class="lianmeng">该数据集显示了每个NYS公立学校和中国银行公布的学校抽水和结果信息。详细说明所采样品的摘要信息，实验室分析结果。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>西尼罗病毒病例，2006年至今</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 加利福尼亚州</i></p>
-                  <p class="lianmeng">该数据集包含2006年至今在居住县发现的人类西尼罗病毒阳性病例。人类通常被感染的蚊子感染西尼罗病毒。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>DMH退伍军人提供者注册</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 密苏里州</i></p>
-                  <p class="lianmeng">数据填充了DMH退伍军人服务 -
-                    心理健康服务地图，有助于将服务成员，退伍军人及其家属与行为健康服务联系起来。访问http://dmh.mo.gov/veterans/</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，第7区 - 堪萨斯城</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
-                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>驾驶员和前排乘客百分比佩戴安全带，2012年和2014年，所有国家</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
-                  <p class="lianmeng">2012年国家数据来源：2012年全国居民保护使用调查（NOPUS）2012年国家数据来源：2012年安全带使用状况国家观测调查。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>汽车乘客死亡率按年龄和性别，2012年和2014年，所有国家</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
-                  <p class="lianmeng">2012年和2014年遇难的机动车辆乘客的年龄/性别（每10万人口）的死亡率。2012年资料来源：死亡率分析报告系统（FARS）。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
-            <div class="view-list">
-              <dl>
-                <dt><img src="/assets/home/caiji.png" alt=""></dt>
-                <dd>
-                  <h3>饮酒过多后（过去30天），所有国家，2012年和2014年的成年人的百分比</h3>
-                  <p class="jibing"><i><img src="/assets/home/ren.png"> 疾病预防与控制中心</i></p>
-                  <p class="lianmeng">资料来源：行为风险因素监测系统（BRFSS），2012年和2014年。</p>
-                  <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
-                  </p>
-                </dd>
-              </dl>
-            </div>
+            <table data-toggle="table"
+                   data-striped="true"
+                   data-search="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-url="/examples/bootstrap_table/data"
+                   data-height="800"
+                   data-side-pagination="server"
+                   data-pagination="true"
+                   pageSize="20">
+              <thead>
+              <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td>Item 1</td>
+                <td>$1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Item 2</td>
+                <td>$2</td>
+              </tr>
+              </tbody>
+            </table>
           </div>
 
           <div *ngIf="flag01" class="view-cont">

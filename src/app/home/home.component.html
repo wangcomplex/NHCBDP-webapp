@@ -8,28 +8,31 @@
     </div>
   </div>
 
+  <div class="bannerContainer">
+    <div class="mark"></div>
+    <ul class="bannerPicList">
+      <li [class.active]="currentPic==0"><img src="/assets/home/banner11.jpg"/><h3>国家级健康数据服务平台</h3></li>
+      <li [class.active]="currentPic==1"><img src="/assets/home/banner22.jpg"/><h3>健康医疗大数据的领导者</h3></li>
+      <li [class.active]="currentPic==2"><img src="/assets/home/banner33.jpg"/><h3>健康医疗大数据中心建设</h3></li>
+      <li [class.active]="currentPic==3"><img src="/assets/home/banner44.jpg"/><h3>健康医疗大数据治理平台</h3></li>
+    </ul>
+    <ul class="bannerBtnList">
+      <li><span class="picBtn" (click)="changebanner(0)"></span></li>
+      <li><span class="picBtn" (click)="changebanner(1)"></span></li>
+      <li><span class="picBtn" (click)="changebanner(2)"></span></li>
+      <li><span class="picBtn" (click)="changebanner(3)"></span></li>
+    </ul>
+    <!--<div class="button-left">-->
+      <!--<button class="btn-default btn-left"> <</button>-->
+    <!--</div>-->
+    <!--<div class="button-right">-->
+      <!--<button class="btn-default btn-right"> ></button>-->
+    <!--</div>-->
+  </div>
+
   <div class="data-content">
 
-    <div class="bannerContainer">
-      <ul class="bannerPicList">
-        <li [class.active]="currentPic==0"><img src="/assets/home/luobo1.jpg"/></li>
-        <li [class.active]="currentPic==1"><img src="/assets/home/luobo2.jpg"/></li>
-        <li [class.active]="currentPic==2"><img src="/assets/home/luobo3.jpg"/></li>
-        <li [class.active]="currentPic==3"><img src="/assets/home/luobo4.jpg"/></li>
-      </ul>
-      <ul class="bannerBtnList">
-        <li><span class="picBtn" (click)="changebanner(0)"></span></li>
-        <li><span class="picBtn" (click)="changebanner(1)"></span></li>
-        <li><span class="picBtn" (click)="changebanner(2)"></span></li>
-        <li><span class="picBtn" (click)="changebanner(3)"></span></li>
-      </ul>
-      <div class="button-left">
-        <button class="btn-default btn-left"> <</button>
-      </div>
-      <div class="button-right">
-        <button class="btn-default btn-right"> ></button>
-      </div>
-    </div>
+
 
     <div class="data-capacity">
       <h4>数据智能</h4>

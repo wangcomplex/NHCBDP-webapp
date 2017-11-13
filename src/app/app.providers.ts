@@ -93,7 +93,7 @@ export const COMPONENT_PROVIDERS = [
   FeedBackComponent,
   ExtractionDataComponent,
   ShowResultComponent,
-  ShowResultPieComponent
+  ShowResultPieComponent,
 ];
 export const PIPE_PROVIDERS = [];
 

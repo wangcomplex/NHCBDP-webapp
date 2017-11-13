@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DataSetComponent implements OnInit {
 
-  bValue = 3558;
+  bValue = 800;
 
   flag00 = true;
   flag01 = false;
@@ -22,7 +22,7 @@ export class DataSetComponent implements OnInit {
   flag09 = false;
   flag10 = false;
 
-  resultCount = [3558, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18];
+  resultCount = [800, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18];
 
   selectedType;
 
