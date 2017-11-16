@@ -30,6 +30,7 @@ import {OrderDetailComponent} from './components/order-detail/order-detail.compo
 import {FeedBackComponent} from './components/feed-back/feed-back.component';
 import {ExtractionDataComponent} from './components/extraction-data/extraction-data.component';
 import {ShowResultComponent} from './components/show-result/show-result.component';
+import {DataDetailComponent} from './components/data-detail/data-detail.component';
 
 export const ROUTES: Routes = [
   {
@@ -160,5 +161,9 @@ export const ROUTES: Routes = [
   {
     path: 'show-result',
     component:  ShowResultComponent,
+  },
+  {
+    path: 'data-detail/:dataName',
+    component:  DataDetailComponent,
   },
 ];

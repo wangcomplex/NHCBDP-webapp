@@ -1,0 +1,74 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar [type]="2"></app-nav-bar>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h1>数据表明细</h1>
+
+    <div *ngIf="data.length !== 0">
+      <table id="table"></table>
+
+      <!--<table data-toggle="table"-->
+             <!--data-striped="true"-->
+             <!--data-show-toggle="true"-->
+             <!--data-show-columns="true"-->
+             <!--data-height="600"-->
+             <!--data-side-pagination="server"-->
+             <!--data-pagination="true">-->
+        <!--<thead>-->
+        <!--<tr>-->
+          <!--<th>字段名称</th>-->
+          <!--<th>字段类型</th>-->
+          <!--<th>描述</th>-->
+          <!--<th>是否为空</th>-->
+          <!--<th>大小</th>-->
+          <!--<th>默认</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr *ngFor="let row of data">-->
+          <!--<td>{{row.name}}</td>-->
+          <!--<td>{{row.type}}</td>-->
+          <!--<td>{{row.desc}}</td>-->
+          <!--<td>{{row.nullable}}</td>-->
+          <!--<td>{{row.size}}</td>-->
+          <!--<td>{{row.default}}</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+
+      <!--<table id="table"-->
+             <!--data-toggle="table"-->
+             <!--data-striped="true"-->
+             <!--data-show-toggle="true"-->
+             <!--data-show-columns="true"-->
+             <!--data-height="500"-->
+             <!--data-search="true"-->
+             <!--data-side-pagination="server"-->
+             <!--data-pagination="true">-->
+        <!--<thead>-->
+        <!--<tr>-->
+          <!--<th >ID</th>-->
+          <!--<th data-field="type">数据表名</th>-->
+          <!--<th data-field="desc">中文名称</th>-->
+          <!--<th data-field="nullable">是否为空</th>-->
+          <!--<th data-field="size">大小</th>-->
+          <!--<th data-field="default">默认</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+      <!--</table>-->
+    </div>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

@@ -12,6 +12,7 @@ import {CustomFormsModule} from 'ng2-validation';
 import {SelectModule} from './select/select.module';
 import {MapService} from './core/api/map.service';
 import {HttpClientModule} from '@angular/common/http';
+import {ModalModule} from 'ng2-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
     SelectModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     SERVICE_PROVIDERS,

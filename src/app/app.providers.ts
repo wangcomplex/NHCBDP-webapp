@@ -46,6 +46,7 @@ import {FeedBackComponent} from './components/feed-back/feed-back.component';
 import {ExtractionDataComponent} from './components/extraction-data/extraction-data.component';
 import {ShowResultComponent} from './components/show-result/show-result.component';
 import {ShowResultPieComponent} from './components/show-echarts/show-result-pie/show-result-pie';
+import {DataDetailComponent} from './components/data-detail/data-detail.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -94,6 +95,7 @@ export const COMPONENT_PROVIDERS = [
   ExtractionDataComponent,
   ShowResultComponent,
   ShowResultPieComponent,
+  DataDetailComponent,
 ];
 export const PIPE_PROVIDERS = [];
 

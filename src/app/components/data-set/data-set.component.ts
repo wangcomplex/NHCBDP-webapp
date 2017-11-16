@@ -1,14 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+declare var jQuery: any;
+import 'bootstrap-table';
 
 @Component({
   selector: 'app-data-set',
   templateUrl: './data-set.component.html',
   styleUrls: ['./data-set.component.scss']
 })
-export class DataSetComponent implements OnInit {
+export class DataSetComponent implements OnInit, AfterViewChecked {
 
-  bValue = 800;
+  bValue = 754;
+
+  data;
 
   flag00 = true;
   flag01 = false;
@@ -21,18 +25,69 @@ export class DataSetComponent implements OnInit {
   flag08 = false;
   flag09 = false;
   flag10 = false;
+  flag11 = false;
+  flag12 = false;
+  flag13 = false;
+  flag14 = false;
+  flag15 = false;
+  flag16 = false;
+  flag17 = false;
+  flag18 = false;
+  flag19 = false;
+  flag20 = false;
 
-  resultCount = [800, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18];
+  resultCount = [754, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18, 4, 12, 12, 5, 6, 3, 25, 36, 6, 17];
 
   selectedType;
 
-  constructor(private router1: ActivatedRoute, private router: Router ) {
+  constructor(private router1: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.router1.params.subscribe(params => {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
+    });
+  }
+
+  ngAfterViewChecked(): void {
+    this.initTable();
+  }
+
+  initTable() {
+    jQuery('#table').bootstrapTable({
+      method: 'get',
+      dataType: 'json',
+      cache: false,
+      striped: true,
+      sidePagination: 'server',
+      url: '/data/datasource/jkda',
+      search: true,
+      pagination: true,
+      showRefresh: true,
+      showToggle: true,
+      showColumns: true,
+      height: 600 ,
+      columns: [{
+        field: 'id',
+        title: 'ID'
+      }, {
+        field: 'name',
+        title: '数据表名'
+      }, {
+        field: 'chname',
+        title: '中文名称'
+      }, {
+        field: 'desc',
+        title: '描述'
+      }, ]
+    });
+    const self = this;
+    jQuery(function () {
+      jQuery('#table').on('click-row.bs.table', function (e, row, element) {
+        const url = row.name;
+        self.router.navigateByUrl('data-detail/' + url);
+      });
     });
   }
 
@@ -84,7 +139,46 @@ export class DataSetComponent implements OnInit {
         this.flag10 = true;
         break;
       }
-
+      case 11: {
+        this.flag11 = true;
+        break;
+      }
+      case 12: {
+        this.flag12 = true;
+        break;
+      }
+      case 13: {
+        this.flag13 = true;
+        break;
+      }
+      case 14: {
+        this.flag14 = true;
+        break;
+      }
+      case 15: {
+        this.flag15 = true;
+        break;
+      }
+      case 16: {
+        this.flag16 = true;
+        break;
+      }
+      case 17: {
+        this.flag17 = true;
+        break;
+      }
+      case 18: {
+        this.flag18 = true;
+        break;
+      }
+      case 19: {
+        this.flag19 = true;
+        break;
+      }
+      case 20: {
+        this.flag20 = true;
+        break;
+      }
     }
 
 
@@ -102,6 +196,16 @@ export class DataSetComponent implements OnInit {
     this.flag08 = false;
     this.flag09 = false;
     this.flag10 = false;
+    this.flag11 = false;
+    this.flag12 = false;
+    this.flag13 = false;
+    this.flag14 = false;
+    this.flag15 = false;
+    this.flag16 = false;
+    this.flag17 = false;
+    this.flag18 = false;
+    this.flag19 = false;
+    this.flag20 = false;
   }
 
   getStyle(flag) {
@@ -115,13 +219,18 @@ export class DataSetComponent implements OnInit {
   toDateCartogram() {
     this.router.navigateByUrl('/data-cartogram/1');
   }
+
   toDateMedicine() {
     this.router.navigateByUrl('/data-medicine/1');
   }
+
   toDateCode() {
     this.router.navigateByUrl('/code-management/1');
   }
+
   toMedicalService() {
     this.router.navigateByUrl('/medical-service/1');
   }
+
+
 }

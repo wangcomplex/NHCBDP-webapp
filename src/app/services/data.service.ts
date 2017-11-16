@@ -37,4 +37,8 @@ export class DataService {
   getMedType2Data(): Observable<any> {
     return this.http.get('/data/api/bar/med/type2');
   }
+
+  getJDKA(rowName: any): Observable<any> {
+    return this.http.get(`/data/datasource/jkda/${rowName}`);
+  }
 }
