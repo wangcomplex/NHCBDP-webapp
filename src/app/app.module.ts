@@ -13,6 +13,7 @@ import {SelectModule} from './select/select.module';
 import {MapService} from './core/api/map.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ModalModule} from 'ng2-bootstrap';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {ModalModule} from 'ng2-bootstrap';
     RouterModule.forRoot(ROUTES),
     SelectModule,
     ModalModule.forRoot(),
+    Ng2SmartTableModule,
   ],
   providers: [
     SERVICE_PROVIDERS,

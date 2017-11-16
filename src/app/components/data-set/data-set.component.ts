@@ -1,4 +1,4 @@
-import {AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 declare var jQuery: any;
 import 'bootstrap-table';
@@ -8,7 +8,7 @@ import 'bootstrap-table';
   templateUrl: './data-set.component.html',
   styleUrls: ['./data-set.component.scss']
 })
-export class DataSetComponent implements OnInit, AfterViewChecked {
+export class DataSetComponent implements OnInit{
 
   bValue = 754;
 
@@ -47,47 +47,6 @@ export class DataSetComponent implements OnInit, AfterViewChecked {
     this.router1.params.subscribe(params => {
       this.selectedType = params['type'];
       this.showContent(parseInt(this.selectedType));
-    });
-  }
-
-  ngAfterViewChecked(): void {
-    this.initTable();
-  }
-
-  initTable() {
-    jQuery('#table').bootstrapTable({
-      method: 'get',
-      dataType: 'json',
-      cache: false,
-      striped: true,
-      sidePagination: 'server',
-      url: '/data/datasource/jkda',
-      search: true,
-      pagination: true,
-      showRefresh: true,
-      showToggle: true,
-      showColumns: true,
-      height: 600 ,
-      columns: [{
-        field: 'id',
-        title: 'ID'
-      }, {
-        field: 'name',
-        title: '数据表名'
-      }, {
-        field: 'chname',
-        title: '中文名称'
-      }, {
-        field: 'desc',
-        title: '描述'
-      }, ]
-    });
-    const self = this;
-    jQuery(function () {
-      jQuery('#table').on('click-row.bs.table', function (e, row, element) {
-        const url = row.name;
-        self.router.navigateByUrl('data-detail/' + url);
-      });
     });
   }
 
@@ -231,6 +190,24 @@ export class DataSetComponent implements OnInit, AfterViewChecked {
   toMedicalService() {
     this.router.navigateByUrl('/medical-service/1');
   }
+
+
+  toChildrenBorn() {
+    this.router.navigateByUrl(`children-data`);
+  }
+
+  toChildrenHealth() {
+    this.router.navigateByUrl(`children-health`);
+  }
+
+  toSafeGuard() {
+    this.router.navigateByUrl(`safe-guard`);
+  }
+
+  toSeeDoctor() {
+  this.router.navigateByUrl(`see-doctor`);
+}
+
 
 
 }

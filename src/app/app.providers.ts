@@ -47,6 +47,11 @@ import {ExtractionDataComponent} from './components/extraction-data/extraction-d
 import {ShowResultComponent} from './components/show-result/show-result.component';
 import {ShowResultPieComponent} from './components/show-echarts/show-result-pie/show-result-pie';
 import {DataDetailComponent} from './components/data-detail/data-detail.component';
+import {DataTableComponent} from './components/data-table/data-table.component';
+import {ChildrenDataComponent} from './components/children-data/children-data.component';
+import {ChildrenHealthComponent} from './components/children-health/children-health.component';
+import {SafeGuardComponent} from './components/safe-guard/safe-guard.component';
+import {SeeDoctorComponent} from './components/see-doctor/see-doctor.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -96,6 +101,13 @@ export const COMPONENT_PROVIDERS = [
   ShowResultComponent,
   ShowResultPieComponent,
   DataDetailComponent,
+  DataTableComponent,
+  ChildrenDataComponent,
+  ChildrenHealthComponent,
+  SafeGuardComponent,
+  SeeDoctorComponent
+
+
 ];
 export const PIPE_PROVIDERS = [];
 

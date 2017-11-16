@@ -1,15 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-declare var jQuery: any;
-import 'bootstrap-table';
 import {DataService} from '../../services/data.service';
 
 @Component({
-  selector: 'app-data-detail',
-  templateUrl: './data-detail.component.html',
-  styleUrls: ['./data-detail.component.scss']
+  selector: 'app-see-doctor',
+  templateUrl: './see-doctor.component.html',
+  styleUrls: ['./see-doctor.component.scss']
 })
-export class DataDetailComponent implements OnInit {
+export class SeeDoctorComponent implements OnInit {
+
 
   dimoTypes = [];
   settings = {
@@ -25,9 +24,6 @@ export class DataDetailComponent implements OnInit {
       type: {
         title: '字段类型'
       },
-      default: {
-        title: '默认'
-      },
       desc: {
         title: '描述'
       },
@@ -37,7 +33,9 @@ export class DataDetailComponent implements OnInit {
       nullable: {
         title: '是否为空'
       },
-
+      default: {
+        title: '默认'
+      },
     }
   };
 
@@ -45,11 +43,17 @@ export class DataDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router1.params.subscribe(params => {
-      this.dataService.getJDKAName(params['dataName']).subscribe(response => {
+    // this.router1.params.subscribe(params => {
+      // this.dataService.getCECDataJDKA(params['dataName']).subscribe(response => {
+      //   this.dimoTypes = response;
+      //   console.log(response);
+      // });
+      this.dataService.getCECDataJDKA4().subscribe(response => {
         this.dimoTypes = response;
+        console.log(response);
       });
-    });
+    // });
   }
+
 
 }

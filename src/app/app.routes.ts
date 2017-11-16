@@ -31,6 +31,10 @@ import {FeedBackComponent} from './components/feed-back/feed-back.component';
 import {ExtractionDataComponent} from './components/extraction-data/extraction-data.component';
 import {ShowResultComponent} from './components/show-result/show-result.component';
 import {DataDetailComponent} from './components/data-detail/data-detail.component';
+import {ChildrenDataComponent} from './components/children-data/children-data.component';
+import {ChildrenHealthComponent} from './components/children-health/children-health.component';
+import {SafeGuardComponent} from './components/safe-guard/safe-guard.component';
+import {SeeDoctorComponent} from './components/see-doctor/see-doctor.component';
 
 export const ROUTES: Routes = [
   {
@@ -165,5 +169,21 @@ export const ROUTES: Routes = [
   {
     path: 'data-detail/:dataName',
     component:  DataDetailComponent,
+  },
+  {
+    path: 'children-data',
+    component: ChildrenDataComponent,
+  },
+  {
+    path: 'children-health',
+    component: ChildrenHealthComponent,
+  },
+  {
+    path: 'safe-guard',
+    component: SafeGuardComponent
+  },
+  {
+    path: 'see-doctor',
+    component: SeeDoctorComponent,
   },
 ];

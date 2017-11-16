@@ -227,29 +227,10 @@
           </div>
 
           <div *ngIf="flag00" class="view-cont">
+            <div class='form-control' style="height: 500px;border:1px solid #ccc;">
+              <app-data-table></app-data-table>
+            </div>
 
-            <table id="table"></table>
-
-            <!--<table id="table"-->
-                   <!--data-toggle="table"-->
-                   <!--data-striped="true"-->
-                   <!--data-search="true"-->
-                   <!--data-show-toggle="true"-->
-                   <!--data-show-columns="true"-->
-                   <!--data-url="/data/datasource/jkda"-->
-                   <!--data-height="600"-->
-                   <!--data-side-pagination="server"-->
-                   <!--data-pagination="true">-->
-              <!--<thead>-->
-              <!--<tr>-->
-                <!--<th data-field="id">ID</th>-->
-                <!--<th data-field="name">数据表名</th>-->
-                <!--<th data-field="chname">中文名称</th>-->
-                <!--<th data-field="desc">描述</th>-->
-              <!--</tr>-->
-              <!--</thead>-->
-
-            <!--</table>-->
           </div>
 
           <div *ngIf="flag01" class="view-cont">
@@ -1413,7 +1394,7 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>儿童出生医学信息</h3>
+                  <h3 (click)="toChildrenBorn()">儿童出生医学信息</h3>
                   <p class="jibing"><i><img src="/assets/home/ren.png"> 陕西</i></p>
                   <p class="lianmeng">儿童出生医学信息</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
@@ -1425,7 +1406,7 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>儿童健康检查记录</h3>
+                  <h3 (click)="toChildrenHealth()">儿童健康检查记录</h3>
                   <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
                   <p class="lianmeng">CDC内容联盟网站https://tools.cdc.gov/syndication/允许您将CDC网站的内容直接导入您自己的网站或应用程序。</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
@@ -1437,7 +1418,7 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>母婴保障法律信息</h3>
+                  <h3 (click)="toSafeGuard()">母婴保障法律信息</h3>
                   <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
                   <p class="lianmeng">提供进入HSA 90天紧急候车亭候补名单的资历清单。该列表将于2／24／14生成，每天更新两次。</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
@@ -1449,7 +1430,7 @@
               <dl>
                 <dt><img src="/assets/home/caiji.png" alt=""></dt>
                 <dd>
-                  <h3>儿童就诊信息记录</h3>
+                  <h3 (click)="toSeeDoctor()">儿童就诊信息记录</h3>
                   <p class="jibing"><i><img src="/assets/home/ren.png"> 福州</i></p>
                   <p class="lianmeng">这些信息来自于2010年1月1日至今的芝加哥餐馆和其他食品店的检查。</p>
                   <p class="tag-list"><a href="#">CSV</a><a href="#">PDF</a><a href="#">JSON</a><a href="#">文/XML</a>
