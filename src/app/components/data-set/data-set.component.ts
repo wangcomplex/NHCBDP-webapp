@@ -36,7 +36,7 @@ export class DataSetComponent implements OnInit{
   flag19 = false;
   flag20 = false;
 
-  resultCount = [754, 255, 182, 171, 161, 110, 80, 59, 200, 25, 18, 4, 12, 12, 5, 6, 3, 25, 36, 6, 17];
+  resultCount = [754, 15, 15, 11, 6, 8, 10, 9, 8, 4, 7, 4, 12, 12, 5, 6, 3, 25, 36, 6, 17];
 
   selectedType;
 
