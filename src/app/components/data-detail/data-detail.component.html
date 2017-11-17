@@ -17,6 +17,32 @@
                        [settings]="settings" [source]="dimoTypes" style="height: 460px">
       </ng2-smart-table>
     </div>
+    <div class="row">
+      <div style="width: 90%; margin: 20px auto">
+        <button type="button" class="col-sm-12 btn btn-default btn-preview" (click)="previewData('MySQL')">数据预览</button>
+      </div>
+
+    </div>
+    <div class="data-preview" *ngIf="isShownMySQL">
+      <h5>预览数据结果</h5>
+      <div class="grid-table">
+        <div>
+          <table class="table-data" [ngStyle]="getStyle()">
+            <thead class="table-nav">
+            <tr class="table-header">
+              <th *ngFor="let tableHeader of tableHeaders">{{tableHeader}}</th>
+            </tr>
+            </thead>
+            <tbody class="table-nav">
+            <tr *ngFor="let rows of result" class="table-cont">
+              <td *ngFor="let tableHeader of tableHeaders">{{rows[tableHeader]}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div style="height: 60px"></div>

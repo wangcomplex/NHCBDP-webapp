@@ -11,6 +11,10 @@ import {DataService} from '../../services/data.service';
 })
 export class DataDetailComponent implements OnInit {
 
+  isShownMySQL = false;
+  tableHeaders = [];
+  result = [];
+
   dimoTypes = [];
   settings = {
     actions: {
@@ -50,6 +54,31 @@ export class DataDetailComponent implements OnInit {
         this.dimoTypes = response;
       });
     });
+
+    this.getData();
+  }
+
+  previewData(dataSource) {
+    if (dataSource === 'MySQL') {
+      this.isShownMySQL = true;
+    }
+  }
+
+  getData() {
+    this.dataService.getCECDataSample().subscribe(response => {
+      this.tableHeaders = response.columns;
+      this.result = response.val;
+      console.log(this.tableHeaders);
+      console.log(this.result);
+    });
+  }
+
+
+  getStyle() {
+    const result = (this.tableHeaders.length * 150 + 2) + 'px';
+    return {
+      width: result
+    };
   }
 
 }

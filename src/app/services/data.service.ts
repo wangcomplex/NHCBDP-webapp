@@ -72,4 +72,10 @@ export class DataService {
       return response.json();
     });
   }
+
+  getCECDataSample(): Observable<any> {
+    return this.http.get(`/data/datasource/cecdatajkda/cecd_child_health_001/sample`).map(response => {
+      return response.json();
+    });
+  }
 }
