@@ -12,10 +12,13 @@
   <div class="data-content">
     <h1>儿童出生医学信息</h1>
 
-    <div *ngIf="dimoTypes.length !== 0">
-      <ng2-smart-table *ngIf="dimoTypes.length !== 0" class='form-control'
-                       [settings]="settings" [source]="dimoTypes" style="height: 500px">
+    <div *ngIf="showTable">
+      <ng2-smart-table *ngIf="dimoTypes.length !== 0"
+                       [settings]="settings" [source]="dimoTypes">
       </ng2-smart-table>
+    </div>
+    <div *ngIf="!showTable">
+      正在加载，请稍后...
     </div>
   </div>
 

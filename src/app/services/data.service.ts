@@ -73,9 +73,16 @@ export class DataService {
     });
   }
 
-  getCECDataSample(): Observable<any> {
-    return this.http.get(`/data/datasource/cecdatajkda/cecd_child_health_001/sample`).map(response => {
+  getCECDataSample(tableName): Observable<any> {
+    return this.http.get(`/data/datasource/jkda/${tableName}/sample`).map(response => {
       return response.json();
     });
   }
+  getCECSqlDataSample(sql): Observable<any> {
+    return this.http.get(`/data/datasource/jkda/sql?sql=${sql}`).map(response => {
+      return response.json();
+    });
+  }
+
+
 }

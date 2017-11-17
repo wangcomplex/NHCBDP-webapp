@@ -12,9 +12,17 @@ import {DataService} from '../../services/data.service';
 export class DataDetailComponent implements OnInit {
 
   isShownMySQL = false;
+  isShownWRITESQL= false;
+
   tableHeaders = [];
   result = [];
 
+  sqlTableHeaders = [];
+  sqlResult = [];
+
+  inputSql;
+
+  tableName;
   dimoTypes = [];
   settings = {
     actions: {
@@ -50,7 +58,8 @@ export class DataDetailComponent implements OnInit {
 
   ngOnInit() {
     this.router1.params.subscribe(params => {
-      this.dataService.getJDKAName(params['dataName']).subscribe(response => {
+      this.tableName = params['dataName'];
+      this.dataService.getJDKAName(this.tableName).subscribe(response => {
         this.dimoTypes = response;
       });
     });
@@ -62,14 +71,26 @@ export class DataDetailComponent implements OnInit {
     if (dataSource === 'MySQL') {
       this.isShownMySQL = true;
     }
+    if (dataSource === 'WRITESQL') {
+      this.getSqlData();
+    }
   }
 
   getData() {
-    this.dataService.getCECDataSample().subscribe(response => {
+    this.dataService.getCECDataSample(this.tableName).subscribe(response => {
       this.tableHeaders = response.columns;
       this.result = response.val;
-      console.log(this.tableHeaders);
-      console.log(this.result);
+    });
+  }
+
+  getSqlData() {
+    this.dataService.getCECSqlDataSample(this.inputSql).subscribe(response => {
+      this.sqlTableHeaders = response.colums;
+      this.sqlResult = response.data;
+      this.isShownWRITESQL = true;
+      console.log(response.colums);
+      console.log(response.data);
+      console.log(response);
     });
   }
 

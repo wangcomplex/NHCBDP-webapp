@@ -9,7 +9,7 @@ import {DataService} from '../../services/data.service';
 })
 export class ChildrenDataComponent implements OnInit {
 
-
+  showTable = false;
   dimoTypes = [];
   settings = {
     actions: {
@@ -48,8 +48,10 @@ export class ChildrenDataComponent implements OnInit {
       //   this.dimoTypes = response;
       //   console.log(response);
       // });
+      this.showTable = false;
       this.dataService.getCECDataJDKA().subscribe(response => {
         this.dimoTypes = response;
+        this.showTable = true;
         console.log(response);
       });
     // });
