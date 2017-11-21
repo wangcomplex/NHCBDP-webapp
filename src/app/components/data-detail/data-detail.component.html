@@ -11,63 +11,75 @@
 
   <div class="data-content">
     <h1>数据表明细</h1>
-
-    <div *ngIf="dimoTypes.length !== 0">
-      <ng2-smart-table *ngIf="dimoTypes.length !== 0"
-                       [settings]="settings" [source]="dimoTypes">
-      </ng2-smart-table>
-    </div>
-    <div class="row">
-      <div style="width: 90%; margin: 20px auto">
-        <button type="button" class="col-sm-12 btn btn-default btn-preview" (click)="previewData('MySQL')">数据预览</button>
+    <ul class="data-desc">
+      <li><b>描述： </b><small>描述医生访问的表</small></li>
+      <li><b>创建时间： </b><small>2017-11-13 00:00:00 AM</small></li>
+      <li><b>记录： </b><small>1</small></li>
+      <li><b>作者： </b><small></small></li>
+    </ul>
+    <div style="width: 96%;margin:0 auto;">
+      <div *ngIf="dimoTypes.length !== 0">
+        <ng2-smart-table *ngIf="dimoTypes.length !== 0"
+                         [settings]="settings" [source]="dimoTypes">
+        </ng2-smart-table>
       </div>
+      <div class="row">
+        <div style="width: 90%; margin: 20px auto">
+          <button type="button" class="col-sm-12 btn btn-default btn-preview" (click)="previewData('MySQL')">数据预览</button>
+        </div>
 
-    </div>
-    <div class="data-preview" *ngIf="isShownMySQL">
-      <h5>预览数据结果</h5>
-      <div class="grid-table">
-        <div>
-          <table class="table-data" [ngStyle]="getStyle()">
-            <thead class="table-nav">
-            <tr class="table-header">
-              <th *ngFor="let tableHeader of tableHeaders">{{tableHeader}}</th>
-            </tr>
-            </thead>
-            <tbody class="table-nav">
-            <tr *ngFor="let rows of result" class="table-cont">
-              <td *ngFor="let tableHeader of tableHeaders" title="{{rows[tableHeader]}}">{{rows[tableHeader]}}</td>
-            </tr>
-            </tbody>
-          </table>
+      </div>
+      <div class="data-preview" *ngIf="isShownMySQL">
+        <h5>预览数据结果</h5>
+        <div class="grid-table">
+          <div>
+            <table class="table-data" [ngStyle]="getStyle()">
+              <thead class="table-nav">
+              <tr class="table-header">
+                <th *ngFor="let tableHeader of tableHeaders">{{tableHeader}}</th>
+              </tr>
+              </thead>
+              <tbody class="table-nav">
+              <tr *ngFor="let rows of result" class="table-cont">
+                <td *ngFor="let tableHeader of tableHeaders" title="{{rows[tableHeader]}}">{{rows[tableHeader]}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="mysql">
-      <div class="operation-sql">
-        <input class="write-sql" placeholder="请正确输入你要运行的SQL语句···" [(ngModel)]="inputSql"/>
-        <button class="btn btn-primary operation" (click)="previewData('WRITESQL')">运行</button>
-      </div>
-    </div>
-    <div class="data-preview" *ngIf="isShownWRITESQL">
-      <h5>预览数据结果123</h5>
-      <div class="grid-table">
-        <div>
-          <table class="table-data" [ngStyle]="getStyle()">
-            <thead class="table-nav">
-            <tr class="table-header">
-              <th *ngFor="let tableHeader of sqlTableHeaders">{{tableHeader}}</th>
-            </tr>
-            </thead>
-            <tbody class="table-nav">
-            <tr *ngFor="let rows of sqlResult" class="table-cont">
-              <td *ngFor="let tableHeader of sqlTableHeaders" title="{{rows[tableHeader]}}">{{rows[tableHeader]}}</td>
-            </tr>
-            </tbody>
-          </table>
+      <div class="mysql">
+        <div class="operation-sql">
+          <input class="write-sql" placeholder="请正确输入你要运行的SQL语句···" [(ngModel)]="inputSql"/>
+          <button class="btn btn-primary operation" (click)="previewData('WRITESQL')" style="margin-right: 30px">运行</button>
+          <button class="btn btn-primary operation" (click)="save()" style="margin-right: 30px">保存</button>
+          <button class="btn btn-primary operation" (click)="showSaved()">查看已保存的MySQL</button>
         </div>
       </div>
+      <div class="data-preview" *ngIf="isShownWRITESQL">
+        <h5>预览MySQL查询结果</h5>
+        <div class="grid-table">
+          <div>
+            <table class="table-data" [ngStyle]="getStyle()">
+              <thead class="table-nav">
+              <tr class="table-header">
+                <th *ngFor="let tableHeader of sqlTableHeaders">{{tableHeader}}</th>
+              </tr>
+              </thead>
+              <tbody class="table-nav">
+              <tr *ngFor="let rows of sqlResult" class="table-cont">
+                <td *ngFor="let tableHeader of sqlTableHeaders" title="{{rows[tableHeader]}}">{{rows[tableHeader]}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 30px"></div>
     </div>
+
   </div>
 
   <div style="height: 60px"></div>

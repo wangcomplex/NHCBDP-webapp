@@ -88,9 +88,6 @@ export class DataDetailComponent implements OnInit {
       this.sqlTableHeaders = response.colums;
       this.sqlResult = response.data;
       this.isShownWRITESQL = true;
-      console.log(response.colums);
-      console.log(response.data);
-      console.log(response);
     });
   }
 
@@ -102,4 +99,9 @@ export class DataDetailComponent implements OnInit {
     };
   }
 
+
+  save() {
+  }
+  showSaved() {
+  }
 }

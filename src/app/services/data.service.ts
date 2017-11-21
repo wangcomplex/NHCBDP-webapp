@@ -84,5 +84,9 @@ export class DataService {
     });
   }
 
-
+  // saveSQL(userName, sql): Observable<any> {
+  //   return this.http.post(`/data/datasource/jkda/${userName}/sql?sql=${sql}`).map(response => {
+  //     return response.json();
+  //   });
+  // }
 }

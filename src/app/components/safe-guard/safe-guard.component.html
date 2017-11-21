@@ -11,8 +11,13 @@
 
   <div class="data-content">
     <h1>母婴保障法律信息</h1>
-
-    <div *ngIf="dimoTypes.length !== 0">
+    <ul class="data-desc">
+      <li><b>描述： </b><small>描述医生访问的表</small></li>
+      <li><b>创建时间： </b><small>2017-11-13 00:00:00 AM</small></li>
+      <li><b>记录： </b><small>1</small></li>
+      <li><b>作者： </b><small></small></li>
+    </ul>
+    <div *ngIf="dimoTypes.length !== 0" class="table-list">
       <ng2-smart-table *ngIf="dimoTypes.length !== 0"
                        [settings]="settings" [source]="dimoTypes">
       </ng2-smart-table>
