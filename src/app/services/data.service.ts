@@ -84,9 +84,15 @@ export class DataService {
     });
   }
 
-  // saveSQL(userName, sql): Observable<any> {
-  //   return this.http.post(`/data/datasource/jkda/${userName}/sql?sql=${sql}`).map(response => {
-  //     return response.json();
-  //   });
-  // }
+  saveSQL(sql): Observable<any> {
+    return this.http.post(`/data/datasource/jkda/wbliu/sql?sql=${sql}`, '').map(response => {
+      return response.json();
+    });
+  }
+
+  listSQL(): Observable<any> {
+    return this.http.get(`/data/datasource/sqls/wbliu`, '').map(response => {
+      return response.json();
+    });
+  }
 }

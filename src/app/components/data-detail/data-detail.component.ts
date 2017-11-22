@@ -13,12 +13,16 @@ export class DataDetailComponent implements OnInit {
 
   isShownMySQL = false;
   isShownWRITESQL= false;
+  isShownSaved = false;
 
   tableHeaders = [];
   result = [];
 
   sqlTableHeaders = [];
   sqlResult = [];
+
+  savedHeaders = [];
+  savedResult = [];
 
   inputSql;
 
@@ -74,6 +78,9 @@ export class DataDetailComponent implements OnInit {
     if (dataSource === 'WRITESQL') {
       this.getSqlData();
     }
+    if (dataSource === 'SAVED') {
+      this.showSaved();
+    }
   }
 
   getData() {
@@ -101,7 +108,21 @@ export class DataDetailComponent implements OnInit {
 
 
   save() {
+    if (this.inputSql !== '' && this.inputSql !== undefined) {
+      this.dataService.saveSQL(this.inputSql).subscribe(response => {
+        if (response) {
+          alert('保存成功');
+        }
+      });
+    }
   }
+
   showSaved() {
+    this.dataService.listSQL().subscribe(response => {
+      this.savedResult = response.data;
+      this.isShownSaved = true;
+      console.log(response.data);
+      console.log(response);
+    });
   }
 }

@@ -54,7 +54,7 @@
           <input class="write-sql" placeholder="请正确输入你要运行的SQL语句···" [(ngModel)]="inputSql"/>
           <button class="btn btn-primary operation" (click)="previewData('WRITESQL')" style="margin-right: 30px">运行</button>
           <button class="btn btn-primary operation" (click)="save()" style="margin-right: 30px">保存</button>
-          <button class="btn btn-primary operation" (click)="showSaved()">查看已保存的MySQL</button>
+          <button class="btn btn-primary operation" (click)="previewData('SAVED')">查看已保存的MySQL</button>
         </div>
       </div>
       <div class="data-preview" *ngIf="isShownWRITESQL">
@@ -70,6 +70,28 @@
               <tbody class="table-nav">
               <tr *ngFor="let rows of sqlResult" class="table-cont">
                 <td *ngFor="let tableHeader of sqlTableHeaders" title="{{rows[tableHeader]}}">{{rows[tableHeader]}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-preview" *ngIf="isShownSaved">
+        <h5>预览已保存的MySQL语句查询结果</h5>
+        <div class="grid-table table-sql">
+          <div>
+            <table class="table-data">
+              <thead class="table-nav">
+              <tr class="table-header">
+                <th>数据源</th>
+                <th>SQL</th>
+              </tr>
+              </thead>
+              <tbody class="table-nav">
+              <tr *ngFor="let rows of savedResult" class="table-cont">
+                <td>{{rows.datasource}}</td>
+                <td>{{rows.sql}}</td>
               </tr>
               </tbody>
             </table>
