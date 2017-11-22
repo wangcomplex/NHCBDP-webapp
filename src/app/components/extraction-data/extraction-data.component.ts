@@ -13,8 +13,8 @@ export class ExtractionDataComponent implements OnInit {
   ngOnInit() {
   }
 
-  gotoResult() {
-    this.router.navigateByUrl('/show-result');
+  gotoApply() {
+    this.router.navigateByUrl('/apply-for');
   }
 
 }

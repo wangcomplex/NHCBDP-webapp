@@ -1,3 +1,74 @@
-<p>
-  order-detail works!
-</p>
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar></app-nav-bar>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h4>订单详情</h4>
+    <div class="data-preview">
+      <div class="row order-list">
+        <h5 class="col-lg-5">
+          <input type="checkbox" checked="checked">
+          <label for="">赖诺普利的数据下载</label>
+        </h5>
+        <ul class="col-lg-5">
+          <li>统计人数：100万</li>
+          <li>平均年龄：20-40岁</li>
+          <li>男性占比：40%-50%</li>
+          <li>高血压率：40%-50%</li>
+          <li>心衰率：30%-40%</li>
+          <li>心肌梗死率：30%-40%</li>
+          <li>其他治疗领域：40%-50%</li>
+        </ul>
+        <p class="col-lg-2">
+          <b>¥2999</b><br>
+          <span>删除</span>
+        </p>
+
+      </div>
+      <div class="row order-list">
+        <h5 class="col-lg-5">
+          <input type="checkbox" checked="checked">
+          <label for="">赖诺普利的数据下载</label>
+        </h5>
+        <ul class="col-lg-5">
+          <li>统计人数：100万</li>
+          <li>平均年龄：20-40岁</li>
+          <li>男性占比：40%-50%</li>
+          <li>高血压率：40%-50%</li>
+          <li>心衰率：30%-40%</li>
+          <li>心肌梗死率：30%-40%</li>
+          <li>其他治疗领域：40%-50%</li>
+        </ul>
+        <p class="col-lg-2">
+          <b>¥999</b><br>
+          <span>删除</span>
+        </p>
+
+      </div>
+      <div class="row order-list">
+        <h5 class="col-lg-8">
+          <input type="checkbox" checked="checked">
+          <label for="">全选</label>
+        </h5>
+        <p class="col-lg-4" style="margin-top: 50px;">
+          <span style="color: #666">总价：</span>
+          <b style="color:red">¥3998</b>
+          <button class="btn-primary tijiao" (click)="submitOrder()">提交订单</button>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

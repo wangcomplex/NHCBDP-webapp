@@ -82,6 +82,59 @@
   line-height: 28px;
   border-radius: 5px;
   outline: none;
-  margin-left: 20px;
+  margin:0 20px 0 60px;
 }
 
+.table-data{
+  width:100%;
+  border:1px solid #ccc;
+  th,td{
+    border-right:1px solid #ccc;
+    float: left;
+    line-height:36px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    &:last-of-type {
+      border-right:none;
+    }
+  }
+}
+.table-header{
+  color: #333;
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+}
+.table-cont {
+  border-bottom: 1px solid #d5e6f1;
+  td{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.way{
+  width: 96%;
+  margin: 20px auto;
+  h5{
+    line-height: 30px;
+  }
+  .way-list{
+    list-style: none;
+    li{
+      height: 46px;
+      a{
+        float: left;
+        width: 33.3%;
+        img{
+          margin-left: 10px;
+          border:1px solid #ccc;
+          width: 142px;
+          height: 31px;
+        }
+      }
+    }
+  }
+}

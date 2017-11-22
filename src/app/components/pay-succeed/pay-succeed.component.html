@@ -1,0 +1,28 @@
+
+<app-layout-header></app-layout-header>
+
+
+<div class="main-content">
+  <div class="topbar">
+    <div class="nav-region">
+      <app-nav-bar></app-nav-bar>
+    </div>
+  </div>
+
+  <div class="data-content">
+    <h4>付款结果</h4>
+    <div class="data-preview">
+      <p class="done-img"><img src="/assets/images/succeed.png"></p>
+      <div class="down-load">
+        <h3>您已成功付款3998.00元</h3>
+        <p>现在您可以：<a href="/#/my-order">查看我的订单</a></p>
+        <button class="btn-primary tijiao" (click)="showResult()">下载数据</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 60px"></div>
+</div>
+
+
+<app-layout-footer></app-layout-footer>

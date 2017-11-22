@@ -52,26 +52,28 @@
 }
 
 .data-preview{
-  width:90%;
+  width:60%;
   margin: 0 auto;
-  .order-list {
-    height:190px;
-    border-bottom: 1px solid #ccc;
-    ul{
-      list-style: none;
-      line-height: 26px;
+  height:600px;
+  .done-img{
+    float: left;
+    width: 72px;
+    height: 72px;
+    margin:10% 20px 0 0;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .down-load{
+    margin-top: 10%;
+    float: left;
+    h3{
+      line-height: 30px;
+      font-size: 24px;
     }
     p{
-      b{
-        font-size: 16px;
-        color:#333;
-        line-height: 30px;
-      }
-      span{
-        font-size: 15px;
-        color: red;
-        text-align: right;
-      }
+      font-size: 14px;
     }
   }
 }
@@ -82,6 +84,7 @@
   line-height: 28px;
   border-radius: 5px;
   outline: none;
-  margin-left: 20px;
+  margin-top: 20px;
 }
+
 

@@ -13,7 +13,7 @@ export class ShowResultComponent implements OnInit {
   ngOnInit() {
   }
   gotoDownload() {
-  this.router.navigateByUrl('/apply-for');
+
   }
 
 }

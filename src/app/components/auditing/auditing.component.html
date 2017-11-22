@@ -28,18 +28,18 @@
                 <label>提交审核</label>
                 <img src="/assets/images/jiantou.png" alt="">
               </li>
-              <li>
-                <img src="/assets/images/false.png" alt="">
+              <li (click)="technology()">
+                <img src="/assets/images/true.png" alt="">
                 <label>技术审核</label>
                 <img src="/assets/images/jiantou.png" alt="">
               </li>
-              <li>
-                <img src="/assets/images/false.png" alt="">
+              <li (click)="law()">
+                <img src="/assets/images/true.png" alt="">
                 <label>法务审核</label>
                 <img src="/assets/images/jiantou.png" alt="">
               </li>
-              <li>
-                <img src="/assets/images/false.png" alt="">
+              <li (click)="done()">
+                <img src="/assets/images/true.png" alt="">
                 <label>完成</label>
               </li>
             </ul>
@@ -56,7 +56,20 @@
             <li>公司名称：北医三院</li>
             <li>申请内容：数据表、医学影像、分析结果</li>
           </ul>
+          <ul>
+            <li>技术审核：已成功</li>
+          </ul>
+
+          <ul>
+            <li>法务审核：已成功</li>
+          </ul>
+
+          <ul>
+            <li>审核已完成！ 可以进入   <button class="btn btn-primary" (click)="gotoBuy()">购买</button></li>
+          </ul>
+
         </div>
+
       </div>
 
 

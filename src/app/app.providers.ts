@@ -52,6 +52,9 @@ import {ChildrenDataComponent} from './components/children-data/children-data.co
 import {ChildrenHealthComponent} from './components/children-health/children-health.component';
 import {SafeGuardComponent} from './components/safe-guard/safe-guard.component';
 import {SeeDoctorComponent} from './components/see-doctor/see-doctor.component';
+import {PaymentComponent} from './components/payment/payment.component';
+import {PaySucceedComponent} from './components/pay-succeed/pay-succeed.component';
+import {MyOrderComponent} from './components/my-order/my-order.component';
 
 export const COMPONENT_PROVIDERS = [
   LoginComponent,
@@ -105,7 +108,10 @@ export const COMPONENT_PROVIDERS = [
   ChildrenDataComponent,
   ChildrenHealthComponent,
   SafeGuardComponent,
-  SeeDoctorComponent
+  SeeDoctorComponent,
+  PaymentComponent,
+  PaySucceedComponent,
+  MyOrderComponent,
 
 
 ];
