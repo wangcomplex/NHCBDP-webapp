@@ -31,7 +31,7 @@
     font-size: 14px;
     font-weight: normal;
   }
-  ul{
+  .all-status{
     list-style: none;
     li{
       float: left;
@@ -73,5 +73,16 @@
     &:hover{
       cursor: pointer;
     }
+  }
+}
+
+.pack-details {
+  .pack-pay{
+    list-style: none;
+    color:#666;
+    line-height: 20px;
+  }
+  .pack-list{
+    padding-left: 4%;
   }
 }

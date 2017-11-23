@@ -7,31 +7,32 @@
 <div class="data-content">
   <div class="home-content">
     <div class="list-right">
-      <ul>
-        <li style="color: #333">全部订单</li>
-        <li>已支付</li>
-        <li>未支付</li>
-        <li>已取消</li>
+      <ul class="all-status">
+        <li [ngStyle]="getStyle(flag00)" (click)="showContent(0)">全部订单</li>
+        <li [ngStyle]="getStyle(flag01)" (click)="showContent(1)">已支付</li>
+        <li [ngStyle]="getStyle(flag02)" (click)="showContent(2)">未支付</li>
+        <li [ngStyle]="getStyle(flag03)" (click)="showContent(3)">已取消</li>
       </ul>
-      <table class="table-data">
-        <thead class="table-nav">
-        <tr class="table-header">
-          <th width="10%">订单编号</th>
-          <th width="25%">产品</th>
-          <th width="12.5%">创建时间</th>
-          <th width="12.5%">支付时间</th>
-          <th width="10%">状态</th>
-          <th width="10%">应付金额</th>
-          <th width="20%">操作</th>
-        </tr>
-        </thead>
-        <tbody class="table-nav">
+      <div *ngIf="flag00">
+        <table class="table-data">
+          <thead class="table-nav">
+          <tr class="table-header">
+            <th width="10%">订单编号</th>
+            <th width="25%">产品</th>
+            <th width="12.5%">创建时间</th>
+            <th width="12.5%">支付时间</th>
+            <th width="10%">状态</th>
+            <th width="10%">应付金额</th>
+            <th width="20%">操作</th>
+          </tr>
+          </thead>
+          <tbody class="table-nav">
           <tr class="table-cont">
             <td width="10%">D1234567Y12345</td>
             <td width="25%">数据名称数据名称</td>
             <td width="12.5%">2017-11-20 15:34:03</td>
             <td width="12.5%">2017-11-20 15:34:03</td>
-            <td width="10%" style="color: #ddd">已取消</td>
+            <td width="10%" style="color: #999">已取消</td>
             <td width="10%"><b>¥3998</b></td>
             <td width="20%"><span>取消</span><span>删除</span><span>详情</span></td>
           </tr>
@@ -51,10 +52,155 @@
             <td width="12.5%">2017-11-20 15:34:03</td>
             <td width="10%" style="color: #06B811">已支付</td>
             <td width="10%"><b>¥3998</b></td>
-            <td width="20%"><span>取消</span><span>删除</span><span>详情</span></td>
+            <td width="20%"><span></span><span>删除</span><span>收起</span></td>
+            <div class="row pack-details">
+              <div class="col-lg-2"></div>
+              <ul class="col-lg-4 pack-pay pack-list">
+                <li>统计人数：100万</li>
+                <li>平均年龄：20-40岁</li>
+                <li>男性占比：40%-50%</li>
+                <li>高血压率：40%-50%</li>
+                <li>心衰率：30%-40%</li>
+                <li>心肌梗死率：30%-40%</li>
+                <li>其他治疗领域：40%-50%</li>
+              </ul>
+              <ul class="col-lg-3 pack-pay">
+                <li>支付方式：支付宝</li>
+                <li>流水号：45u43u5jk78098</li>
+              </ul>
+            </div>
           </tr>
-        </tbody>
-      </table>
+
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="flag01">
+        <table class="table-data">
+          <thead class="table-nav">
+          <tr class="table-header">
+            <th width="10%">订单编号</th>
+            <th width="25%">产品</th>
+            <th width="12.5%">创建时间</th>
+            <th width="12.5%">支付时间</th>
+            <th width="10%">状态</th>
+            <th width="10%">应付金额</th>
+            <th width="20%">操作</th>
+          </tr>
+          </thead>
+          <tbody class="table-nav">
+          <tr class="table-cont">
+            <td width="10%">D987652Y54367</td>
+            <td width="25%">数据名称数据名称</td>
+            <td width="12.5%">2017-11-22 10:34:03</td>
+            <td width="12.5%">2017-11-22 10:34:03</td>
+            <td width="10%" style="color: #06B811">已支付</td>
+            <td width="10%"><b>¥3998</b></td>
+            <td width="20%"><span></span><span>删除</span><span>收起</span></td>
+            <div class="row pack-details">
+              <div class="col-lg-2"></div>
+              <ul class="col-lg-4 pack-pay pack-list">
+                <li>统计人数：100万</li>
+                <li>平均年龄：25-40岁</li>
+                <li>男性占比：40%-50%</li>
+                <li>高血压率：40%-50%</li>
+                <li>心衰率：30%-40%</li>
+                <li>心肌梗死率：30%-40%</li>
+                <li>其他治疗领域：40%-50%</li>
+              </ul>
+              <ul class="col-lg-3 pack-pay">
+                <li>支付方式：支付宝</li>
+                <li>流水号：88u4jk78093u58</li>
+              </ul>
+            </div>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="flag02">
+        <table class="table-data">
+          <thead class="table-nav">
+          <tr class="table-header">
+            <th width="10%">订单编号</th>
+            <th width="25%">产品</th>
+            <th width="12.5%">创建时间</th>
+            <th width="12.5%">支付时间</th>
+            <th width="10%">状态</th>
+            <th width="10%">应付金额</th>
+            <th width="20%">操作</th>
+          </tr>
+          </thead>
+          <tbody class="table-nav">
+            <tr class="table-cont">
+            <td width="10%">D765432Y67543</td>
+            <td width="25%">数据名称数据名称</td>
+            <td width="12.5%">2017-11-22 10:34:03</td>
+            <td width="12.5%">2017-11-22 10:34:03</td>
+            <td width="10%" style="color: red">未支付</td>
+            <td width="10%"><b>¥3998</b></td>
+            <td width="20%"><span></span><span>删除</span><span>收起</span></td>
+            <div class="row pack-details">
+              <div class="col-lg-2"></div>
+              <ul class="col-lg-4 pack-pay pack-list">
+                <li>统计人数：80万</li>
+                <li>平均年龄：20-30岁</li>
+                <li>男性占比：40%-60%</li>
+                <li>高血压率：40%-50%</li>
+                <li>心衰率：50%-47%</li>
+                <li>心肌梗死率：30%-40%</li>
+                <li>其他治疗领域：40%-50%</li>
+              </ul>
+              <ul class="col-lg-3 pack-pay">
+                <li>支付方式：支付宝</li>
+                <li>流水号：23u4jk783u5098</li>
+              </ul>
+            </div>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="flag03">
+        <table class="table-data">
+          <thead class="table-nav">
+          <tr class="table-header">
+            <th width="10%">订单编号</th>
+            <th width="25%">产品</th>
+            <th width="12.5%">创建时间</th>
+            <th width="12.5%">支付时间</th>
+            <th width="10%">状态</th>
+            <th width="10%">应付金额</th>
+            <th width="20%">操作</th>
+          </tr>
+          </thead>
+          <tbody class="table-nav">
+          <tr class="table-cont">
+            <td width="10%">D1234567Y12345</td>
+            <td width="25%">数据名称数据名称</td>
+            <td width="12.5%">2017-11-20 15:34:03</td>
+            <td width="12.5%">2017-11-20 15:34:03</td>
+            <td width="10%" style="color: #999">已取消</td>
+            <td width="10%"><b>¥3998</b></td>
+            <td width="20%"><span></span><span>删除</span><span>收起</span></td>
+            <div class="row pack-details">
+              <div class="col-lg-2"></div>
+              <ul class="col-lg-4 pack-pay pack-list">
+                <li>统计人数：100万</li>
+                <li>平均年龄：20-40岁</li>
+                <li>男性占比：40%-50%</li>
+                <li>高血压率：40%-50%</li>
+                <li>心衰率：30%-40%</li>
+                <li>心肌梗死率：30%-40%</li>
+                <li>其他治疗领域：40%-50%</li>
+              </ul>
+              <ul class="col-lg-3 pack-pay">
+                <li>支付方式：支付宝</li>
+                <li>流水号：45u43u5jk78098</li>
+              </ul>
+            </div>
+          </tr>
+          </tbody>
+        </table>
+      </div>
 
     </div>
   </div>
