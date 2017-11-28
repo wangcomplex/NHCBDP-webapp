@@ -1,18 +1,34 @@
 .status-area {
-  width: 310px;
+  width: 200px;
   text-align: right;
+  float: right;
+  margin-right: 38px;
+  line-height: 30px;
+  span{
+    color: white;
+  }
   .color-white{
     cursor: pointer;
-    color: #217ac6;
-    font-size: 14px;
-    font-weight: bold;
-    width: 30%;
-    height: 28px;
-    border-radius: 3px;
-    background: #fff;
-    display: inline-block;
-    line-height: 32px;
-    text-align: center;
-    margin-top: 12px;
+    color: #fff;
+    font-size: 12px;
+    padding-right: 10px;
+    text-decoration: underline;
+    &:hover{
+      color:#51BEDE;
+    }
   }
+  //.color-white{
+  //  cursor: pointer;
+  //  color: #217ac6;
+  //  font-size: 14px;
+  //  font-weight: bold;
+  //  width: 30%;
+  //  height: 28px;
+  //  border-radius: 3px;
+  //  background: #fff;
+  //  display: inline-block;
+  //  line-height: 32px;
+  //  text-align: center;
+  //  margin-top: 12px;
+  //}
 }

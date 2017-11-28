@@ -92,7 +92,8 @@ export class MapComponent implements OnInit, OnChanges {
           color: '#333',
           fonSize: '16px'
         },
-        left: '40%'
+        left: '40%',
+        top: '5%',
       },
       tooltip: {
         trigger: 'item',

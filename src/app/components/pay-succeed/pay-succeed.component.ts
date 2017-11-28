@@ -12,8 +12,6 @@ export class PaySucceedComponent implements OnInit {
 
   ngOnInit() {
   }
-  showResult() {
-    this.router.navigateByUrl('/show-result');
-  }
+
 
 }
