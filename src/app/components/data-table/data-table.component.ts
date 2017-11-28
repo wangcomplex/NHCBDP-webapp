@@ -29,6 +29,9 @@ export class DataTableComponent implements OnInit {
       desc: {
         title: '描述'
       },
+      operation: {
+        title: '操作'
+      },
 
     }
   };
@@ -37,6 +40,9 @@ export class DataTableComponent implements OnInit {
   ngOnInit() {
     this.dataService.getJDKA('0').subscribe(response => {
       this.dimoTypes = response.rows;
+      this.dimoTypes.forEach(dimType => {
+        dimType['operation'] = '预览';
+      });
     });
   }
 

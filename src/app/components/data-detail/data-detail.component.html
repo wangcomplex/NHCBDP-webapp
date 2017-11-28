@@ -57,7 +57,7 @@
           <button class="btn btn-primary operation" (click)="previewData('SAVED')">查看已保存的MySQL</button>
         </div>
       </div>
-      <div class="data-preview" *ngIf="isShownWRITESQL">
+      <div class="data-preview" *ngIf="isShownWRITESQL && showResult">
         <h5>预览MySQL查询结果</h5>
         <div class="grid-table">
           <div>
@@ -75,6 +75,9 @@
             </table>
           </div>
         </div>
+      </div>
+      <div class="data-preview" *ngIf="!isShownWRITESQL && showResult">
+        <h5>没有查到您想要的结果！  请    <button class="btn btn-primary" (click)="enter()">进入</button>   自定义数据内容。</h5>
       </div>
 
       <div class="data-preview" *ngIf="isShownSaved">

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 declare var jQuery: any;
 import 'bootstrap-table';
 import {DataService} from '../../services/data.service';
@@ -12,8 +12,9 @@ import {DataService} from '../../services/data.service';
 export class DataDetailComponent implements OnInit {
 
   isShownMySQL = false;
-  isShownWRITESQL= false;
+  isShownWRITESQL = false;
   isShownSaved = false;
+  showResult = false;
 
   tableHeaders = [];
   result = [];
@@ -57,7 +58,7 @@ export class DataDetailComponent implements OnInit {
     }
   };
 
-  constructor(private router1: ActivatedRoute, private dataService: DataService) {
+  constructor(private router1: ActivatedRoute, private dataService: DataService, private router: Router) {
   }
 
   ngOnInit() {
@@ -92,9 +93,14 @@ export class DataDetailComponent implements OnInit {
 
   getSqlData() {
     this.dataService.getCECSqlDataSample(this.inputSql).subscribe(response => {
-      this.sqlTableHeaders = response.colums;
-      this.sqlResult = response.data;
-      this.isShownWRITESQL = true;
+      this.showResult = true;
+      if (response.code === 500) {
+        this.isShownWRITESQL = false;
+      } else {
+        this.sqlTableHeaders = response.colums;
+        this.sqlResult = response.data;
+        this.isShownWRITESQL = true;
+      }
     });
   }
 
@@ -124,5 +130,9 @@ export class DataDetailComponent implements OnInit {
       console.log(response.data);
       console.log(response);
     });
+  }
+
+  enter() {
+    this.router.navigateByUrl(`extraction-data`);
   }
 }
