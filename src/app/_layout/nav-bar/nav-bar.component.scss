@@ -59,7 +59,32 @@
     color: #fff;
   }
 }
-.user-states{
+.search-data{
+  width: 16%;
   float:right;
   margin-right: 36px;
+  position: relative;
+  input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding-left: 10px;
+    outline: none;
+  }
+  span{
+    width: 30px;
+    height: 30px;
+    background: #51BEDE;
+    position: absolute;
+    right:0;
+    top:10px;
+    img{
+      width: 16px;
+      height: 16px;
+      margin: 8px 0 0 8px;
+    }
+  }
+
 }

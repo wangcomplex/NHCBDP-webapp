@@ -18,10 +18,13 @@ export class NavBarComponent implements OnInit {
   flag07 = false;
   flag08 = false;
 
+  query;
+
   @Input()
   type;
 
-  constructor(private router: Router, private router1: ActivatedRoute) { }
+  constructor(private router: Router, private router1: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.initFlag(this.type);
@@ -78,4 +81,9 @@ export class NavBarComponent implements OnInit {
     this.router.navigateByUrl('/data-set/' + type);
   }
 
+  search() {
+    if (!!this.query) {
+      window.location.assign(`http://10.1.11.109:9090/search?s=${this.query}&sign=1&pn=0`);
+    }
+  }
 }
