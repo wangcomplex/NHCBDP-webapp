@@ -107,7 +107,9 @@ section {
     }
   }
   }
-
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 .top-nav{
   height: 50px;
