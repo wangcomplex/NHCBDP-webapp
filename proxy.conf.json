@@ -5,7 +5,7 @@
     "pathRewrite": {"^/api" : ""}
   },
   "/data":{
-    "target": "http://10.1.11.109:9090",
+    "target": "http://10.1.11.109:9091",
     "secure": false,
     "pathRewrite": {"^/data" : ""}
   }
