@@ -20,43 +20,66 @@
   </li>
   <li class="nav-item">
     <a href="/#/discounts-government" [ngStyle]="getStyle(flag03)" class="nav-link" routerLinkActive="active">
-      战略生态
+      安全
     </a>
-  </li>
-  <!--<li class="nav-item">-->
-    <!--<a href="/#/feed-back" [ngStyle]="getStyle(flag04)" class="nav-link" routerLinkActive="active">-->
-      <!--反馈-->
-    <!--</a>-->
-  <!--</li>-->
-  <li class="nav-item dropdown">
-    <a href="" [ngStyle]="getStyle(flag05)" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
-      开发商
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="/#/data-api" [ngStyle]="getStyle(flag06)">数据API</a></li>
-    </ul>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a href="#" [ngStyle]="getStyle(flag07)" class="nav-link dropdown">
-      主题
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>
-      <li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>
-      <li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>
-      <li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>
-      <li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>
-      <li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>
-      <li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>
-      <li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>
-    </ul>
   </li>
   <li class="nav-item">
+    <a href="/#/feed-back" [ngStyle]="getStyle(flag04)" class="nav-link" routerLinkActive="active">
+      生态
+    </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a href="" [ngStyle]="getStyle(flag05)" class="nav-link dropdown-toggle" data-toggle="dropdown" routerLinkActive="active">
+      AI
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <b href="/#/data-api" [ngStyle]="getStyle(flag06)">知识库</b>
+        <ul class="menu-list">
+          <li><a href="/#/data-api">规则库</a></li>
+          <li><a href="/#/data-api">术语库</a></li>
+          <li><a href="/#/data-api">术语关系库</a></li>
+          <li><a href="/#/data-api">事实信息库</a></li>
+        </ul>
+      </li>
+      <li>
+        <b href="/#/data-api" [ngStyle]="getStyle(flag06)">标准库</b>
+        <ul class="menu-list">
+          <li><a href="/#/data-api">规则库</a></li>
+          <li><a href="/#/data-api">术语库</a></li>
+          <li><a href="/#/data-api">术语关系库</a></li>
+          <li><a href="/#/data-api">事实信息库</a></li>
+        </ul>
+      </li>
+      <li><b href="/#/data-api">算法库</b></li>
+      <li><b href="/#/data-api">模型库</b></li>
+    </ul>
+  </li>
+  <!--<li class="nav-item">-->
+    <!--<a href="/#/feed-back" [ngStyle]="getStyle(flag07)" class="nav-link" routerLinkActive="active">-->
+      <!--支持-->
+    <!--</a>-->
+  <!--</li>-->
+  <!--<li class="nav-item dropdown">-->
+    <!--<a href="#" [ngStyle]="getStyle(flag07)" class="nav-link dropdown">-->
+      <!--主题-->
+      <!--<b class="caret"></b>-->
+    <!--</a>-->
+    <!--<ul class="dropdown-menu">-->
+      <!--<li><a (click)="toDataSet(1)"><img src="/assets/home/zhengfu.png">政府</a></li>-->
+      <!--<li><a (click)="toDataSet(2)"><img src="/assets/home/baoxian.png">保险</a></li>-->
+      <!--<li><a (click)="toDataSet(3)"><img src="/assets/home/yaoqi.png">药企</a></li>-->
+      <!--<li><a (click)="toDataSet(4)"><img src="/assets/home/jishu.png">技术</a></li>-->
+      <!--<li><a (click)="toDataSet(5)"><img src="/assets/home/safe.png">安全</a></li>-->
+      <!--<li><a (click)="toDataSet(6)"><img src="/assets/home/rengong.png">AI</a></li>-->
+      <!--<li><a (click)="toDataSet(7)"><img src="/assets/home/yiliaojigou.png">医疗机构</a></li>-->
+      <!--<li><a (click)="toDataSet(8)"><img src="/assets/home/shujukaifang.png">数据开放</a></li>-->
+    <!--</ul>-->
+  <!--</li>-->
+  <li class="nav-item">
     <a href="/#/about" [ngStyle]="getStyle(flag08)" class="nav-link" routerLinkActive="active">
-      关于
+      联系
     </a>
   </li>
 </ul>

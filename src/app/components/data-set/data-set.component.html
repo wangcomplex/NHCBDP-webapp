@@ -66,10 +66,6 @@
                     <ul class="nav nav-pills nav-stacked">
                       <li [ngStyle]="getStyle(flag09)" (click)="showContent(9)"><a>数据标准管理（<b>4</b>）</a></li>
                       <li [ngStyle]="getStyle(flag10)" (click)="showContent(10)"><a>资源目录管理（<b>7</b>）</a></li>
-                      <!--<li><a>数据质量管理（<b>7</b>）</a></li>-->
-                      <!--<li><a>数据价值评估（<b>11</b>）</a></li>-->
-                      <!--<li><a>数据资源监控（<b>1</b>）</a></li>-->
-                      <!--<li><a>数据服务监控（<b>1</b>）</a></li>-->
                     </ul>
                   </div>
                 </div>
@@ -178,6 +174,21 @@
                       <li><a href="#">开放数据库许可证（<b>17</b>）</a></li>
                       <li><a href="#">公共域（<b>11</b>）</a></li>
                       <li><a href="#">其他(公共域)（<b>11</b>）</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default" *ngIf="flag01">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
+                  <a class="accordion-toggle">改变</a>
+                </div>
+                <div id="collapseNine" class="panel-collapse collapse" style="height: 0px;">
+                  <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                      <li><a href="#">新增（<b>5</b>）</a></li>
+                      <li><a href="#">虚假（<b>2</b>）</a></li>
+                      <li><a href="#">数据（<b>17</b>）</a></li>
+                      <li><a href="#">联动（<b>1</b>）</a></li>
                     </ul>
                   </div>
                 </div>

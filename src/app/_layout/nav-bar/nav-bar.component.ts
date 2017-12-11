@@ -71,8 +71,10 @@ export class NavBarComponent implements OnInit {
   getStyle(flag) {
     if (flag) {
       return {
-        background: '#424A55',
-        fontWeight: 'bold'
+        // background: '#424A55',
+        // fontWeight: 'bold'
+        color: '#1badd8',
+        borderBottom: '3px solid #1badd8'
       };
     }
   }
